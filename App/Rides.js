@@ -1,11 +1,26 @@
 'use strict';
 
 import React, { Component } from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Navigator,
+  ScrollView,
+} from 'react-native'
 import CookieManager from 'react-native-cookies';
 import RideApplLogin from './App';
+//import Tabbar, { Tab, RawContent, IconWithBar, glypyMapMaker } from 'react-native-tabbar';
 
-export default class Rides extends Component {
+
+
+const glypy = glypyMapMaker({
+  Groups: 'e900',
+  Rides: 'e902',
+  Settings: 'e901',
+});
+
+class Rides extends Component {
 
     constructor(props, context) {
         super(props, context);
@@ -24,20 +39,25 @@ export default class Rides extends Component {
             loggedIn: false,
         });
     }
-
+  
     render () {
+        return (
+        <Navigator
+            renderScene={this.renderScene.bind(this)}
+            navigator = {navigator}
+           />
+        );
+      }
+
+    renderScene (route, navigator) {
         if (this.state.loggedIn) {
             return (
                 <View style={styles.container}>
-                    <Text style={styles.welcome}>
-                        You are authenticated!
-                    </Text>
+                   
                 </View>
             ); 
         } else {
-            return (
-                <RideApplLogin/>
-            );
+            this.props.navigator.push({id: "LoginPage", name:"Index"})
         }
     }
 }
@@ -55,3 +75,5 @@ var styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+module.exports = Rides;

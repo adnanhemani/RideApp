@@ -7,6 +7,6 @@
 import React, { Component } from 'react';
 import {AppRegistry} from "react-native";
 import RideApplLogin from "./App/App";
+import Navigate from "./App/Navigator";
 
-
-AppRegistry.registerComponent('RideApp', () => RideApplLogin);
+AppRegistry.registerComponent('RideApp', () => Navigate);
