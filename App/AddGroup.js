@@ -18,7 +18,7 @@ import {
 } from 'react-native'
 import CookieManager from 'react-native-cookies';
 
-class Register extends Component {
+class AddGroup extends Component {
 
     constructor(props, context) {
         super(props, context);
@@ -58,96 +58,20 @@ class Register extends Component {
       return (
                 <ScrollView>
                     <NavigationBar
-                      title={{ title: "Register", tintColor: 'black', }}
+                      title={{ title: "Add Group", tintColor: 'black', }}
                       style={{ backgroundColor: "white", }}
                       leftButton={backButton}
                       statusBar={{ tintColor: "white", }}
                     />
                     <Text
                       style={styles.fName}>
-                      First Name:
-                    </Text>
-                    <TextInput
-                      style={styles.fNameInput}
-                      placeholder={'First Name'}
-                      placeholderTextColor={"rgba(198,198,204,1)"}
-                      onChangeText={(text) => {this.setState({fName: text})}}
-                      onSubmitEditing={() => {this.setState({fName: ''})}}
-                      value={(this.state && this.state.fName) || ''}
-                    />
-                    <Text
-                      style={styles.lName}>
-                      Last Name:
-                    </Text>
-                    <TextInput
-                      style={styles.lNameInput}
-                      placeholder={'Last Name'}
-                      placeholderTextColor={"rgba(198,198,204,1)"}
-                      onChangeText={(text) => {this.setState({lName: text})}}
-                      onSubmitEditing={() => {this.setState({lName: ''})}}
-                      value={(this.state && this.state.lName) || ''}
-                    />
-                    <Text
-                      style={styles.phoneNumber}>
-                      Phone Number:
-                    </Text>
-                     <TextInput
-                      style={styles.phoneNumberInput}
-                      placeholder={'Phone Number'}
-                      placeholderTextColor={"rgba(198,198,204,1)"}
-                      onChangeText={(text) => {this.setState({phone: text})}}
-                      onSubmitEditing={() => {this.setState({phone: ''})}}
-                      value={(this.state && this.state.phone) || ''}
-                      keyboardType={'phone-pad'}
-                    />
-                    <Text
-                      style={styles.emailText}>
-                      Email Address:
-                    </Text>
-                    <TextInput
-                      style={styles.emailTextInput}
-                      placeholder={'Email'}
-                      placeholderTextColor={"rgba(198,198,204,1)"}
-                      onChangeText={(text) => {this.setState({email: text})}}
-                      onSubmitEditing={() => {this.setState({email: ''})}}
-                      value={(this.state && this.state.email) || ''}
-                      keyboardType={'email-address'}
-                    />
-                    <Text
-                      style={styles.riderOrDriver}>
-                      Are you a rider or driver?
+                      What group would like like to become a part of?
                     </Text>
                     <Picker 
                       style={styles.riderDriverSelector}
                       selectedValue={(this.state && this.state.riderDriver) || 'rider'}
                       onValueChange={(value) => {
                         this.setState({riderDriver: value})
-                      }}>
-                      <Picker.Item label={'Rider'} value={'rider'} />
-                      <Picker.Item label={'Driver'} value={'driver'} />
-                    </Picker>
-                    <Text
-                      style={styles.carSelect}>
-                      If you are a driver, do you own your own car?
-                    </Text>
-                    <Picker 
-                      style={styles.carSelector}
-                      selectedValue={(this.state && this.state.carOrNah) || 'Yes'}
-                      onValueChange={(value) => {
-                        this.setState({carOrNah: value})
-                      }}>
-                      <Picker.Item label={'Yes'} value={"y"} />
-                      <Picker.Item label={'No'} value={"n"} />
-                    </Picker>
-                    <Text
-                      style={styles.groupText}>
-                      What group would you like to join?
-                    </Text>
-                    <Picker 
-                      style={styles.groupsPicker}
-                      selectedValue={(this.state && this.state.group) || 'a'}
-                      onValueChange={(value) => {
-                        this.setState({group: value})
                       }}>
                       <Picker.Item label={'Cal Ismailis Rideshare'} value={'Cal Ismailis Rideshare'} />
                     </Picker>
@@ -260,9 +184,7 @@ var styles = StyleSheet.create({
     
   },
   riderDriverSelector: {
-    marginLeft: 10,
-    top: 35,
-    
+    marginLeft: 10,    
   },
   carSelector: {
     marginLeft: 10,
@@ -288,7 +210,6 @@ var styles = StyleSheet.create({
     justifyContent: "center",
     height: 40,
     marginRight: 10,
-    top: -200,
   },
   submitText: {
     alignSelf: "center",
@@ -298,4 +219,4 @@ var styles = StyleSheet.create({
     fontFamily: 'Helvetica Neue',
   },
 });
-module.exports = Register;
+module.exports = AddGroup;

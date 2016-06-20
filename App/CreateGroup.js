@@ -18,7 +18,7 @@ import {
 } from 'react-native'
 import CookieManager from 'react-native-cookies';
 
-class Register extends Component {
+class CreateGroup extends Component {
 
     constructor(props, context) {
         super(props, context);
@@ -58,99 +58,60 @@ class Register extends Component {
       return (
                 <ScrollView>
                     <NavigationBar
-                      title={{ title: "Register", tintColor: 'black', }}
+                      title={{ title: "Create New Group", tintColor: 'black', }}
                       style={{ backgroundColor: "white", }}
                       leftButton={backButton}
                       statusBar={{ tintColor: "white", }}
                     />
                     <Text
                       style={styles.fName}>
-                      First Name:
+                      New Group Name:
                     </Text>
                     <TextInput
                       style={styles.fNameInput}
-                      placeholder={'First Name'}
+                      placeholder={'Group Name'}
                       placeholderTextColor={"rgba(198,198,204,1)"}
-                      onChangeText={(text) => {this.setState({fName: text})}}
-                      onSubmitEditing={() => {this.setState({fName: ''})}}
-                      value={(this.state && this.state.fName) || ''}
+                      onChangeText={(text) => {this.setState({groupName: text})}}
+                      onSubmitEditing={() => {this.setState({groupName: ''})}}
+                      value={(this.state && this.state.groupName) || ''}
                     />
                     <Text
                       style={styles.lName}>
-                      Last Name:
+                      Location 1:
                     </Text>
                     <TextInput
                       style={styles.lNameInput}
-                      placeholder={'Last Name'}
+                      placeholder={'Location 1'}
                       placeholderTextColor={"rgba(198,198,204,1)"}
-                      onChangeText={(text) => {this.setState({lName: text})}}
-                      onSubmitEditing={() => {this.setState({lName: ''})}}
-                      value={(this.state && this.state.lName) || ''}
+                      onChangeText={(text) => {this.setState({l1: text})}}
+                      onSubmitEditing={() => {this.setState({l1: ''})}}
+                      value={(this.state && this.state.l1) || ''}
                     />
                     <Text
                       style={styles.phoneNumber}>
-                      Phone Number:
+                      Location 2:
                     </Text>
                      <TextInput
                       style={styles.phoneNumberInput}
-                      placeholder={'Phone Number'}
+                      placeholder={'Location 2'}
                       placeholderTextColor={"rgba(198,198,204,1)"}
-                      onChangeText={(text) => {this.setState({phone: text})}}
-                      onSubmitEditing={() => {this.setState({phone: ''})}}
-                      value={(this.state && this.state.phone) || ''}
-                      keyboardType={'phone-pad'}
+                      onChangeText={(text) => {this.setState({l2: text})}}
+                      onSubmitEditing={() => {this.setState({l2: ''})}}
+                      value={(this.state && this.state.l2) || ''}
                     />
                     <Text
                       style={styles.emailText}>
-                      Email Address:
+                      Location 3:
                     </Text>
                     <TextInput
                       style={styles.emailTextInput}
-                      placeholder={'Email'}
+                      placeholder={'Location 3'}
                       placeholderTextColor={"rgba(198,198,204,1)"}
-                      onChangeText={(text) => {this.setState({email: text})}}
-                      onSubmitEditing={() => {this.setState({email: ''})}}
-                      value={(this.state && this.state.email) || ''}
-                      keyboardType={'email-address'}
+                      onChangeText={(text) => {this.setState({l3: text})}}
+                      onSubmitEditing={() => {this.setState({l3: ''})}}
+                      value={(this.state && this.state.l3) || ''}
                     />
-                    <Text
-                      style={styles.riderOrDriver}>
-                      Are you a rider or driver?
-                    </Text>
-                    <Picker 
-                      style={styles.riderDriverSelector}
-                      selectedValue={(this.state && this.state.riderDriver) || 'rider'}
-                      onValueChange={(value) => {
-                        this.setState({riderDriver: value})
-                      }}>
-                      <Picker.Item label={'Rider'} value={'rider'} />
-                      <Picker.Item label={'Driver'} value={'driver'} />
-                    </Picker>
-                    <Text
-                      style={styles.carSelect}>
-                      If you are a driver, do you own your own car?
-                    </Text>
-                    <Picker 
-                      style={styles.carSelector}
-                      selectedValue={(this.state && this.state.carOrNah) || 'Yes'}
-                      onValueChange={(value) => {
-                        this.setState({carOrNah: value})
-                      }}>
-                      <Picker.Item label={'Yes'} value={"y"} />
-                      <Picker.Item label={'No'} value={"n"} />
-                    </Picker>
-                    <Text
-                      style={styles.groupText}>
-                      What group would you like to join?
-                    </Text>
-                    <Picker 
-                      style={styles.groupsPicker}
-                      selectedValue={(this.state && this.state.group) || 'a'}
-                      onValueChange={(value) => {
-                        this.setState({group: value})
-                      }}>
-                      <Picker.Item label={'Cal Ismailis Rideshare'} value={'Cal Ismailis Rideshare'} />
-                    </Picker>
+                    
                     <TouchableElement
                         style={styles.submit}
                         onPress={() => this.submitted()}>
@@ -288,7 +249,7 @@ var styles = StyleSheet.create({
     justifyContent: "center",
     height: 40,
     marginRight: 10,
-    top: -200,
+    top: 100,
   },
   submitText: {
     alignSelf: "center",
@@ -298,4 +259,4 @@ var styles = StyleSheet.create({
     fontFamily: 'Helvetica Neue',
   },
 });
-module.exports = Register;
+module.exports = CreateGroup;

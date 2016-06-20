@@ -13,7 +13,18 @@ import React, {Component} from "react";
 
 var RideApplLogin = require('./App/App');
 var Register = require('./App/Register');
-var Rides = require('./App/Rides');
+var Tabs = require('./App/Tabs');
+var RidesPage = require("./App/RidesPage");
+var GroupsPage = require("./App/GroupsPage");
+var GroupDetails = require("./App/GroupDetails");
+var RideSeek = require("./App/RideSeek");
+var RideResults = require("./App/rideresults");
+var SettingsPage = require("./App/SettingsPage");
+var AddGroup = require("./App/AddGroup");
+var LeaveGroup = require("./App/LeaveGroup");
+var CreateGroup = require("./App/CreateGroup");
+var GroupMgmt = require("./App/GroupMgmt");
+var GroupMgmtOptions = require("./App/GroupMgmtOptions");
 
 class App extends Component {
   render() {
@@ -37,15 +48,75 @@ class App extends Component {
           navigator={navigator} />
       );
     }
-    if (routeId === 'Rides') {
+    if (routeId === "GroupMgmtOptions") {
       return (
-        <Rides
+        <GroupMgmtOptions
+            navigator={navigator} />
+      );
+    }
+    if (routeId === "GroupMgmt") {
+      return (
+        <GroupMgmt
+            navigator = {navigator} />
+      );
+    }
+    if (routeId === "CreateGroup") {
+      return (
+        <CreateGroup
+            navigator={navigator} />
+      );
+    }
+    if (routeId === "LeaveGroup") {
+      return (
+        <LeaveGroup
+            navigator={navigator} />
+        );
+    }
+    if (routeId === "AddGroup") {
+      return (
+        <AddGroup
+            navigator={navigator} />
+      );
+    }
+    if (routeId === "RideResults") {
+      return (
+        <RideResults
+            navigator={navigator} />
+      );
+    }
+    if (routeId === "RideSeek") {
+      return (
+        <RideSeek
+            navigator={navigator} />
+      );
+    }
+    if (routeId === "GroupDetails") {
+      return (
+      <GroupDetails
+          navigator= {navigator} />
+        );
+    }
+    if (routeId === 'Tabs') {
+      return (
+        <Tabs
           navigator={navigator} />
       );
     }
     if (routeId === 'Register') {
       return (
         <Register
+            navigator={navigator} />
+      );
+    }
+    if (routeId === "Rides") {
+      return (
+        <RidesPage
+            navigator={navigator} />
+      );
+    }
+    if (routeId === "Groups") {
+      return (
+          <GroupsPage
             navigator={navigator} />
       );
     }

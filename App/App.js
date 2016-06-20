@@ -13,18 +13,11 @@ import {
   Navigator,
 } from 'react-native';
 import CookieManager from 'react-native-cookies';
-var Button = require('react-native-button');
-
-
-
-
-
-
 
 //Change this for our backend
 const LOGIN_URL = "http://localhost:80/login/";
 
-var options = {};
+
 
 class RideApplLogin extends Component {
 
@@ -38,12 +31,10 @@ class RideApplLogin extends Component {
 	}
   
     signin () {
-      console.log("signed in");
-      this.props.navigator.push({id: "Rides", name: "Rides"})
+      this.props.navigator.push({id: "Tabs", name: "Tabs"})
     };
   
     changeCheckboxState () {
-      console.log(!this.state.checkboxState);
       this.setState({checkboxState: !this.state.checkboxState});
     };
     
@@ -79,7 +70,7 @@ class RideApplLogin extends Component {
       return (
       <Navigator
           renderScene={this.renderScene.bind(this)}
-          navigator = {navigator}
+          navigator = {this.props.navigator}
          />
       );
     }
@@ -91,7 +82,7 @@ class RideApplLogin extends Component {
 		if (this.state.loadedCookie) {
 			if (this.state.loggedIn) {
 				return (
-					<Rides/>
+					<Tabs/>
 				);
 			}
 			else {
