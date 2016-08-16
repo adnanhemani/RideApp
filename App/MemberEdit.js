@@ -18,7 +18,7 @@ import NavigationBar from 'react-native-navbar';
 var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
 
 
-class GroupMgmtOptions extends Component {
+class MemberEdit extends Component {
 
     constructor(props, context) {
         super(props, context);
@@ -28,20 +28,29 @@ class GroupMgmtOptions extends Component {
         };
 
     }
-    
-   addEvent () {
-     console.log("add event pressed");
-     this.props.navigator.push({id:"AddEvent", name:"AddEvent"});
-   }
   
-  groupMemberMgmt () {
-    console.log("group member management pressed");
-    this.props.navigator.push({id:"MemberMgmt", name:"MemberMgmt"});
-
-  }
-  
-  backOneScene () {
+    backOnePage () {
       this.props.navigator.pop();
+    }
+    
+    phone () {
+      console.log("change phone number");
+    }
+  
+    email () {
+      console.log("change email address");
+    }
+  
+    rdstatus () {
+      console.log("change r/d status");
+    }
+  
+    owncarstatus () {
+      console.log("change owns car status");
+    }
+  
+    deleteMember () {
+      console.log("delete member");
     }
   
     render () {
@@ -55,37 +64,58 @@ class GroupMgmtOptions extends Component {
   
   renderScene (route, navigator) {
      var TouchableElement = TouchableHighlight;
-    //console.log(TouchableElement);
-    if (Platform.OS === 'android') {
-      TouchableElement = TouchableNativeFeedback;
-    }
+              //console.log(TouchableElement);
+              if (Platform.OS === 'android') {
+                TouchableElement = TouchableNativeFeedback;
+              }
     const backButton = {
-      title: "Back",
-      handler: () => this.backOneScene(),
-    };
+            title: "Back",
+            handler: () => this.backOnePage(),
+          };
     return (
-            <View>
+            <ScrollView>
             <NavigationBar
                       title={{ title: "Settings", tintColor: 'black', }}
                       style={{ backgroundColor: "white", }}
-                      leftButton={backButton}
+                      leftButton = {backButton}
                       statusBar={{ tintColor: "white", }}
                     />
             <TouchableElement
                 style={styles.submit}
-                onPress={() => this.addEvent()}>
+                onPress={() => this.phone()}>
                 <View>
-                    <Text style={styles.submitText}>Add event</Text>
+                    <Text style={styles.submitText}>Change Phone Number</Text>
                 </View>
             </TouchableElement>
             <TouchableElement
                 style={styles.submit}
-                onPress={() => this.groupMemberMgmt()}>
+                onPress={() => this.email()}>
                 <View>
-                    <Text style={styles.submitText}>Manage group members</Text>
+                    <Text style={styles.submitText}>Change Email Address</Text>
                 </View>
             </TouchableElement>
-            </View>
+            <TouchableElement
+                style={styles.submit}
+                onPress={() => this.rdstatus()}>
+                <View>
+                    <Text style={styles.submitText}>Change Ride/Driver Status</Text>
+                </View>
+            </TouchableElement>
+            <TouchableElement
+                style={styles.submit}
+                onPress={() => this.owncarstatus()}>
+                <View>
+                    <Text style={styles.submitText}>Change Owns Car Status</Text>
+                </View>
+            </TouchableElement>
+            <TouchableElement
+                style={styles.submit}
+                onPress={() => this.deleteMember()}>
+                <View>
+                    <Text style={styles.submitText}>Delete Member</Text>
+                </View>
+            </TouchableElement>
+            </ScrollView>
     );
 
     
@@ -141,4 +171,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = GroupMgmtOptions;
+module.exports = MemberEdit;

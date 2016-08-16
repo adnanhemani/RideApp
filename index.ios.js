@@ -25,6 +25,9 @@ var LeaveGroup = require("./App/LeaveGroup");
 var CreateGroup = require("./App/CreateGroup");
 var GroupMgmt = require("./App/GroupMgmt");
 var GroupMgmtOptions = require("./App/GroupMgmtOptions");
+var AddEvent = require("./App/AddEvent");
+var MemberMgmt = require("./App/MemberMgmt");
+var MemberEdit = require("./App/MemberEdit");
 
 class App extends Component {
   render() {
@@ -45,6 +48,24 @@ class App extends Component {
     if (routeId === 'LoginPage') {
       return (
         <RideApplLogin
+          navigator={navigator} />
+      );
+    }
+    if (routeId === "MemberEdit") {
+      return (
+        <MemberEdit
+          navigator={navigator} />
+      );
+    }
+    if (routeId === "MemberMgmt") {
+      return (
+        <MemberMgmt
+          navigator={navigator} />
+      );
+    }
+    if (routeId === "AddEvent") {
+      return (
+        <AddEvent
           navigator={navigator} />
       );
     }
