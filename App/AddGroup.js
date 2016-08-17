@@ -76,7 +76,6 @@ class AddGroup extends Component {
                       <Picker.Item label={'Cal Ismailis Rideshare'} value={'Cal Ismailis Rideshare'} />
                     </Picker>
                     <TouchableElement
-                        style={styles.submit}
                         onPress={() => this.submitted()}>
                         <View style={styles.submit}>
                             <Text style={styles.submitText}>Submit</Text>

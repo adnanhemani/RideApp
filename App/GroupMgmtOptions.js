@@ -72,14 +72,12 @@ class GroupMgmtOptions extends Component {
                       statusBar={{ tintColor: "white", }}
                     />
             <TouchableElement
-                style={styles.submit}
                 onPress={() => this.addEvent()}>
                 <View style={styles.submit}>
                     <Text style={styles.submitText}>Add event</Text>
                 </View>
             </TouchableElement>
             <TouchableElement
-                style={styles.submit}
                 onPress={() => this.groupMemberMgmt()}>
                 <View style={styles.submit}>
                     <Text style={styles.submitText}>Manage group members</Text>

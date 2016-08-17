@@ -80,35 +80,30 @@ class SettingsPage extends Component {
                       statusBar={{ tintColor: "white", }}
                     />
             <TouchableElement
-                style={styles.submit}
                 onPress={() => this.logout()}>
                 <View style={styles.submit}>
                     <Text style={styles.submitText}>Log Out</Text>
                 </View>
             </TouchableElement>
             <TouchableElement
-                style={styles.submit}
                 onPress={() => this.addGroup()}>
                 <View style={styles.submit}>
                     <Text style={styles.submitText}>Add Group</Text>
                 </View>
             </TouchableElement>
             <TouchableElement
-                style={styles.submit}
                 onPress={() => this.leaveGroup()}>
                 <View style={styles.submit}>
                     <Text style={styles.submitText}>Leave Group</Text>
                 </View>
             </TouchableElement>
             <TouchableElement
-                style={styles.submit}
                 onPress={() => this.createGroup()}>
                 <View style={styles.submit}>
                     <Text style={styles.submitText}>Create Group</Text>
                 </View>
             </TouchableElement>
             <TouchableElement
-                style={styles.submit}
                 onPress={() => this.manageGroup()}>
                 <View style={styles.submit}>
                     <Text style={styles.submitText}>Group Management</Text>

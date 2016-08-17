@@ -103,15 +103,15 @@ class RideApplLogin extends Component {
                     <Text
                       style={{
                         color: 'black',
-                        fontSize: 16,
+                        fontSize: 16,  
                         fontWeight: 'normal',
                         fontFamily: 'Helvetica Neue',
                         marginLeft: 10, 
                         marginTop: 20,                      
                       }}>
                       Username:
-                    </Text>
-                     
+                    </Text>  
+                       
                     <TextInput
                       style={styles.username}
                       placeholder={"Username"}
@@ -119,9 +119,9 @@ class RideApplLogin extends Component {
                       onChangeText={(text) => {this.setState({username})}}
                       onSubmitEditing={() => {this.setState({username: ''})}}
                       value={(this.state && this.state.username) || ''}
-                    />
-
-                    <Text
+                    />  
+  
+                    <Text  
                       style={{
                         color: 'black',
                         fontSize: 16,
@@ -131,9 +131,9 @@ class RideApplLogin extends Component {
                         marginTop: 20,                      
                       }}>
                       Password:
-                    </Text>
-
-                    <TextInput
+                    </Text>  
+  
+                    <TextInput  
                       style={styles.password}
                       placeholder={"Password"}
                       placeholderTextColor={"rgba(198,198,204,1)"}
@@ -148,21 +148,21 @@ class RideApplLogin extends Component {
                       onChange={() => this.changeCheckboxState()} />
                     
                     <TouchableElement
-                        style={styles.signin}
+                        
                         onPress={() => this.signin()}>
                         <View style={styles.register}>
                             <Text style={styles.buttonText}>Sign In</Text>
                         </View>
                     </TouchableElement>
                     <TouchableElement
-                        style={styles.register}
+                        
                         onPress={this.register.bind(this)}>
                         <View style={styles.register}>
                             <Text style={styles.buttonText}>Register</Text>
                         </View>
                     </TouchableElement>
                     <TouchableElement
-                        style={styles.forgot}
+                        
                         onPress={() => this.forgot()}>
                         <View style={styles.register}>
                             <Text style={styles.forgotText}>Forgot Username or Password?</Text>
@@ -188,17 +188,17 @@ var styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: '#F5FCFF',
   },
-  username: {
+  username: {  
     height: 60, 
     width: 300,
     borderWidth: 1,
     borderColor: "rgba(0,0,0,0.5)",
     marginLeft: 10,
     marginRight: 10,
-    
-  },
+      
+  },  
   password: {
-    height: 60, 
+    height: 60,  
     width: 300,
     borderWidth: 1,
     borderColor: "rgba(0,0,0,0.5)",

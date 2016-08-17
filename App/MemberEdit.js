@@ -81,35 +81,30 @@ class MemberEdit extends Component {
                       statusBar={{ tintColor: "white", }}
                     />
             <TouchableElement
-                style={styles.submit}
                 onPress={() => this.phone()}>
                 <View style={styles.submit}>
                     <Text style={styles.submitText}>Change Phone Number</Text>
                 </View>
             </TouchableElement>
             <TouchableElement
-                style={styles.submit}
                 onPress={() => this.email()}>
                 <View style={styles.submit}>
                     <Text style={styles.submitText}>Change Email Address</Text>
                 </View>
             </TouchableElement>
             <TouchableElement
-                style={styles.submit}
                 onPress={() => this.rdstatus()}>
                 <View style={styles.submit}>
                     <Text style={styles.submitText}>Change Ride/Driver Status</Text>
                 </View>
             </TouchableElement>
             <TouchableElement
-                style={styles.submit}
                 onPress={() => this.owncarstatus()}>
                 <View style={styles.submit}>
                     <Text style={styles.submitText}>Change Owns Car Status</Text>
                 </View>
             </TouchableElement>
             <TouchableElement
-                style={styles.submit}
                 onPress={() => this.deleteMember()}>
                 <View style={styles.submit}>
                     <Text style={styles.submitText}>Delete Member</Text>

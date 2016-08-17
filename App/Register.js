@@ -69,7 +69,7 @@ class Register extends Component {
                     </Text>
                     <TextInput
                       style={styles.fNameInput}
-                      placeholder={'First Namea'}
+                      placeholder={'First Name'}
                       placeholderTextColor={"rgba(198,198,204,1)"}
                       onChangeText={(text) => {this.setState({fName: text})}}
                       onSubmitEditing={() => {this.setState({fName: ''})}}
@@ -173,8 +173,8 @@ var styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#F5FCFF',
-  },
-  fName: {
+  },  
+  fName: {  
     color: 'black',
     fontSize: 16,
     fontWeight: 'normal',
@@ -202,7 +202,7 @@ var styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "rgba(0,0,0,0.5)",
     marginLeft: 10,
-  },
+  },  
   phoneNumber: {
     color: 'black',
     fontSize: 16,
@@ -210,7 +210,7 @@ var styles = StyleSheet.create({
     fontFamily: 'Helvetica Neue',
     marginLeft: 10,
     marginTop: 20,
-    
+      
   },
   phoneNumberInput: {
     height: 45, 
@@ -219,7 +219,7 @@ var styles = StyleSheet.create({
     borderColor: "rgba(0,0,0,0.5)",
     marginLeft: 10,
       
-  },
+  },  
   emailText: {
     color: 'black',
     fontSize: 16,
@@ -227,7 +227,7 @@ var styles = StyleSheet.create({
     fontFamily: 'Helvetica Neue',
     marginLeft: 10,
     marginTop: 20,
-  },
+  },  
   emailTextInput: {
     height: 45, 
     width:  200 ,
@@ -243,18 +243,18 @@ var styles = StyleSheet.create({
     fontFamily: 'Helvetica Neue',
     marginLeft: 10,
     marginTop: 20,    
-  },
-  carSelect: {
+  },  
+  carSelect: {  
     color: 'black',
     fontSize: 16,
     fontWeight: 'normal',
     fontFamily: 'Helvetica Neue',
     marginLeft: 10,
     marginTop: 20,    
-  },
+  },  
   riderDriverSelector: {
     marginLeft: 10,
-        
+          
   },
   carSelector: {
     marginLeft: 10,
@@ -286,4 +286,4 @@ var styles = StyleSheet.create({
     fontFamily: 'Helvetica Neue',
   },
 });
-module.exports = Register;
+module.exports = Register;        
