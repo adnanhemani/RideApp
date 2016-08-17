@@ -82,35 +82,35 @@ class SettingsPage extends Component {
             <TouchableElement
                 style={styles.submit}
                 onPress={() => this.logout()}>
-                <View>
+                <View style={styles.submit}>
                     <Text style={styles.submitText}>Log Out</Text>
                 </View>
             </TouchableElement>
             <TouchableElement
                 style={styles.submit}
                 onPress={() => this.addGroup()}>
-                <View>
+                <View style={styles.submit}>
                     <Text style={styles.submitText}>Add Group</Text>
                 </View>
             </TouchableElement>
             <TouchableElement
                 style={styles.submit}
                 onPress={() => this.leaveGroup()}>
-                <View>
+                <View style={styles.submit}>
                     <Text style={styles.submitText}>Leave Group</Text>
                 </View>
             </TouchableElement>
             <TouchableElement
                 style={styles.submit}
                 onPress={() => this.createGroup()}>
-                <View>
+                <View style={styles.submit}>
                     <Text style={styles.submitText}>Create Group</Text>
                 </View>
             </TouchableElement>
             <TouchableElement
                 style={styles.submit}
                 onPress={() => this.manageGroup()}>
-                <View>
+                <View style={styles.submit}>
                     <Text style={styles.submitText}>Group Management</Text>
                 </View>
             </TouchableElement>

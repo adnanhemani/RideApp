@@ -47,40 +47,6 @@ class AddEvent extends Component {
 
     }
   
-    showTimePicker() {
-        var date = this.state.date;
-        this.picker.showTimePicker(date, (d)=>{
-            this.setState({date:d});
-        });
-    }
-  
-    _getOptionList() {
-      return this.refs.navigator.refs['OPTIONLIST'];
-    }
-
-    componentDidUpdate () {
-        updatePosition(this.refs.navigator.refs['SELECT1']);
-        updatePosition(this.refs.navigator.refs['OPTIONLIST']);
-
-    }
-
-    setPrefLocation(location) {
-    this.setState({
-        prefLocation: location
-      });
-    }
-  
-  rideToEvent () {
-    this.setState({rte: !this.state.rte});
-  }
-  
-  rideFromEvent() {
-    this.setState({rfe: !this.state.rfe});
-  }
-  
-  latestPickup () {
-    this.setState({latest: !this.state.latest});
-  }
   
   backOneScene () {
     this.props.navigator.pop();
@@ -118,6 +84,7 @@ class AddEvent extends Component {
       return (
               <ScrollView style={styles.container}>
               <NavigationBar
+                      title = {{title: "Add Event", tintColor: 'black',}}
                       style={{ backgroundColor: "white", }}
                       leftButton={backButton}
                       statusBar={{ tintColor: "white", }}
@@ -125,7 +92,7 @@ class AddEvent extends Component {
                 <Text style={styles.selectLocationText}>Event Name</Text>
                 <TextInput
                   style={{
-                    height: 30, 
+                    height: 45, 
                     width:  300 ,
                     borderWidth: 1,
                     borderColor: "rgba(0,0,0,0.5)",
@@ -155,7 +122,7 @@ class AddEvent extends Component {
                 <Text style={styles.specReqsText}>Event Time</Text>
                 <TextInput
                   style={{
-                    height: 30, 
+                    height: 45, 
                     width: 100,
                     borderWidth: 1,
                     borderColor: "rgba(0,0,0,0.5)",
@@ -171,7 +138,7 @@ class AddEvent extends Component {
                 <Text style={styles.specReqsText}>Event Expiry Time</Text>
                 <TextInput
                   style={{
-                    height: 30, 
+                    height: 45, 
                     width: 100,
                     borderWidth: 1,
                     borderColor: "rgba(0,0,0,0.5)",
@@ -188,7 +155,7 @@ class AddEvent extends Component {
                 <TouchableElement
                         style={styles.submit}
                         onPress={() => this.submitted()}>
-                        <View>
+                        <View style={styles.submit}>
                             <Text style={styles.submitText}>Submit</Text>
                         </View>
                 </TouchableElement>

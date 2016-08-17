@@ -26,7 +26,7 @@ class RideApplLogin extends Component {
 		this.state = {
 			loggedIn: false,
 			loadedCookie: false,
-            checkboxState: true,
+      checkboxState: true,
 		};
 	}
   
@@ -71,7 +71,7 @@ class RideApplLogin extends Component {
       <Navigator
           renderScene={this.renderScene.bind(this)}
           navigator = {this.props.navigator}
-         />
+        />
       );
     }
   
@@ -99,6 +99,18 @@ class RideApplLogin extends Component {
                                style={{ backgroundColor: "white", }}
                                statusBar={{ tintColor: "white", }}
                              />
+
+                    <Text
+                      style={{
+                        color: 'black',
+                        fontSize: 16,
+                        fontWeight: 'normal',
+                        fontFamily: 'Helvetica Neue',
+                        marginLeft: 10, 
+                        marginTop: 20,                      
+                      }}>
+                      Username:
+                    </Text>
                      
                     <TextInput
                       style={styles.username}
@@ -108,6 +120,19 @@ class RideApplLogin extends Component {
                       onSubmitEditing={() => {this.setState({username: ''})}}
                       value={(this.state && this.state.username) || ''}
                     />
+
+                    <Text
+                      style={{
+                        color: 'black',
+                        fontSize: 16,
+                        fontWeight: 'normal',
+                        fontFamily: 'Helvetica Neue',
+                        marginLeft: 10,  
+                        marginTop: 20,                      
+                      }}>
+                      Password:
+                    </Text>
+
                     <TextInput
                       style={styles.password}
                       placeholder={"Password"}
@@ -116,55 +141,34 @@ class RideApplLogin extends Component {
                       onSubmitEditing={() => {this.setState({pw: ''})}}
                       value={(this.state && this.state.pw) || ''}
                     />
-                    <Text
-                      style={{
-                        color: 'black',
-                        fontSize: 16,
-                        fontWeight: 'normal',
-                        fontFamily: 'Helvetica Neue',
-                        marginLeft: 10,
-                        top: 0,
-                       
-                      }}>
-                      Username:
-                    </Text>
-                    <Text
-                      style={{
-                        color: 'black',
-                        fontSize: 16,
-                        fontWeight: 'normal',
-                        fontFamily: 'Helvetica Neue',
-                        marginLeft: 10,
-                        top: 80,
-                        
-                      }}>
-                      Password:
-                    </Text>
+                    
+                    <CheckBox 
+                      label="Remember me?"
+                      checked={this.state.checkboxState}
+                      onChange={() => this.changeCheckboxState()} />
+                    
                     <TouchableElement
                         style={styles.signin}
                         onPress={() => this.signin()}>
-                        <View>
+                        <View style={styles.register}>
                             <Text style={styles.buttonText}>Sign In</Text>
                         </View>
                     </TouchableElement>
                     <TouchableElement
                         style={styles.register}
                         onPress={this.register.bind(this)}>
-                        <View>
+                        <View style={styles.register}>
                             <Text style={styles.buttonText}>Register</Text>
                         </View>
                     </TouchableElement>
                     <TouchableElement
                         style={styles.forgot}
                         onPress={() => this.forgot()}>
-                        <View>
+                        <View style={styles.register}>
                             <Text style={styles.forgotText}>Forgot Username or Password?</Text>
                         </View>
                     </TouchableElement>
-                    <CheckBox 
-                      label="Remember me?"
-                      checked={this.state.checkboxState}
-                      onChange={() => this.changeCheckboxState()} />
+                    
         			</View>
 				);
 			}
@@ -185,43 +189,41 @@ var styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   username: {
-    height: 30, 
+    height: 60, 
     width: 300,
     borderWidth: 1,
     borderColor: "rgba(0,0,0,0.5)",
-    top: 80,
     marginLeft: 10,
     marginRight: 10,
     
   },
   password: {
-    height: 30, 
+    height: 60, 
     width: 300,
     borderWidth: 1,
     borderColor: "rgba(0,0,0,0.5)",
-    top: 150,
     marginLeft: 10,
     marginRight: 10,
+    marginBottom: 10,
     
   },
   signin: {
-    top: 180,
     marginLeft: 10,
     backgroundColor: "lightgrey",
     justifyContent: "center",
     height: 40,
     marginRight: 10,
+    marginTop: 20,
   },
   register: {
-    top: 230,
     marginLeft: 10,
     backgroundColor: "lightgrey",
     justifyContent: "center",
     height: 40,
     marginRight: 10,
+    marginTop: 40,
   },
   forgot: {
-    top: 300,
     marginLeft: 10,
     backgroundColor: "lightgrey",
     justifyContent: "center",
@@ -235,22 +237,6 @@ var styles = StyleSheet.create({
   forgotText: {
     alignSelf: "center",
     fontSize: 11,
-  },
-  buttonCont: {
-    padding:10, height:45, overflow:'hidden', borderRadius:4, backgroundColor: 'white', top: 200,
-  },
-  rightContainer: {
-	flex: 1,
-  },
-  title: {
-    fontSize: 20,
-    marginBottom: 8,
-    textAlign: 'center',
-  },
-  welcome: {
-	textAlign: 'center',
-	color: '#333333',
-	marginBottom: 5,
   },
 });
 

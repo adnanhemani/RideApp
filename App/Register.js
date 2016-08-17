@@ -69,7 +69,7 @@ class Register extends Component {
                     </Text>
                     <TextInput
                       style={styles.fNameInput}
-                      placeholder={'First Name'}
+                      placeholder={'First Namea'}
                       placeholderTextColor={"rgba(198,198,204,1)"}
                       onChangeText={(text) => {this.setState({fName: text})}}
                       onSubmitEditing={() => {this.setState({fName: ''})}}
@@ -117,6 +117,7 @@ class Register extends Component {
                       style={styles.riderOrDriver}>
                       Are you a rider or driver?
                     </Text>
+
                     <Picker 
                       style={styles.riderDriverSelector}
                       selectedValue={(this.state && this.state.riderDriver) || 'rider'}
@@ -126,6 +127,7 @@ class Register extends Component {
                       <Picker.Item label={'Rider'} value={'rider'} />
                       <Picker.Item label={'Driver'} value={'driver'} />
                     </Picker>
+
                     <Text
                       style={styles.carSelect}>
                       If you are a driver, do you own your own car?
@@ -154,7 +156,7 @@ class Register extends Component {
                     <TouchableElement
                         style={styles.submit}
                         onPress={() => this.submitted()}>
-                        <View>
+                        <View style={styles.submit}>
                             <Text style={styles.submitText}>Submit</Text>
                         </View>
                     </TouchableElement>
@@ -178,16 +180,13 @@ var styles = StyleSheet.create({
     fontWeight: 'normal',
     fontFamily: 'Helvetica Neue',
     marginLeft: 10,
-    top: 0,
   },
   fNameInput: {
-    height: 30, 
+    height: 45, 
     width:  200 ,
     borderWidth: 1,
     borderColor: "rgba(0,0,0,0.5)",
-    marginLeft: 10,
-    top: 10,
-    
+    marginLeft: 10,    
   },
   lName: {
     color: 'black',
@@ -195,16 +194,14 @@ var styles = StyleSheet.create({
     fontWeight: 'normal',
     fontFamily: 'Helvetica Neue',
     marginLeft: 10,
-    top: 20,
-    
+    marginTop: 20
   },
   lNameInput: {
-    height: 30, 
+    height: 45, 
     width:  200 ,
     borderWidth: 1,
     borderColor: "rgba(0,0,0,0.5)",
     marginLeft: 10,
-    top: 25,
   },
   phoneNumber: {
     color: 'black',
@@ -212,17 +209,16 @@ var styles = StyleSheet.create({
     fontWeight: 'normal',
     fontFamily: 'Helvetica Neue',
     marginLeft: 10,
-    top: 41,
+    marginTop: 20,
     
   },
   phoneNumberInput: {
-    height: 30, 
+    height: 45, 
     width:  200 ,
     borderWidth: 1,
     borderColor: "rgba(0,0,0,0.5)",
     marginLeft: 10,
-    top: 41,
-    
+      
   },
   emailText: {
     color: 'black',
@@ -230,16 +226,15 @@ var styles = StyleSheet.create({
     fontWeight: 'normal',
     fontFamily: 'Helvetica Neue',
     marginLeft: 10,
-    top: 57,
+    marginTop: 20,
   },
   emailTextInput: {
-    height: 30, 
+    height: 45, 
     width:  200 ,
     borderWidth: 1,
     borderColor: "rgba(0,0,0,0.5)",
     marginLeft: 10,
-    top: 57,
-    
+        
   },
   riderOrDriver: {
     color: 'black',
@@ -247,8 +242,7 @@ var styles = StyleSheet.create({
     fontWeight: 'normal',
     fontFamily: 'Helvetica Neue',
     marginLeft: 10,
-    top: 73,
-    
+    marginTop: 20,    
   },
   carSelect: {
     color: 'black',
@@ -256,17 +250,14 @@ var styles = StyleSheet.create({
     fontWeight: 'normal',
     fontFamily: 'Helvetica Neue',
     marginLeft: 10,
-    top: 20,
-    
+    marginTop: 20,    
   },
   riderDriverSelector: {
     marginLeft: 10,
-    top: 35,
-    
+        
   },
   carSelector: {
     marginLeft: 10,
-    top: -50,
     
     
   },
@@ -276,11 +267,9 @@ var styles = StyleSheet.create({
     fontWeight: 'normal',
     fontFamily: 'Helvetica Neue',
     marginLeft: 10,
-    top: -80,
   },
   groupsPicker: {
     marginLeft: 10,
-    top: -130,
   },
   submit: {
     marginLeft: 10,
@@ -288,7 +277,6 @@ var styles = StyleSheet.create({
     justifyContent: "center",
     height: 40,
     marginRight: 10,
-    top: -200,
   },
   submitText: {
     alignSelf: "center",

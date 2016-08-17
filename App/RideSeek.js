@@ -22,12 +22,7 @@ import {
 import CookieManager from 'react-native-cookies';
 
 
-import {
-  Select,
-  Option,
-  OptionList,
-  updatePosition
-} from "react-native-dropdown";
+
 
 
 class RideSeek extends Component {
@@ -37,30 +32,13 @@ class RideSeek extends Component {
         this.state = {
             loggedIn: true,
             rando: "a",
-            prefLocation: "",
+            prefLocation: 0,
             rte: false,
             rfe: false,
             latest: false,
             time: "",
           
         };
-
-    }
-  
-    showTimePicker() {
-        var date = this.state.date;
-        this.picker.showTimePicker(date, (d)=>{
-            this.setState({date:d});
-        });
-    }
-  
-    _getOptionList() {
-      return this.refs.navigator.refs['OPTIONLIST'];
-    }
-
-    componentDidUpdate () {
-        updatePosition(this.refs.navigator.refs['SELECT1']);
-        updatePosition(this.refs.navigator.refs['OPTIONLIST']);
 
     }
 
@@ -129,21 +107,24 @@ class RideSeek extends Component {
                 <Text style={styles.headerOtherText}>Event Time: {this.state.rando}</Text>
                 <Text style={styles.headerOtherText}>Event Signup Expiry: {this.state.rando}</Text>
                 </View>
-                <Text style={styles.selectLocationText}>Preferred Location</Text>
-                <Select
-                  width={250}
-                  ref="SELECT1"
-                  optionListRef={this._getOptionList.bind(this)}
-                  defaultValue="Select a Preferred Location"
-                  onSelect={this.setPrefLocation.bind(this)}>
-                  <Option>Location 1</Option>
-                  <Option>Location 2</Option>
-                  <Option>Location 3</Option>
-                </Select>
+                <Text style={styles.selectLocationText}>Preferred Locations</Text>
+
+                <Picker 
+                      style={styles.picker}
+                      selectedValue={(this.state && this.state.prefLocation) || 0}
+                      onValueChange={(value) => {
+                        this.setState({prefLocation: value})
+                      }}>
+                      <Picker.Item label={"None"} value={0} />
+                      <Picker.Item label={'Location 1'} value={1} />
+                      <Picker.Item label={'Location 2'} value={2} />
+                      <Picker.Item label={'Location 3'} value={3} />
+                    </Picker>
+
                 <Text style={styles.specReqsText}>If you plan on driving, what time will you be leaving?</Text>
                 <TextInput
                   style={{
-                    height: 30, 
+                    height: 45, 
                     width: 100,
                     borderWidth: 1,
                     borderColor: "rgba(0,0,0,0.5)",
@@ -158,7 +139,7 @@ class RideSeek extends Component {
                 <Text style={styles.specReqsText}>If you plan on driving, how many open spaces will be in your car?</Text>
                 <TextInput
                   style={{
-                    height: 30, 
+                    height: 45, 
                     width: 100,
                     borderWidth: 1,
                     borderColor: "rgba(0,0,0,0.5)",
@@ -191,11 +172,10 @@ class RideSeek extends Component {
                 <TouchableElement
                         style={styles.submit}
                         onPress={() => this.submitted()}>
-                        <View>
+                        <View style={styles.submit}>
                             <Text style={styles.submitText}>Submit</Text>
                         </View>
                     </TouchableElement>
-                <OptionList style={{backgroundColor:'#fff'}} ref="OPTIONLIST"/>
               </ScrollView>
         
             );
@@ -276,5 +256,13 @@ var styles = StyleSheet.create({
     height: 40,
     marginRight: 10,
   },
+  riderDriverSelector: {
+    marginLeft: 10,
+        
+  },
+
+  picker: {
+    marginLeft: 10,
+  }
 });
 module.exports = RideSeek;

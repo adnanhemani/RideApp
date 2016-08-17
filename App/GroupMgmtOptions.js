@@ -74,14 +74,14 @@ class GroupMgmtOptions extends Component {
             <TouchableElement
                 style={styles.submit}
                 onPress={() => this.addEvent()}>
-                <View>
+                <View style={styles.submit}>
                     <Text style={styles.submitText}>Add event</Text>
                 </View>
             </TouchableElement>
             <TouchableElement
                 style={styles.submit}
                 onPress={() => this.groupMemberMgmt()}>
-                <View>
+                <View style={styles.submit}>
                     <Text style={styles.submitText}>Manage group members</Text>
                 </View>
             </TouchableElement>

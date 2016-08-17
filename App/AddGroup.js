@@ -78,7 +78,7 @@ class AddGroup extends Component {
                     <TouchableElement
                         style={styles.submit}
                         onPress={() => this.submitted()}>
-                        <View>
+                        <View style={styles.submit}>
                             <Text style={styles.submitText}>Submit</Text>
                         </View>
                     </TouchableElement>
@@ -210,6 +210,7 @@ var styles = StyleSheet.create({
     justifyContent: "center",
     height: 40,
     marginRight: 10,
+    marginTop: 40,
   },
   submitText: {
     alignSelf: "center",
