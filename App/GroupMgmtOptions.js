@@ -15,7 +15,6 @@ import {
 } from "react-native";
 import CookieManager from 'react-native-cookies';
 import NavigationBar from 'react-native-navbar';
-var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
 
 
 class GroupMgmtOptions extends Component {
@@ -31,12 +30,13 @@ class GroupMgmtOptions extends Component {
     
    addEvent () {
      console.log("add event pressed");
-     this.props.navigator.push({id:"AddEvent", name:"AddEvent"});
+     console.log(this.props.group_info);
+     this.props.navigator.push({id:"AddEvent", name:"AddEvent", passProps: {group_info: this.props.group_info}});
    }
   
   groupMemberMgmt () {
     console.log("group member management pressed");
-    this.props.navigator.push({id:"MemberMgmt", name:"MemberMgmt"});
+    this.props.navigator.push({id:"MemberMgmt", name:"MemberMgmt", passProps: {group_info: this.props.group_info}});
 
   }
   

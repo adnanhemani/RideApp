@@ -6,16 +6,18 @@ import {Platform, TouchableHighlight,
   TouchableNativeFeedback } from "react-native";
 import React, { Component } from 'react';
 import {
+  AsyncStorage,
   StyleSheet,
   Text,
   View,
   TextInput,
   Navigator,
+  Alert,
 } from 'react-native';
 import CookieManager from 'react-native-cookies';
 
 //Change this for our backend
-const LOGIN_URL = "http://localhost:80/login/";
+var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/login/?';
 
 
 
@@ -31,7 +33,25 @@ class RideApplLogin extends Component {
 	}
   
     signin () {
-      this.props.navigator.push({id: "Tabs", name: "Tabs"})
+      if (this.state.responseFS.logged_in === true) {
+        if (this.state.checkboxState) {
+          console.log("logged in with remembering");
+          AsyncStorage.setItem("user", toString(this.state.responseFS.user));
+          this.props.navigator.push({id: "Tabs", name: "Tabs", passProps: {"user": this.state.responseFS.user}});
+
+        } else {
+          console.log("logged in w/o remembering");
+          this.props.navigator.push({id: "Tabs", name: "Tabs", passProps: {"user": this.state.responseFS.user}});
+        }
+
+      } else {
+        console.log("Error!");
+        Alert.alert("Submission failed", this.state.responseFS.reason,
+                 [
+                  {text: 'OK', onPress: () => console.log('ok pressed'), style: "cancel"},
+
+                ]);
+      }  
     };
   
     changeCheckboxState () {
@@ -47,23 +67,53 @@ class RideApplLogin extends Component {
       console.log("forgot");
     };
 
-	componentWillMount () {
-		CookieManager.get(LOGIN_URL, (cookie) => {
-			let isAuthenticated;
-			// If it differs, change `cookie.remember_me` to whatever the name for your persistent cookie is!!!
-			if (cookie && cookie.indexOf('remember_me') != -1) {
-				isAuthenticated = true;
-			}
-			else {
-				//CHANG THIS BACK
-				isAuthenticated = false;
-			}
+    toQueryString(obj) {
+      return obj ? Object.keys(obj).sort().map(function (key) {
+          var val = obj[key];
 
-			this.setState({
-				loggedIn: isAuthenticated,
-				loadedCookie: true
-			});
-		});
+          if (Array.isArray(val)) {
+              return val.sort().map(function (val2) {
+                  return encodeURIComponent(key) + '=' + encodeURIComponent(val2);
+              }).join('&');
+          }
+
+          return encodeURIComponent(key) + '=' + encodeURIComponent(val);
+      }).join('&') : '';
+    }
+  
+
+  fetchData() {
+    var params = {"email": this.state.email, "password": this.state.pw};
+    console.log(params);
+    fetch(REQUEST_URL + this.toQueryString(params)).then((response) => response.json())
+      .then(((responseData) => {
+        console.log(responseData);
+        this.setState({
+          responseFS: responseData
+        });
+        this.signin();
+      }))
+      .done();
+
+      console.log("Here");
+      
+ 
+    }
+
+	componentWillMount () {
+		try {
+      AsyncStorage.getItem("user").then((value) => {
+        if (value !== null){
+        console.log(value);
+        this.props.navigator.push({id: "Tabs", name: "Tabs", passProps: {"user": parseInt(value)}});
+
+        } else {
+          console.log("no remembered user data found");
+        }
+      }).done();
+    } catch (error) {
+      console.log("Error?");
+    }
 	}
   
     render () {
@@ -78,19 +128,11 @@ class RideApplLogin extends Component {
   
 
 	renderScene (route, navigator) {
-	// If we have completed loading the cookie choose to show Login WebView or the LoggedIn component, else just show an empty View.
-		if (this.state.loadedCookie) {
-			if (this.state.loggedIn) {
-				return (
-					<Tabs/>
-				);
-			}
-			else {
-              var TouchableElement = TouchableHighlight;
-              //console.log(TouchableElement);
-              if (Platform.OS === 'android') {
-                TouchableElement = TouchableNativeFeedback;
-              }
+        var TouchableElement = TouchableHighlight;
+        //console.log(TouchableElement);
+        if (Platform.OS === 'android') {
+          TouchableElement = TouchableNativeFeedback;
+        }
 				return (
 					<View style={styles.container}>
                     
@@ -109,16 +151,15 @@ class RideApplLogin extends Component {
                         marginLeft: 10, 
                         marginTop: 20,                      
                       }}>
-                      Username:
+                      Email Address:
                     </Text>  
                        
                     <TextInput
                       style={styles.username}
                       placeholder={"Username"}
                       placeholderTextColor={"rgba(198,198,204,1)"}
-                      onChangeText={(text) => {this.setState({username})}}
-                      onSubmitEditing={() => {this.setState({username: ''})}}
-                      value={(this.state && this.state.username) || ''}
+                      onChangeText={(text) => {this.setState({email: text})}}
+                      value={(this.state && this.state.email) || ''}
                     />  
   
                     <Text  
@@ -137,8 +178,8 @@ class RideApplLogin extends Component {
                       style={styles.password}
                       placeholder={"Password"}
                       placeholderTextColor={"rgba(198,198,204,1)"}
-                      onChangeText={(text) => {this.setState({pw})}}
-                      onSubmitEditing={() => {this.setState({pw: ''})}}
+                      secureTextEntry={true}
+                      onChangeText={(text) => {this.setState({pw: text})}}
                       value={(this.state && this.state.pw) || ''}
                     />
                     
@@ -149,7 +190,7 @@ class RideApplLogin extends Component {
                     
                     <TouchableElement
                         
-                        onPress={() => this.signin()}>
+                        onPress={() => this.fetchData()}>
                         <View style={styles.register}>
                             <Text style={styles.buttonText}>Sign In</Text>
                         </View>
@@ -171,12 +212,7 @@ class RideApplLogin extends Component {
                     
         			</View>
 				);
-			}
-		} else {
-			return (
-			<View></View>
-			);
-		}
+
 	}
 
 

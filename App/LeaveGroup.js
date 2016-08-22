@@ -10,7 +10,8 @@ import {
 } from 'react-native'
 import CookieManager from 'react-native-cookies';
 import NavigationBar from 'react-native-navbar';
-var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
+var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/groups/?';
+var POST_URL = 'https://calm-garden-29993.herokuapp.com/index/removefromgroup/?';
 
 
 class LeaveGroup extends Component {
@@ -46,17 +47,32 @@ class LeaveGroup extends Component {
       this.fetchData();
     }
   
+    toQueryString(obj) {
+      return obj ? Object.keys(obj).sort().map(function (key) {
+          var val = obj[key];
+
+          if (Array.isArray(val)) {
+              return val.sort().map(function (val2) {
+                  return encodeURIComponent(key) + '=' + encodeURIComponent(val2);
+              }).join('&');
+          }
+
+          return encodeURIComponent(key) + '=' + encodeURIComponent(val);
+      }).join('&') : '';
+    }
+  
     fetchData() {
-    fetch(REQUEST_URL)
+    fetch(REQUEST_URL + this.toQueryString({"user": 2}))
       .then((response) => response.json())
       .then((responseData) => {
+        console.log(JSON.parse(responseData.groups));
         this.setState({
-          dataSource: this.state.dataSource.cloneWithRows(responseData.movies),
+          dataSource: this.state.dataSource.cloneWithRows(JSON.parse(responseData.groups)),
           loaded: true,
         });
       })
       .done();
-  }
+    }
   
     render () {
         return (
@@ -105,24 +121,57 @@ class LeaveGroup extends Component {
 
 Object.assign(LeaveGroup.prototype, {
     bindableMethods : {
-        renderRide (ride) {
+        renderRide (group) {
           return (
           <View>
-              <Text onPress={() => this.wannaLeaveGroup()} style={styles.title}>{ride.title}</Text>
+              <Text onPress={() => this.wannaLeaveGroup(group)} style={styles.title}>{group.fields.name}</Text>
             </View>
           );
         },
-        wannaLeaveGroup() {
+        wannaLeaveGroup(group) {
             Alert.alert("Leaving Group", "Are you sure you want to leave this group?",
                [
-                {text: 'OK', onPress: () => this.leaveGroup(), style: "positive"},
+                {text: 'OK', onPress: () => this.leaveGroup(group), style: "positive"},
                 {text: 'Cancel', onPress: () => console.log('cancel pressed'), style: "cancel"},
           
               ]);
         },
-        leaveGroup () {
+        leaveGroup (group) {
           console.log("leave group requested");
+          fetch(POST_URL + this.toQueryString({"user": 2, "group": group.pk}))
+          .then((response) => response.json())
+          .then((responseData) => {
+            console.log(responseData);
+            this.setState({
+              afterLeaving: responseData,
+            });
+            this.afterPressing();
+          })
+          .done();
+        },
+
+        afterPressing () {
+          if (this.state.afterLeaving.error === false){
+            Alert.alert("Success!", "You have left the group!",
+                 [
+                  {text: 'OK', onPress: () => this.okPressed(), style: "positive"},
+            
+                ]);
+          } else {
+            Alert.alert("Failure", "Some error occurred when trying to remove you from the group. Please try again later or contact your group admin.",
+                 [
+                  {text: 'OK', onPress: () => this.okPressed(), style: "positive"},
+            
+                ]);
+          }
+        },
+
+        okPressed () {
+          console.log("ok pressed");
+          this.props.navigator.push({id: "Tabs", name:"Tabs"});
+
         }
+
     }
 });
 
@@ -151,7 +200,7 @@ var styles = StyleSheet.create({
   },
   listView: {
     paddingTop: 20,
-    backgroundColor: '#0000ff',
+    backgroundColor: 'powderblue',
     marginBottom: 50,
     
   },

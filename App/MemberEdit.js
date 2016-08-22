@@ -15,7 +15,7 @@ import {
 } from "react-native";
 import CookieManager from 'react-native-cookies';
 import NavigationBar from 'react-native-navbar';
-var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
+var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/removefromgroup/?';
 
 
 class MemberEdit extends Component {
@@ -51,6 +51,36 @@ class MemberEdit extends Component {
   
     deleteMember () {
       console.log("delete member");
+      this.fetchData();
+    }
+
+    toQueryString(obj) {
+      return obj ? Object.keys(obj).sort().map(function (key) {
+          var val = obj[key];
+
+          if (Array.isArray(val)) {
+              return val.sort().map(function (val2) {
+                  return encodeURIComponent(key) + '=' + encodeURIComponent(val2);
+              }).join('&');
+          }
+
+          return encodeURIComponent(key) + '=' + encodeURIComponent(val);
+      }).join('&') : '';
+    }
+  
+    fetchData() {
+    fetch(REQUEST_URL + this.toQueryString({"group": this.props.group_info.pk, "user": this.props.member_info.pk}))
+      .then((response) => response.json())
+      .then((responseData) => {
+        console.log(responseData);
+        Alert.alert("Success!", "User was removed from your group!",
+               [
+                {text: 'OK', onPress: () => console.log('ok pressed'), style: "cancel"},
+
+              ]);
+        
+      })
+      .done();
     }
   
     render () {

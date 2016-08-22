@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 import CookieManager from 'react-native-cookies';
 import NavigationBar from 'react-native-navbar';
-var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
+var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/groupsinfo/?';
 
 
 class GroupDetails extends Component {
@@ -18,9 +18,6 @@ class GroupDetails extends Component {
         super(props, context);
         this.state = {
             loggedIn: true,
-            dataSource: new ListView.DataSource({
-              rowHasChanged: (row1, row2) => row1 !== row2,
-            }),
             loaded: false,
             rando: "a",
           
@@ -45,18 +42,35 @@ class GroupDetails extends Component {
     componentDidMount () {
       this.fetchData();
     }
-  
+
+    toQueryString(obj) {
+      return obj ? Object.keys(obj).sort().map(function (key) {
+          var val = obj[key];
+
+          if (Array.isArray(val)) {
+              return val.sort().map(function (val2) {
+                  return encodeURIComponent(key) + '=' + encodeURIComponent(val2);
+              }).join('&');
+          }
+
+          return encodeURIComponent(key) + '=' + encodeURIComponent(val);
+      }).join('&') : '';
+    }  
+
     fetchData() {
-    fetch(REQUEST_URL)
+      console.log(this.props.group_info.pk);
+      fetch(REQUEST_URL + this.toQueryString({"group": this.props.group_info.pk}))
       .then((response) => response.json())
       .then((responseData) => {
+        console.log(responseData);
         this.setState({
-          dataSource: this.state.dataSource.cloneWithRows(responseData.movies),
+          group_info: responseData,
           loaded: true,
         });
       })
       .done();
-  }
+      
+    }
   
   render () {
     if (!this.state.loaded) {
@@ -65,6 +79,9 @@ class GroupDetails extends Component {
             </View>);
         }
         else if (this.state.loggedIn) {
+          console.log(this.props.group_info.fields);
+          console.log(this.state);
+          console.log(this.state.group_info[0]);
           const backButton = {
             title: "Back",
             handler: () => this.backOnePage(),
@@ -78,18 +95,10 @@ class GroupDetails extends Component {
                     />
             
               <Text style={styles.headTitle}>
-                Group Name: {this.state.rando}
+                Group Name: {this.state.group_info.name}
               </Text>
-              <Text style={styles.headerOtherText}>Group Leader: {this.state.rando}</Text>
-              <Text style={styles.headerOtherText}>{this.state.rando} people in this group.</Text>
-                <ListView
-                
-                  dataSource = {this.state.dataSource}
-                  renderRow = {this.renderRide}
-                  style = {styles.listView}
-                  renderHeader = {this.header}
-                  
-                  />
+              <Text style={styles.headerOtherText}>Group Leader: {this.state.group_info.admin}</Text>
+              <Text style={styles.headerOtherText}>{this.state.group_info.users} people in this group.</Text>
               </ScrollView>
           );
         } else {

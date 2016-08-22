@@ -20,6 +20,8 @@ import {
 } from "react-native";
 
 import CookieManager from 'react-native-cookies';
+var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/adminmakenewevent/?';
+
 
 
 import {
@@ -51,15 +53,57 @@ class AddEvent extends Component {
   backOneScene () {
     this.props.navigator.pop();
   }
+
+  toQueryString(obj) {
+      return obj ? Object.keys(obj).sort().map(function (key) {
+          var val = obj[key];
+
+          if (Array.isArray(val)) {
+              return val.sort().map(function (val2) {
+                  return encodeURIComponent(key) + '=' + encodeURIComponent(val2);
+              }).join('&');
+          }
+
+          return encodeURIComponent(key) + '=' + encodeURIComponent(val);
+      }).join('&') : '';
+    }
+  
+
+  fetchData() {
+    var params = {"name": this.state.eventName, "event_time": this.state.eventTime, 
+      "signup_expiry": this.state.exp_time, "group": this.props.group_info.pk, "active": true};
+    fetch(REQUEST_URL + this.toQueryString(params)).then((response) => response.json())
+      .then(((responseData) => {
+        console.log(responseData);
+        this.setState({
+          responseFS: responseData
+        });
+        this.submitted();
+      }))
+      .done();
+
+      console.log("Here");
+      
+ 
+    }
   
   submitted () {
     console.log("submitted form");
-    Alert.alert("Submission successful", "Your new ride event was successfully received!",
-               [
-                {text: 'OK', onPress: () => console.log('ok pressed'), style: "cancel"},
+    if (this.state.responseFS.error === false) {
+      Alert.alert("Submission successful", "Your new ride event was successfully received!",
+                 [
+                  {text: 'OK', onPress: () => console.log('ok pressed'), style: "cancel"},
 
-              ]);
+                ]);
+      }
+      else {
+      Alert.alert("Failure", "Some error occurred in your request. Possible error might be that you are not following the correct time format. Please try again.",
+                 [
+                  {text: 'OK', onPress: () => console.log('ok pressed'), style: "cancel"},
+
+                ]);
     }
+  }
   
   render () {
     return (
@@ -119,7 +163,7 @@ class AddEvent extends Component {
                   onSubmitEditing={() => {this.setState({eventMessage: ''})}}
                   value={(this.state && this.state.eventMessage) || ''}
                 />
-                <Text style={styles.specReqsText}>Event Time</Text>
+                <Text style={styles.specReqsText}>Event Time (Write in this format: YYYY-MM-DD HH:MM)</Text>
                 <TextInput
                   style={{
                     height: 45, 
@@ -130,12 +174,12 @@ class AddEvent extends Component {
                   }}
                   placeholder={'Time'}
                   placeholderTextColor={"rgba(198,198,204,1)"}
-                  onChangeText={(text) => {this.setState({seats: text})}}
-                  onSubmitEditing={() => {this.setState({seats: ''})}}
-                  value={(this.state && this.state.seats) || ''}
+                  onChangeText={(text) => {this.setState({eventTime: text})}}
+                  onSubmitEditing={() => {this.setState({eventTime: ''})}}
+                  value={(this.state && this.state.eventTime) || ''}
                   keyboardType="numeric"
                 />
-                <Text style={styles.specReqsText}>Event Expiry Time</Text>
+                <Text style={styles.specReqsText}>Event Expiry Time (Write in this format: YYYY-MM-DD HH:MM)</Text>
                 <TextInput
                   style={{
                     height: 45, 
@@ -146,15 +190,15 @@ class AddEvent extends Component {
                   }}
                   placeholder={'Time'}
                   placeholderTextColor={"rgba(198,198,204,1)"}
-                  onChangeText={(text) => {this.setState({seats: text})}}
-                  onSubmitEditing={() => {this.setState({seats: ''})}}
-                  value={(this.state && this.state.seats) || ''}
+                  onChangeText={(text) => {this.setState({exp_time: text})}}
+                  onSubmitEditing={() => {this.setState({exp_time: ''})}}
+                  value={(this.state && this.state.exp_time) || ''}
                   keyboardType="numeric"
                 />
                 <View style={styles.submitlol}/>
                 <TouchableElement
                         style={styles.submit}
-                        onPress={() => this.submitted()}>
+                        onPress={() => this.fetchData()}>
                         <View style={styles.submit}>
                             <Text style={styles.submitText}>Submit</Text>
                         </View>

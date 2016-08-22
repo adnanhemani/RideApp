@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 import CookieManager from 'react-native-cookies';
 import NavigationBar from 'react-native-navbar';
-var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
+var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/ridesessions/?';
 
 
 class RidesPage extends Component {
@@ -40,13 +40,27 @@ class RidesPage extends Component {
     componentDidMount () {
       this.fetchData();
     }
+
+    toQueryString(obj) {
+      return obj ? Object.keys(obj).sort().map(function (key) {
+          var val = obj[key];
+
+          if (Array.isArray(val)) {
+              return val.sort().map(function (val2) {
+                  return encodeURIComponent(key) + '=' + encodeURIComponent(val2);
+              }).join('&');
+          }
+
+          return encodeURIComponent(key) + '=' + encodeURIComponent(val);
+      }).join('&') : '';
+    }
   
     fetchData() {
-    fetch(REQUEST_URL)
+    fetch(REQUEST_URL + this.toQueryString({"user": 2}))
       .then((response) => response.json())
       .then((responseData) => {
         this.setState({
-          dataSource: this.state.dataSource.cloneWithRows(responseData.movies),
+          dataSource: this.state.dataSource.cloneWithRows(JSON.parse(responseData.groups)),
           loaded: true,
         });
       })
@@ -98,13 +112,13 @@ Object.assign(RidesPage.prototype, {
         renderRide (ride) {
           return (
           <View>
-              <Text onPress={() => this.rideSeek()} style={styles.title}>{ride.title}</Text>
+              <Text onPress={() => this.rideSeek(ride)} style={styles.title}>{ride.fields.name}</Text>
             </View>
           );
         },
-        rideSeek() {
+        rideSeek(ride) {
           
-            this.props.navigator.push({id:"RideSeek", name: "RideSeek"});
+            this.props.navigator.push({id:"RideSeek", name: "RideSeek", passProps: {ride_info: ride}});
         },
         rideResults () {
           this.props.navigator.push({id:"RideResults", name:"RideResults"});
@@ -137,7 +151,7 @@ var styles = StyleSheet.create({
   },
   listView: {
     paddingTop: 20,
-    backgroundColor: '#0000ff',
+    backgroundColor: "powderblue",
     marginBottom: 50,
     
   },

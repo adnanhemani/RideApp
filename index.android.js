@@ -54,25 +54,25 @@ class App extends Component {
     if (routeId === "MemberEdit") {
       return (
         <MemberEdit
-          navigator={navigator} />
+          navigator={navigator} {...route.passProps}/>
       );
     }
     if (routeId === "MemberMgmt") {
       return (
         <MemberMgmt
-          navigator={navigator} />
+          navigator={navigator} {...route.passProps}/>
       );
     }
     if (routeId === "AddEvent") {
       return (
         <AddEvent
-          navigator={navigator} />
+          navigator={navigator} {...route.passProps}/>
       );
     }
     if (routeId === "GroupMgmtOptions") {
       return (
         <GroupMgmtOptions
-            navigator={navigator} />
+            navigator={navigator} {...route.passProps}/>
       );
     }
     if (routeId === "GroupMgmt") {
@@ -108,19 +108,19 @@ class App extends Component {
     if (routeId === "RideSeek") {
       return (
         <RideSeek
-            navigator={navigator} />
+            navigator={navigator} {...route.passProps}/>
       );
     }
     if (routeId === "GroupDetails") {
       return (
       <GroupDetails
-          navigator= {navigator} />
+          navigator= {navigator} {...route.passProps} />
         );
     }
     if (routeId === 'Tabs') {
       return (
         <Tabs
-          navigator={navigator} />
+          navigator={navigator} {...route.passProps}/>
       );
     }
     if (routeId === 'Register') {

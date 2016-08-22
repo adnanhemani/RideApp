@@ -15,8 +15,10 @@ import {
   TextInput,
   Picker,
   ScrollView,
+  Alert,
 } from 'react-native'
 import CookieManager from 'react-native-cookies';
+var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/register/?';
 
 class Register extends Component {
 
@@ -29,12 +31,82 @@ class Register extends Component {
   
   submitted () {
     console.log("submitted");
+    this.fetchData();
   }
   
   toSignIn () {
     console.log("Back to sign in screen");
     this.props.navigator.pop();
   }
+
+  toQueryString(obj) {
+      return obj ? Object.keys(obj).sort().map(function (key) {
+          var val = obj[key];
+
+          if (Array.isArray(val)) {
+              return val.sort().map(function (val2) {
+                  return encodeURIComponent(key) + '=' + encodeURIComponent(val2);
+              }).join('&');
+          }
+
+          return encodeURIComponent(key) + '=' + encodeURIComponent(val);
+      }).join('&') : '';
+    }
+  
+
+  fetchData() {
+    if (this.state.pw === this.state.pw2) {
+      var params = {"fname": this.state.fName, "lname": this.state.lName, "phone_number": this.state.phone, "email": this.state.email, 
+          "driver": "True", "own_car": "True", "pw": this.state.pw, "g": this.state.group}
+      fetch(REQUEST_URL + this.toQueryString(params)).then((response) => response.json())
+        .then(((responseData) => {
+          console.log(responseData);
+          this.setState({
+            responseFS: responseData
+          });
+          if (this.state.responseFS.success === true) {
+            this.successAlert();
+          } else {
+            this.failAlert();
+          }
+        }))
+        .done();
+
+        console.log("Here");
+      } else {
+        Alert.alert("Submission failed", "Your passwords weren't the same. Please try again.",
+               [
+                {text: 'OK', onPress: () => console.log('ok pressed'), style: "cancel"},
+
+              ]);
+      }
+      
+ 
+    }
+
+    successAlert () {
+      Alert.alert("Success!", "",
+               [
+                {text: 'OK', onPress: () => console.log('ok pressed'), style: "cancel"},
+
+              ]);
+    }
+
+    failAlert() {
+      if (this.state.responseFS.reason === "A user already exists with this username") {
+        Alert.alert("Submission failed", "A user already exists with that email. Please contact your group admin if you think this is a mistake.",
+                 [
+                  {text: 'OK', onPress: () => console.log('ok pressed'), style: "cancel"},
+
+                ]);
+        } else {
+          Alert.alert("Submission failed", "Some input of yours is incorrect/blank. Please try again.",
+                 [
+                  {text: 'OK', onPress: () => console.log('ok pressed'), style: "cancel"},
+
+                ]);
+        }
+    }
   
   render () {
     return (
@@ -89,7 +161,7 @@ class Register extends Component {
                     />
                     <Text
                       style={styles.phoneNumber}>
-                      Phone Number:
+                      Phone Number: (No parenthesis or hyphens; ONLY NUMBERS PLS)
                     </Text>
                      <TextInput
                       style={styles.phoneNumberInput}
@@ -120,12 +192,12 @@ class Register extends Component {
 
                     <Picker 
                       style={styles.riderDriverSelector}
-                      selectedValue={(this.state && this.state.riderDriver) || 'rider'}
+                      selectedValue={(this.state && this.state.riderDriver) || false}
                       onValueChange={(value) => {
                         this.setState({riderDriver: value})
                       }}>
-                      <Picker.Item label={'Rider'} value={'rider'} />
-                      <Picker.Item label={'Driver'} value={'driver'} />
+                      <Picker.Item label={'Rider'} value={false} />
+                      <Picker.Item label={'Driver'} value={true} />
                     </Picker>
 
                     <Text
@@ -134,12 +206,12 @@ class Register extends Component {
                     </Text>
                     <Picker 
                       style={styles.carSelector}
-                      selectedValue={(this.state && this.state.carOrNah) || 'Yes'}
+                      selectedValue={(this.state && this.state.carOrNah) || true}
                       onValueChange={(value) => {
                         this.setState({carOrNah: value})
                       }}>
-                      <Picker.Item label={'Yes'} value={"y"} />
-                      <Picker.Item label={'No'} value={"n"} />
+                      <Picker.Item label={'Yes'} value={true} />
+                      <Picker.Item label={'No'} value={false} />
                     </Picker>
                     <Text
                       style={styles.groupText}>
@@ -147,12 +219,38 @@ class Register extends Component {
                     </Text>
                     <Picker 
                       style={styles.groupsPicker}
-                      selectedValue={(this.state && this.state.group) || 'a'}
+                      selectedValue={(this.state && this.state.group) || 1}
                       onValueChange={(value) => {
                         this.setState({group: value})
                       }}>
-                      <Picker.Item label={'Cal Ismailis Rideshare'} value={'Cal Ismailis Rideshare'} />
+                      <Picker.Item label={'Cal Ismailis Rideshare'} value={1} />
                     </Picker>
+                    <Text
+                      style={styles.groupText}>
+                      Enter your your new password:
+                    </Text>
+                    <TextInput
+                      style={styles.emailTextInput}
+                      placeholder={'Password'}
+                      secureTextEntry={true}
+                      placeholderTextColor={"rgba(198,198,204,1)"}
+                      onChangeText={(text) => {this.setState({pw: text})}}
+                      onSubmitEditing={() => {this.setState({pw: ''})}}
+                      value={(this.state && this.state.pw) || ''}
+                    />
+                    <Text
+                      style={styles.groupText}>
+                      Re-enter your your new password:
+                    </Text>
+                    <TextInput
+                      style={styles.emailTextInput}
+                      placeholder={'Re-enter password'}
+                      secureTextEntry={true}
+                      placeholderTextColor={"rgba(198,198,204,1)"}
+                      onChangeText={(text) => {this.setState({pw2: text})}}
+                      onSubmitEditing={() => {this.setState({pw2: ''})}}
+                      value={(this.state && this.state.pw2) || ''}
+                    />
                     <TouchableElement
                         style={styles.submit}
                         onPress={() => this.submitted()}>

@@ -15,8 +15,12 @@ import {
   TextInput,
   Picker,
   ScrollView,
+  Alert,
 } from 'react-native'
 import CookieManager from 'react-native-cookies';
+
+var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/addgroup/?';
+
 
 class AddGroup extends Component {
 
@@ -35,6 +39,57 @@ class AddGroup extends Component {
     console.log("Back to sign in screen");
     this.props.navigator.pop();
   }
+
+  toQueryString(obj) {
+      return obj ? Object.keys(obj).sort().map(function (key) {
+          var val = obj[key];
+
+          if (Array.isArray(val)) {
+              return val.sort().map(function (val2) {
+                  return encodeURIComponent(key) + '=' + encodeURIComponent(val2);
+              }).join('&');
+          }
+
+          return encodeURIComponent(key) + '=' + encodeURIComponent(val);
+      }).join('&') : '';
+    }
+
+  fetchData() {
+    fetch(REQUEST_URL + this.toQueryString({"user": 2, "group": this.state.group}))
+      .then((response) => response.json())
+      .then((responseData) => {
+        console.log(responseData);
+        this.setState({
+          responseFS: responseData,
+        });
+        this.submitted();
+      })
+      .done();
+    }
+
+    submitted () {
+      if (this.state.responseFS.error === false) {
+        Alert.alert("Submission successful", "User was added to the group!",
+                   [
+                    {text: 'OK', onPress: () => this.okPressed(), style: "cancel"},
+
+                  ]);
+      }
+      else {
+        console.log("Error!");
+        Alert.alert("Submission failed", this.state.responseFS.reason,
+                 [
+                  {text: 'OK', onPress: () => this.okPressed(), style: "cancel"},
+
+                ]);
+    }
+
+    }
+
+    okPressed () {
+      console.log("ok pressed");
+      this.props.navigator.push({id: "Tabs", name:"Tabs"});
+    }
   
   render () {
     return (
@@ -69,14 +124,14 @@ class AddGroup extends Component {
                     </Text>
                     <Picker 
                       style={styles.riderDriverSelector}
-                      selectedValue={(this.state && this.state.riderDriver) || 'rider'}
+                      selectedValue={(this.state && this.state.group) || 1}
                       onValueChange={(value) => {
-                        this.setState({riderDriver: value})
+                        this.setState({group: value})
                       }}>
-                      <Picker.Item label={'Cal Ismailis Rideshare'} value={'Cal Ismailis Rideshare'} />
+                      <Picker.Item label={'Cal Ismailis Rideshare'} value={1} />
                     </Picker>
                     <TouchableElement
-                        onPress={() => this.submitted()}>
+                        onPress={() => this.fetchData()}>
                         <View style={styles.submit}>
                             <Text style={styles.submitText}>Submit</Text>
                         </View>

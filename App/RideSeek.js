@@ -20,7 +20,7 @@ import {
 } from "react-native";
 
 import CookieManager from 'react-native-cookies';
-
+var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/requestride/?';
 
 
 
@@ -37,10 +37,12 @@ class RideSeek extends Component {
             rfe: false,
             latest: false,
             time: "",
-          
+            seats: 0,
+            responseFS: "",
         };
 
     }
+
 
     setPrefLocation(location) {
     this.setState({
@@ -63,14 +65,70 @@ class RideSeek extends Component {
   backOneScene () {
     this.props.navigator.pop();
   }
+
+  toQueryString(obj) {
+      return obj ? Object.keys(obj).sort().map(function (key) {
+          var val = obj[key];
+
+          if (Array.isArray(val)) {
+              return val.sort().map(function (val2) {
+                  return encodeURIComponent(key) + '=' + encodeURIComponent(val2);
+              }).join('&');
+          }
+
+          return encodeURIComponent(key) + '=' + encodeURIComponent(val);
+      }).join('&') : '';
+    }
+  
+
+  fetchData() {
+    console.log(this.state);
+    if (this.state.time === "" || this.state.seats === 0) {
+      var params = {"user": 2, "driver_leaving_time": "None", "driver_spaces": 0, "special_requests": "None", "event_id": this.props.ride_info.pk};
+    }
+    else {
+      d_l_time = new Date(this.props.ride_info.fields.event_time);
+      d_l_time.setHours(parseInt(this.state.time.slice(0, 1)) + 12);
+      d_l_time.setMinutes(parseInt(this.state.time.slice(2)));
+      d_l_time = d_l_time.toString().slice(16, 21);
+      console.log(d_l_time);
+      console.log(this.props.ride_info)
+      var params = {"user": 2, "driver_leaving_time": d_l_time, "driver_spaces": parseInt(this.state.seats), 
+        "special_requests": "None", "event_id": this.props.ride_info.pk};
+    }
+    console.log(params);
+    fetch(REQUEST_URL + this.toQueryString(params)).then((response) => response.json())
+      .then(((responseData) => {
+        console.log(responseData);
+        this.setState({
+          responseFS: responseData
+        });
+        this.submitted();
+      }))
+      .done();
+
+      console.log("Here");
+      
+ 
+    }
   
   submitted () {
-    console.log("submitted form");
+    if (this.state.responseFS.error === false) {
     Alert.alert("Submission successful", "Your ride request was successfully received!",
                [
                 {text: 'OK', onPress: () => console.log('ok pressed'), style: "cancel"},
 
               ]);
+    }
+    else {
+      console.log("Error!");
+      Alert.alert("Submission failed", "Your ride request wasn't recieved. Please try again. If you cannot send your ride request multiple times, please contact your group administrator.",
+               [
+                {text: 'OK', onPress: () => console.log('ok pressed'), style: "cancel"},
+
+              ]);
+    }
+    
     }
   
   render () {
@@ -93,6 +151,13 @@ class RideSeek extends Component {
         handler: () => this.backOneScene(),
       };
         
+      var eventTime = new Date(); 
+      eventTime = JSON.stringify(this.props.ride_info.fields.event_time);
+      eventTime = new Date(JSON.parse(eventTime));
+
+      var expiryTime = new Date();
+      expiryTime = JSON.stringify(this.props.ride_info.fields.signup_expiry_time);
+      expiryTime = new Date(JSON.parse(expiryTime));
       return (
               <ScrollView style={styles.container}>
               <NavigationBar
@@ -102,10 +167,10 @@ class RideSeek extends Component {
                     />
                 <View style={styles.topContainer}>
                 <Text style={styles.headTitle}>
-                  Event Name: {this.state.rando}
+                  Event Name: {this.props.ride_info.fields.name}
                 </Text>
-                <Text style={styles.headerOtherText}>Event Time: {this.state.rando}</Text>
-                <Text style={styles.headerOtherText}>Event Signup Expiry: {this.state.rando}</Text>
+                <Text style={styles.headerOtherText}>Event Time: {eventTime.toString()}</Text>
+                <Text style={styles.headerOtherText}>Event Signup Expiry: {expiryTime.toString()}</Text>
                 </View>
                 <Text style={styles.selectLocationText}>Preferred Locations</Text>
 
@@ -171,7 +236,7 @@ class RideSeek extends Component {
                 <View style={{ height: 30 }}/>
                 <TouchableElement
                         style={styles.submit}
-                        onPress={() => this.submitted()}>
+                        onPress={() => this.fetchData()}>
                         <View style={styles.submit}>
                             <Text style={styles.submitText}>Submit</Text>
                         </View>

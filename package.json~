@@ -1,0 +1,22 @@
+{
+  "name": "RideApp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "dependencies": {
+    "@remobile/react-native-datetime-picker": "^1.0.3",
+    "@remobile/react-native-simple-button": "^1.0.0",
+    "react": "15.1.0",
+    "react-native": "0.27.1",
+    "react-native-button": "^1.6.0",
+    "react-native-checkbox": "^1.0.13",
+    "react-native-cookies": "^1.0.0",
+    "react-native-datetime-picker": "^1.1.2",
+    "react-native-dropdown": "0.0.6",
+    "react-native-navbar": "^1.5.0",
+    "react-native-selectme": "^1.1.0",
+    "react-native-tabbar": "^0.3.6"
+  }
+}

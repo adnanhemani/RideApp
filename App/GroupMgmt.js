@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import CookieManager from 'react-native-cookies';
 import NavigationBar from 'react-native-navbar';
-var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
+var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/admingroups/?';
 
 
 class GroupMgmt extends Component {
@@ -45,17 +45,32 @@ class GroupMgmt extends Component {
       this.props.navigator.pop();
     }
   
+    toQueryString(obj) {
+      return obj ? Object.keys(obj).sort().map(function (key) {
+          var val = obj[key];
+
+          if (Array.isArray(val)) {
+              return val.sort().map(function (val2) {
+                  return encodeURIComponent(key) + '=' + encodeURIComponent(val2);
+              }).join('&');
+          }
+
+          return encodeURIComponent(key) + '=' + encodeURIComponent(val);
+      }).join('&') : '';
+    }
+  
     fetchData() {
-    fetch(REQUEST_URL)
+    fetch(REQUEST_URL + this.toQueryString({"user": 1}))
       .then((response) => response.json())
       .then((responseData) => {
+        console.log(JSON.parse(responseData.groups));
         this.setState({
-          dataSource: this.state.dataSource.cloneWithRows(responseData.movies),
+          dataSource: this.state.dataSource.cloneWithRows(JSON.parse(responseData.groups)),
           loaded: true,
         });
       })
       .done();
-  }
+    }
   
     render () {
         return (
@@ -104,18 +119,19 @@ class GroupMgmt extends Component {
 
 Object.assign(GroupMgmt.prototype, {
     bindableMethods : {
-        renderRide (ride) {
+        renderRide (group) {
           return (
           <View>
-              <Text onPress={() => this.groupPressed()} style={styles.title}>{ride.title}</Text>
+              <Text onPress={() => this.groupPressed(group)} style={styles.title}>{group.fields.name}</Text>
             </View>
           );
         },
-        groupPressed() {
-            this.props.navigator.push({id:"GroupMgmtOptions", name: "GroupMgmtOptions"});
+        groupPressed(group) {
+            this.props.navigator.push({id:"GroupMgmtOptions", name: "GroupMgmtOptions", passProps: {group_info: group}});
         },
     }
 });
+
 
 var styles = StyleSheet.create({
   container: {
@@ -142,7 +158,7 @@ var styles = StyleSheet.create({
   },
   listView: {
     paddingTop: 20,
-    backgroundColor: '#0000ff',
+    backgroundColor: 'powderblue',
     marginBottom: 50,
     
   },
