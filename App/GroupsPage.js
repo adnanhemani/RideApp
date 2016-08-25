@@ -56,9 +56,11 @@ class GroupsPage extends Component {
     }
   
     fetchData() {
-    fetch(REQUEST_URL + this.toQueryString({"user": 1}))
+    fetch(REQUEST_URL + this.toQueryString({"user": this.props.user}))
       .then((response) => response.json())
       .then((responseData) => {
+        console.log(this.props.user);
+        console.log(this.props);
         console.log(JSON.parse(responseData.groups));
         this.setState({
           dataSource: this.state.dataSource.cloneWithRows(JSON.parse(responseData.groups)),

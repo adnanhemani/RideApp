@@ -34,14 +34,15 @@ class RideApplLogin extends Component {
   
     signin () {
       if (this.state.responseFS.logged_in === true) {
+        var user = this.state.responseFS.user;
         if (this.state.checkboxState) {
           console.log("logged in with remembering");
-          AsyncStorage.setItem("user", toString(this.state.responseFS.user));
-          this.props.navigator.push({id: "Tabs", name: "Tabs", passProps: {"user": this.state.responseFS.user}});
+          AsyncStorage.setItem("user", user.toString());
+          this.props.navigator.push({id: "Tabs", name: "Tabs", passProps: {"user": user}});
 
         } else {
           console.log("logged in w/o remembering");
-          this.props.navigator.push({id: "Tabs", name: "Tabs", passProps: {"user": this.state.responseFS.user}});
+          this.props.navigator.push({id: "Tabs", name: "Tabs", passProps: {"user": user}});
         }
 
       } else {
@@ -101,12 +102,12 @@ class RideApplLogin extends Component {
     }
 
 	componentWillMount () {
+
 		try {
       AsyncStorage.getItem("user").then((value) => {
         if (value !== null){
-        console.log(value);
-        this.props.navigator.push({id: "Tabs", name: "Tabs", passProps: {"user": parseInt(value)}});
-
+          console.log(value);
+          this.props.navigator.push({id: "Tabs", name: "Tabs", passProps: {"user": value}});
         } else {
           console.log("no remembered user data found");
         }

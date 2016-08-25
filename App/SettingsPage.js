@@ -9,13 +9,13 @@ import {
   Alert,
 } from 'react-native';
 import {
+  AsyncStorage,
   Platform,
   TouchableHighlight,
   TouchableNativeFeedback,
 } from "react-native";
 import CookieManager from 'react-native-cookies';
 import NavigationBar from 'react-native-navbar';
-var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
 
 
 class SettingsPage extends Component {
@@ -31,15 +31,22 @@ class SettingsPage extends Component {
     
     logout () {
       console.log("log out");
+      try {
+        AsyncStorage.removeItem("user");
+      } catch (error) {
+        console.log("Error?");
+        console.log(error);
+      }
+      this.props.navigator.push({id: "LoginPage", name: "LoginPage"});
     }
   
     addGroup () {
       console.log("add group");
-      this.props.navigator.push({id: "AddGroup", name: "AddGroup"});
+      this.props.navigator.push({id: "AddGroup", name: "AddGroup", passProps: {user: this.props.user}});
     }
   
     leaveGroup () {
-      this.props.navigator.push({id:"LeaveGroup", name: "LeaveGroup"});
+      this.props.navigator.push({id:"LeaveGroup", name: "LeaveGroup", passProps: {user: this.props.user}});
     }
   
     createGroup () {
@@ -54,7 +61,7 @@ class SettingsPage extends Component {
   
     manageGroup () {
       console.log("group management");
-      this.props.navigator.push({id:"GroupMgmt", name:"GroupMgmt"});
+      this.props.navigator.push({id:"GroupMgmt", name:"GroupMgmt", passProps: {user: this.props.user}});
     }
   
     render () {

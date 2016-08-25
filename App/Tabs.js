@@ -65,19 +65,19 @@ class Tabs extends Component {
                     <Tab name="Groups">
                       <IconWithBar label="Groups" type={glypy.Groups} from={'icomoon'}/>
                       <RawContent>
-                        <GroupsPage navigator={this.props.navigator}/>
+                        <GroupsPage navigator={this.props.navigator} user={this.props.user}/>
                       </RawContent>
                     </Tab>
                      <Tab name="Rides">
                       <IconWithBar label="Rides" type={glypy.Rides} from={'icomoon'}/>
                       <RawContent>
-                        <RidesPage navigator={this.props.navigator}/>
+                        <RidesPage navigator={this.props.navigator} user={this.props.user}/>
                       </RawContent>
                     </Tab>
                     <Tab name="Settings">
                       <IconWithBar label="Settings" type={glypy.Settings} from={'icomoon'}/>
                       <RawContent>
-                        <SettingsPage navigator={this.props.navigator} />
+                        <SettingsPage navigator={this.props.navigator} user={this.props.user}/>
                       </RawContent>
                     </Tab>
                   </Tabbar>

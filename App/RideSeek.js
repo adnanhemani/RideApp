@@ -84,7 +84,7 @@ class RideSeek extends Component {
   fetchData() {
     console.log(this.state);
     if (this.state.time === "" || this.state.seats === 0) {
-      var params = {"user": 2, "driver_leaving_time": "None", "driver_spaces": 0, "special_requests": "None", "event_id": this.props.ride_info.pk};
+      var params = {"user": this.props.user, "driver_leaving_time": "None", "driver_spaces": 0, "special_requests": "None", "event_id": this.props.ride_info.pk};
     }
     else {
       d_l_time = new Date(this.props.ride_info.fields.event_time);

@@ -56,7 +56,7 @@ class RidesPage extends Component {
     }
   
     fetchData() {
-    fetch(REQUEST_URL + this.toQueryString({"user": 2}))
+    fetch(REQUEST_URL + this.toQueryString({"user": this.props.user}))
       .then((response) => response.json())
       .then((responseData) => {
         this.setState({
@@ -118,7 +118,7 @@ Object.assign(RidesPage.prototype, {
         },
         rideSeek(ride) {
           
-            this.props.navigator.push({id:"RideSeek", name: "RideSeek", passProps: {ride_info: ride}});
+            this.props.navigator.push({id:"RideSeek", name: "RideSeek", passProps: {ride_info: ride, user: this.props.user}});
         },
         rideResults () {
           this.props.navigator.push({id:"RideResults", name:"RideResults"});

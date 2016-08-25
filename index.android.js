@@ -10,6 +10,7 @@ import {
 } from "react-native";
 
 import React, {Component} from "react";
+import OneSignal from 'react-native-onesignal';
 
 var RideApplLogin = require('./App/App');
 var Register = require('./App/Register');
@@ -29,8 +30,22 @@ var AddEvent = require("./App/AddEvent");
 var MemberMgmt = require("./App/MemberMgmt");
 var MemberEdit = require("./App/MemberEdit");
 
+
+
 class App extends Component {
   render() {
+    OneSignal.configure({
+      onIdsAvailable: function(device) {
+          console.log('UserId = ', device.userId);
+          console.log('PushToken = ', device.pushToken);
+      },
+    onNotificationOpened: function(message, data, isActive) {
+        console.log('MESSAGE: ', message);
+        console.log('DATA: ', data);
+        console.log('ISACTIVE: ', isActive);
+    }
+  });
+    OneSignal.setSubscription(true);
     return (
       <Navigator
           initialRoute={{id: 'LoginPage', name: 'Index'}}
@@ -78,7 +93,7 @@ class App extends Component {
     if (routeId === "GroupMgmt") {
       return (
         <GroupMgmt
-            navigator = {navigator} />
+            navigator = {navigator} {...route.passProps}/>
       );
     }
     if (routeId === "CreateGroup") {
@@ -90,13 +105,13 @@ class App extends Component {
     if (routeId === "LeaveGroup") {
       return (
         <LeaveGroup
-            navigator={navigator} />
+            navigator={navigator} {...route.passProps}/>
         );
     }
     if (routeId === "AddGroup") {
       return (
         <AddGroup
-            navigator={navigator} />
+            navigator={navigator} {...route.passProps}/>
       );
     }
     if (routeId === "RideResults") {
@@ -132,13 +147,13 @@ class App extends Component {
     if (routeId === "Rides") {
       return (
         <RidesPage
-            navigator={navigator} />
+            navigator={navigator} {...route.passProps}/>
       );
     }
     if (routeId === "Groups") {
       return (
           <GroupsPage
-            navigator={navigator} />
+            navigator={navigator} {...route.passProps}/>
       );
     }
     return this.noRoute(navigator);

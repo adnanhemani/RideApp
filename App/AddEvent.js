@@ -71,7 +71,7 @@ class AddEvent extends Component {
 
   fetchData() {
     var params = {"name": this.state.eventName, "event_time": this.state.eventTime, 
-      "signup_expiry": this.state.exp_time, "group": this.props.group_info.pk, "active": true};
+      "signup_expiry": this.state.exp_time, "group": this.props.group_info.pk, "active": true, "about": this.state.eventMessage};
     fetch(REQUEST_URL + this.toQueryString(params)).then((response) => response.json())
       .then(((responseData) => {
         console.log(responseData);

@@ -55,7 +55,7 @@ class AddGroup extends Component {
     }
 
   fetchData() {
-    fetch(REQUEST_URL + this.toQueryString({"user": 2, "group": this.state.group}))
+    fetch(REQUEST_URL + this.toQueryString({"user": this.props.user, "group": this.state.group}))
       .then((response) => response.json())
       .then((responseData) => {
         console.log(responseData);

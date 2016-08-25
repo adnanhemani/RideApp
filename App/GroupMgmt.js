@@ -60,7 +60,7 @@ class GroupMgmt extends Component {
     }
   
     fetchData() {
-    fetch(REQUEST_URL + this.toQueryString({"user": 1}))
+    fetch(REQUEST_URL + this.toQueryString({"user": this.props.user}))
       .then((response) => response.json())
       .then((responseData) => {
         console.log(JSON.parse(responseData.groups));
