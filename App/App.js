@@ -15,9 +15,11 @@ import {
   Alert,
 } from 'react-native';
 import CookieManager from 'react-native-cookies';
+import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
+
 
 //Change this for our backend
-var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/login/?';
+var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/userid/?';
 
 
 
@@ -83,8 +85,8 @@ class RideApplLogin extends Component {
     }
   
 
-  fetchData() {
-    var params = {"email": this.state.email, "password": this.state.pw};
+  fetchData(auth_email) {
+    var params = {"email": auth_email};
     console.log(params);
     fetch(REQUEST_URL + this.toQueryString(params)).then((response) => response.json())
       .then(((responseData) => {
@@ -92,12 +94,15 @@ class RideApplLogin extends Component {
         this.setState({
           responseFS: responseData
         });
-        this.signin();
+        //this.signin();
+        this.signInpt2();
+        console.log("Here");
       }))
       .done();
     
-      console.log("Here");  
-        
+      console.log("Here");
+      console.log(this.state);
+      return true;
  
     }
 
@@ -116,6 +121,60 @@ class RideApplLogin extends Component {
       console.log("Error?");
     }
 	}
+  
+    componentDidMount() {
+      this._setupGoogleSignin();
+    }
+  
+    async _setupGoogleSignin() {
+      try {
+        await GoogleSignin.hasPlayServices({ autoResolve: true });
+        await GoogleSignin.configure({
+          iosClientId: '1071146405706-6v346jkhkinr8o74g266tdf457dlurs9.apps.googleusercontent.com',
+        });
+
+        const user = await GoogleSignin.currentUserAsync();
+        console.log(user);
+        this.setState({user});
+      }
+      catch(err) {
+        console.log("Google signin error", err.code, err.message);
+      }
+    }
+  
+    signIn() {
+      GoogleSignin.signIn()
+      .then((user) => {
+        this.fetchData(user.email);
+        console.log(user);
+      })
+      .catch((err) => {
+        console.log("something went wrong while logging in");
+        console.log(err);
+      })
+      .done();
+    }
+  
+    signInpt2() {
+      //insert cookies here
+        console.log(this.state);
+        if (this.state.responseFS.logged_in === true) {
+           if (this.state.checkboxState) {
+            console.log("logged in with remembering");
+            AsyncStorage.setItem("user", this.state.responseFS.user_id.toString());
+            this.props.navigator.push({id: "Tabs", name: "Tabs", passProps: {"user": this.state.responseFS.user_id.toString()}});
+             return true;
+          } else {
+            console.log("logged in w/o remembering");
+            this.props.navigator.push({id: "Tabs", name: "Tabs", passProps: {"user": this.state.responseFS.user_id.toString()}});
+            return true;
+          }
+        } else {
+          console.log("email not found");
+          this.props.navigator.push({id:"Register", name: "Register"});
+          return false;
+        }
+      }
   
     render () {
       return (  
@@ -143,62 +202,15 @@ class RideApplLogin extends Component {
                                statusBar={{ tintColor: "white", }}
                              />
 
-                    <Text
-                      style={{
-                        color: 'black',
-                        fontSize: 16,  
-                        fontWeight: 'normal',
-                        fontFamily: 'Helvetica Neue',
-                        marginLeft: 10, 
-                        marginTop: 20,                      
-                      }}>
-                      Email Address:
-                    </Text>  
-                       
-                    <TextInput
-                      style={styles.username}
-                      placeholder={"Username"}
-                      placeholderTextColor={"rgba(198,198,204,1)"}
-                      onChangeText={(text) => {this.setState({email: text})}}
-                      value={(this.state && this.state.email) || ''}
-                    />  
-  
-                    <Text  
-                      style={{
-                        color: 'black',
-                        fontSize: 16,
-                        fontWeight: 'normal',
-                        fontFamily: 'Helvetica Neue',
-                        marginLeft: 10,  
-                        marginTop: 20,                      
-                      }}>
-                      Password:
-                    </Text>  
-  
-                    <TextInput  
-                      style={styles.password}
-                      placeholder={"Password"}
-                      placeholderTextColor={"rgba(198,198,204,1)"}
-                      secureTextEntry={true}
-                      onChangeText={(text) => {this.setState({pw: text})}}
-                      value={(this.state && this.state.pw) || ''}
-                    />
-                    
-                    <CheckBox 
-                      label="Remember me?"
-                      checked={this.state.checkboxState}
-                      onChange={() => this.changeCheckboxState()} />
-                      
-                    <TouchableElement
-                        
-                        onPress={() => this.fetchData()}>
+                    <TouchableElement onPress={() => this.signIn()}>
                         <View style={styles.register}>
-                            <Text style={styles.buttonText}>Sign In</Text>
+                            <Text style={styles.buttonText}>Sign in with Google</Text>
                         </View>
-                      </TouchableElement>
+                    </TouchableElement>
+                    
                       <TouchableElement
                         
-                         onPress={this.register.bind(this)}>
+                          onPress={this.register.bind(this)}>
                         <View style={styles.register}>
                             <Text style={styles.buttonText}>Register</Text>
                         </View>

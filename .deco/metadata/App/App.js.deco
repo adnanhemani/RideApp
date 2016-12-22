@@ -3,11 +3,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 97,
+					"line": 101,
 					"ch": 4
 				},
 				"to": {
-					"line": 97,
+					"line": 101,
 					"ch": 2
 				}
 			},
@@ -19,43 +19,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 98,
-					"ch": 28
-				},
-				"to": {
-					"line": 98,
-					"ch": 26
-				}
-			},
-			"editWith": "colorPicker",
-			"type": "string",
-			"name": "Background Color",
-			"group": "REACT NATIVE NAVBAR"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 99,
-					"ch": 8
-				},
-				"to": {
-					"line": 99,
-					"ch": 6
-				}
-			},
-			"editWith": "colorPicker",
-			"type": "string",
-			"name": "Status Bar Color",
-			"group": "REACT NATIVE NAVBAR"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 104,
+					"line": 109,
 					"ch": 2
 				},
 				"to": {
-					"line": 104,
+					"line": 109,
 					"ch": 0
 				}
 			},
@@ -67,11 +35,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 105,
+					"line": 110,
 					"ch": 9
 				},
 				"to": {
-					"line": 105,
+					"line": 110,
 					"ch": 7
 				}
 			},
@@ -83,11 +51,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 112,
+					"line": 117,
 					"ch": 11
 				},
 				"to": {
-					"line": 112,
+					"line": 117,
 					"ch": 9
 				}
 			},
@@ -99,11 +67,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 113,
+					"line": 118,
 					"ch": 18
 				},
 				"to": {
-					"line": 113,
+					"line": 118,
 					"ch": 16
 				}
 			},
@@ -115,11 +83,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 120,
+					"line": 179,
 					"ch": 16
 				},
 				"to": {
-					"line": 120,
+					"line": 179,
 					"ch": 14
 				}
 			},
@@ -131,11 +99,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 121,
+					"line": 180,
 					"ch": 18
 				},
 				"to": {
-					"line": 121,
+					"line": 180,
 					"ch": 16
 				}
 			},
@@ -146,11 +114,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 122,
+					"line": 181,
 					"ch": 2
 				},
 				"to": {
-					"line": 122,
+					"line": 181,
 					"ch": 0
 				}
 			},
@@ -163,11 +131,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 133,
+					"line": 192,
 					"ch": 29
 				},
 				"to": {
-					"line": 133,
+					"line": 192,
 					"ch": 27
 				}
 			},
@@ -178,11 +146,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 134,
+					"line": 193,
 					"ch": 2
 				},
 				"to": {
-					"line": 134,
+					"line": 193,
 					"ch": 0
 				}
 			},
@@ -195,11 +163,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 135,
+					"line": 194,
 					"ch": 11
 				},
 				"to": {
-					"line": 135,
+					"line": 194,
 					"ch": 9
 				}
 			},
@@ -212,93 +180,16 @@
 		{
 			"range": {
 				"from": {
-					"line": 187,
-					"ch": 12
-				},
-				"to": {
-					"line": 187,
-					"ch": 14
-				}
-			},
-			"type": "number",
-			"name": "Height",
-			"group": "TEXT INPUT"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 188,
-					"ch": 11
-				},
-				"to": {
-					"line": 188,
-					"ch": 14
-				}
-			},
-			"type": "number",
-			"name": "Width",
-			"group": "TEXT INPUT"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 190,
-					"ch": 15
-				},
-				"to": {
-					"line": 190,
-					"ch": 13
-				}
-			},
-			"editWith": "colorPicker",
-			"type": "string",
-			"name": "BorderColor",
-			"group": "TEXT INPUT"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 197,
+					"line": 210,
 					"ch": 6
 				},
 				"to": {
-					"line": 197,
-					"ch": 4
-				}
-			},
-			"type": "number",
-			"name": "Height",
-			"group": "TEXT INPUT"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 198,
-					"ch": 6
-				},
-				"to": {
-					"line": 198,
+					"line": 210,
 					"ch": 4
 				}
 			},
 			"type": "number",
 			"name": "Width",
-			"group": "TEXT INPUT"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 200,
-					"ch": 17
-				},
-				"to": {
-					"line": 200,
-					"ch": 16
-				}
-			},
-			"editWith": "colorPicker",
-			"type": "string",
-			"name": "BorderColor",
 			"group": "TEXT INPUT"
 		}
 	]
