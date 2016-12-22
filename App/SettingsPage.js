@@ -16,6 +16,7 @@ import {
 } from "react-native";
 import CookieManager from 'react-native-cookies';
 import NavigationBar from 'react-native-navbar';
+import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
 
 
 class SettingsPage extends Component {
@@ -28,11 +29,19 @@ class SettingsPage extends Component {
         };
 
     }
+  
+    googleSignOut() {
+      GoogleSignin.revokeAccess().then(() => GoogleSignin.signOut()).then(() => {
+        this.setState({user: null});
+      })
+      .done();
+    }
     
     logout () {
       console.log("log out");
       try {
         AsyncStorage.removeItem("user");
+        this.googleSignOut();
       } catch (error) {
         console.log("Error?");
         console.log(error);
@@ -75,8 +84,8 @@ class SettingsPage extends Component {
   
   renderScene (route, navigator) {
      var TouchableElement = TouchableHighlight;
-              //console.log(TouchableElement);
-              if (Platform.OS === 'android') {
+              //console.log(TouchableElement);  
+              if (Platform.OS === 'android') {  
                 TouchableElement = TouchableNativeFeedback;
               }
     return (
