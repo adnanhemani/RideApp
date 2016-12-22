@@ -1,0 +1,19 @@
+{
+	"liveValues": [
+		{
+			"range": {
+				"from": {
+					"line": 33,
+					"ch": 28
+				},
+				"to": {
+					"line": 33,
+					"ch": 33
+				}
+			},
+			"type": "boolean",
+			"name": "Horizontal",
+			"group": "SCROLL VIEW"
+		}
+	]
+}

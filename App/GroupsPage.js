@@ -72,7 +72,7 @@ class GroupsPage extends Component {
   
     render () {
         return (
-        <Navigator
+        <Navigator    
             renderScene={this.renderScene.bind(this)}
             navigator = {this.props.navigator}
            />

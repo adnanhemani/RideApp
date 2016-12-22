@@ -54,31 +54,31 @@ class App extends Component {
     if (routeId === "MemberEdit") {
       return (
         <MemberEdit
-          navigator={navigator} />
+          navigator={navigator} {...route.passProps}/>
       );
     }
     if (routeId === "MemberMgmt") {
       return (
         <MemberMgmt
-          navigator={navigator} />
+          navigator={navigator} {...route.passProps}/>
       );
     }
     if (routeId === "AddEvent") {
       return (
         <AddEvent
-          navigator={navigator} />
+          navigator={navigator} {...route.passProps}/>
       );
     }
     if (routeId === "GroupMgmtOptions") {
       return (
         <GroupMgmtOptions
-            navigator={navigator} />
+            navigator={navigator} {...route.passProps}/>
       );
     }
     if (routeId === "GroupMgmt") {
       return (
         <GroupMgmt
-            navigator = {navigator} />
+            navigator = {navigator} {...route.passProps}/>
       );
     }
     if (routeId === "CreateGroup") {
@@ -90,13 +90,13 @@ class App extends Component {
     if (routeId === "LeaveGroup") {
       return (
         <LeaveGroup
-            navigator={navigator} />
+            navigator={navigator} {...route.passProps}/>
         );
     }
     if (routeId === "AddGroup") {
       return (
         <AddGroup
-            navigator={navigator} />
+            navigator={navigator} {...route.passProps}/>
       );
     }
     if (routeId === "RideResults") {
@@ -108,19 +108,19 @@ class App extends Component {
     if (routeId === "RideSeek") {
       return (
         <RideSeek
-            navigator={navigator} />
+            navigator={navigator} {...route.passProps}/>
       );
     }
     if (routeId === "GroupDetails") {
       return (
       <GroupDetails
-          navigator= {navigator} />
+          navigator= {navigator} {...route.passProps} />
         );
     }
     if (routeId === 'Tabs') {
       return (
         <Tabs
-          navigator={navigator} />
+          navigator={navigator} {...route.passProps}/>
       );
     }
     if (routeId === 'Register') {
@@ -132,13 +132,13 @@ class App extends Component {
     if (routeId === "Rides") {
       return (
         <RidesPage
-            navigator={navigator} />
+            navigator={navigator} {...route.passProps}/>
       );
     }
     if (routeId === "Groups") {
       return (
           <GroupsPage
-            navigator={navigator} />
+            navigator={navigator} {...route.passProps}/>
       );
     }
     return this.noRoute(navigator);

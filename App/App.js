@@ -95,32 +95,32 @@ class RideApplLogin extends Component {
         this.signin();
       }))
       .done();
-
-      console.log("Here");
-      
+    
+      console.log("Here");  
+        
  
     }
 
 	componentWillMount () {
-
-		try {
+  
+		try {  
       AsyncStorage.getItem("user").then((value) => {
         if (value !== null){
           console.log(value);
           this.props.navigator.push({id: "Tabs", name: "Tabs", passProps: {"user": value}});
         } else {
           console.log("no remembered user data found");
-        }
-      }).done();
+        }  
+      }).done();  
     } catch (error) {
       console.log("Error?");
     }
 	}
   
     render () {
-      return (
-      <Navigator
-          renderScene={this.renderScene.bind(this)}
+      return (  
+      <Navigator  
+            renderScene={this.renderScene.bind(this)}
           navigator = {this.props.navigator}
         />
       );
@@ -130,10 +130,10 @@ class RideApplLogin extends Component {
 
 	renderScene (route, navigator) {
         var TouchableElement = TouchableHighlight;
-        //console.log(TouchableElement);
-        if (Platform.OS === 'android') {
-          TouchableElement = TouchableNativeFeedback;
-        }
+        //console.log(Touchable Element);
+        if (Platform.OS ===   'android') {
+            TouchableElement = TouchableNativeFeedback;
+        }  
 				return (
 					<View style={styles.container}>
                     
@@ -188,17 +188,17 @@ class RideApplLogin extends Component {
                       label="Remember me?"
                       checked={this.state.checkboxState}
                       onChange={() => this.changeCheckboxState()} />
-                    
+                      
                     <TouchableElement
                         
                         onPress={() => this.fetchData()}>
                         <View style={styles.register}>
                             <Text style={styles.buttonText}>Sign In</Text>
                         </View>
-                    </TouchableElement>
-                    <TouchableElement
+                      </TouchableElement>
+                      <TouchableElement
                         
-                        onPress={this.register.bind(this)}>
+                         onPress={this.register.bind(this)}>
                         <View style={styles.register}>
                             <Text style={styles.buttonText}>Register</Text>
                         </View>

@@ -59,8 +59,14 @@ class RidesPage extends Component {
     fetch(REQUEST_URL + this.toQueryString({"user": this.props.user}))
       .then((response) => response.json())
       .then((responseData) => {
+        var ds;
+        try {
+            ds = this.state.dataSource.cloneWithRows(JSON.parse(responseData.groups));
+          } catch (err) {
+            ds = null;
+          }
         this.setState({
-          dataSource: this.state.dataSource.cloneWithRows(JSON.parse(responseData.groups)),
+          dataSource: ds,
           loaded: true,
         });
       })
@@ -72,9 +78,9 @@ class RidesPage extends Component {
         <Navigator
             renderScene={this.renderScene.bind(this)}
             navigator = {this.props.navigator}
-           />
-        );
-      }
+           />    
+        );  
+      }  
   
   renderScene (route, navigator) {
     if (!this.state.loaded) {
