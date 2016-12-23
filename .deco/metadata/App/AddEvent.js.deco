@@ -3,11 +3,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 122,
+					"line": 140,
 					"ch": 48
 				},
 				"to": {
-					"line": 122,
+					"line": 140,
 					"ch": 55
 				}
 			},
@@ -19,11 +19,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 124,
+					"line": 142,
 					"ch": 28
 				},
 				"to": {
-					"line": 124,
+					"line": 142,
 					"ch": 26
 				}
 			},
@@ -35,11 +35,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 129,
+					"line": 147,
 					"ch": 16
 				},
 				"to": {
-					"line": 129,
+					"line": 147,
 					"ch": 14
 				}
 			},
@@ -50,11 +50,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 135,
+					"line": 153,
 					"ch": 31
 				},
 				"to": {
-					"line": 135,
+					"line": 153,
 					"ch": 43
 				}
 			},
@@ -66,11 +66,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 136,
+					"line": 154,
 					"ch": 24
 				},
 				"to": {
-					"line": 136,
+					"line": 154,
 					"ch": 22
 				}
 			},
@@ -82,11 +82,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 144,
+					"line": 162,
 					"ch": 28
 				},
 				"to": {
-					"line": 144,
+					"line": 162,
 					"ch": 30
 				}
 			},
@@ -97,11 +97,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 151,
+					"line": 169,
 					"ch": 20
 				},
 				"to": {
-					"line": 151,
+					"line": 169,
 					"ch": 18
 				}
 			},
@@ -113,11 +113,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 159,
+					"line": 177,
 					"ch": 28
 				},
 				"to": {
-					"line": 159,
+					"line": 177,
 					"ch": 30
 				}
 			},
@@ -128,11 +128,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 160,
+					"line": 178,
 					"ch": 22
 				},
 				"to": {
-					"line": 160,
+					"line": 178,
 					"ch": 20
 				}
 			},
@@ -143,11 +143,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 162,
+					"line": 180,
 					"ch": 33
 				},
 				"to": {
-					"line": 162,
+					"line": 180,
 					"ch": 50
 				}
 			},
@@ -159,11 +159,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 165,
+					"line": 183,
 					"ch": 31
 				},
 				"to": {
-					"line": 165,
+					"line": 183,
 					"ch": 37
 				}
 			},
@@ -175,11 +175,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 166,
+					"line": 184,
 					"ch": 20
 				},
 				"to": {
-					"line": 166,
+					"line": 184,
 					"ch": 18
 				}
 			},
@@ -191,89 +191,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 175,
-					"ch": 22
-				},
-				"to": {
-					"line": 175,
-					"ch": 20
-				}
-			},
-			"type": "number",
-			"name": "Height",
-			"group": "TEXT INPUT"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 176,
-					"ch": 27
-				},
-				"to": {
-					"line": 176,
-					"ch": 30
-				}
-			},
-			"type": "number",
-			"name": "Width",
-			"group": "TEXT INPUT"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 178,
-					"ch": 33
-				},
-				"to": {
-					"line": 178,
-					"ch": 50
-				}
-			},
-			"editWith": "colorPicker",
-			"type": "string",
-			"name": "BorderColor",
-			"group": "TEXT INPUT"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 181,
-					"ch": 31
-				},
-				"to": {
-					"line": 181,
-					"ch": 37
-				}
-			},
-			"editWith": "inputField",
-			"type": "string",
-			"name": "Placeholder",
-			"group": "TEXT INPUT"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 182,
-					"ch": 20
-				},
-				"to": {
-					"line": 182,
-					"ch": 18
-				}
-			},
-			"editWith": "colorPicker",
-			"type": "string",
-			"name": "PlaceholderTextColor",
-			"group": "TEXT INPUT"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 216,
+					"line": 224,
 					"ch": 11
 				},
 				"to": {
-					"line": 216,
+					"line": 224,
 					"ch": 18
 				}
 			},
@@ -285,11 +207,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 218,
+					"line": 226,
 					"ch": 14
 				},
 				"to": {
-					"line": 218,
+					"line": 226,
 					"ch": 12
 				}
 			},
@@ -302,11 +224,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 219,
+					"line": 227,
 					"ch": 16
 				},
 				"to": {
-					"line": 219,
+					"line": 227,
 					"ch": 28
 				}
 			},
@@ -319,11 +241,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 229,
+					"line": 237,
 					"ch": 11
 				},
 				"to": {
-					"line": 229,
+					"line": 237,
 					"ch": 18
 				}
 			},
@@ -335,11 +257,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 231,
+					"line": 239,
 					"ch": 16
 				},
 				"to": {
-					"line": 231,
+					"line": 239,
 					"ch": 24
 				}
 			},
@@ -352,11 +274,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 232,
+					"line": 240,
 					"ch": 6
 				},
 				"to": {
-					"line": 232,
+					"line": 240,
 					"ch": 4
 				}
 			},
@@ -369,11 +291,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 239,
+					"line": 247,
 					"ch": 11
 				},
 				"to": {
-					"line": 239,
+					"line": 247,
 					"ch": 18
 				}
 			},
@@ -385,11 +307,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 241,
+					"line": 249,
 					"ch": 16
 				},
 				"to": {
-					"line": 241,
+					"line": 249,
 					"ch": 19
 				}
 			},
@@ -402,11 +324,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 242,
+					"line": 250,
 					"ch": 16
 				},
 				"to": {
-					"line": 242,
+					"line": 250,
 					"ch": 25
 				}
 			},
@@ -419,11 +341,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 249,
+					"line": 257,
 					"ch": 11
 				},
 				"to": {
-					"line": 249,
+					"line": 257,
 					"ch": 18
 				}
 			},
@@ -435,11 +357,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 251,
+					"line": 259,
 					"ch": 16
 				},
 				"to": {
-					"line": 251,
+					"line": 259,
 					"ch": 19
 				}
 			},
@@ -452,11 +374,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 252,
+					"line": 260,
 					"ch": 16
 				},
 				"to": {
-					"line": 252,
+					"line": 260,
 					"ch": 25
 				}
 			},
@@ -469,11 +391,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 258,
+					"line": 266,
 					"ch": 6
 				},
 				"to": {
-					"line": 258,
+					"line": 266,
 					"ch": 4
 				}
 			},
@@ -485,11 +407,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 260,
+					"line": 268,
 					"ch": 16
 				},
 				"to": {
-					"line": 260,
+					"line": 268,
 					"ch": 19
 				}
 			},
@@ -502,11 +424,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 261,
+					"line": 269,
 					"ch": 16
 				},
 				"to": {
-					"line": 261,
+					"line": 269,
 					"ch": 19
 				}
 			},

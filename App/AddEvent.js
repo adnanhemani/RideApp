@@ -19,7 +19,7 @@ import {
   TouchableNativeFeedback,
 } from "react-native";
 
-import DatePicker from 'react-native-datepicker'
+import DatePicker from 'react-native-datepicker';
 
 import CookieManager from 'react-native-cookies';
 var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/adminmakenewevent/?';
@@ -38,6 +38,7 @@ class AddEvent extends Component {
 
     constructor(props, context) {
         super(props, context);
+        var date = this.formatDate(new Date());
         this.state = {
             loggedIn: true,
             rando: "a",
@@ -45,11 +46,28 @@ class AddEvent extends Component {
             rte: false,
             rfe: false,
             latest: false,
-            time: "",
+            eventTime: date,
+            expiryTime: date,
           
         };
 
     }
+  
+  formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear(),
+        hour = d.getHours(),
+        time = d.getMinutes();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+    if (hour.length < 2) hour = '0' + hour;
+    if (time.length < 2) time = '0' + time;
+
+    return [year, month, day].join('-') + " " + [hour, time].join(':');
+  }
   
   
   backOneScene () {
@@ -165,37 +183,27 @@ class AddEvent extends Component {
                   onSubmitEditing={() => {this.setState({eventMessage: ''})}}
                   value={(this.state && this.state.eventMessage) || ''}
                 />  
-                <Text style={styles.specReqsText}>Event Time (Write in this format: YYYY-MM-DD HH:MM)</Text>
-                <TextInput
-                  style={{
-                    height: 45, 
-                    width: 100,
-                    borderWidth: 1,
-                    borderColor: "rgba(0,0,0,0.5)",
-                    marginLeft: 10,
-                  }}  
-                  placeholder={'Time'}
-                  placeholderTextColor={"rgba(198,198,204,1)"}
-                  onChangeText={(text) => {this.setState({eventTime: text})}}
-                  onSubmitEditing={() => {this.setState({eventTime: ''})}}
-                  value={(this.state && this.state.eventTime) || ''}
-                  keyboardType="numeric"
-                />  
-                <Text style={styles.specReqsText}>Event Expiry Time (Write in this format: YYYY-MM-DD HH:MM)</Text>
-                <TextInput
-                  style={{
-                    height: 45, 
-                    width: 100,
-                    borderWidth: 1,
-                    borderColor: "rgba(0,0,0,0.5)",
-                    marginLeft: 10,
-                  }}
-                  placeholder={'Time'}
-                  placeholderTextColor={"rgba(198,198,204,1)"}
-                  onChangeText={(text) => {this.setState({exp_time: text})}}
-                  onSubmitEditing={() => {this.setState({exp_time: ''})}}
-                  value={(this.state && this.state.exp_time) || ''}
-                  keyboardType="numeric"
+                <Text style={styles.specReqsText}>Event Time</Text>
+                <DatePicker
+                  style={{width: 200}}
+                  date={this.state.eventTime}
+                  mode="datetime"
+                  format="YYYY-MM-DD HH:mm"
+                  placeholder="select date"
+                  confirmBtnText="Confirm"
+                  cancelBtnText="Cancel"
+                  onDateChange={(date) => {this.setState({eventTime: date})}}
+                />
+                <Text style={styles.specReqsText}>Event Expiry Time</Text>
+                <DatePicker
+                  style={{width: 200}}
+                  date={this.state.expiryTime}
+                  mode="datetime"
+                  format="YYYY-MM-DD HH:mm"
+                  placeholder="select date"
+                  confirmBtnText="Confirm"
+                  cancelBtnText="Cancel"
+                  onDateChange={(date) => {this.setState({expiryTime: date})}}
                 />
                 <View style={styles.submitlol}/>
                 <TouchableElement
