@@ -19,6 +19,8 @@ import {
   TouchableNativeFeedback,
 } from "react-native";
 
+import DatePicker from 'react-native-datepicker'
+
 import CookieManager from 'react-native-cookies';
 var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/adminmakenewevent/?';
 
@@ -120,19 +122,19 @@ class AddEvent extends Component {
               if (Platform.OS === 'android') {
                 TouchableElement = TouchableNativeFeedback;
               }
-      const backButton = {
+      const backButton = {  
         title: "Back",
         handler: () => this.backOneScene(),
       };
         
-      return (
+      return (  
               <ScrollView style={styles.container}>
               <NavigationBar
-                      title = {{title: "Add Event", tintColor: 'black',}}
+                      title = {{title: "Add Event" , tintColor: 'black',}}
                       style={{ backgroundColor: "white", }}
                       leftButton={backButton}
                       statusBar={{ tintColor: "white", }}
-                    />
+                    />  
                 <Text style={styles.selectLocationText}>Event Name</Text>
                 <TextInput
                   style={{
@@ -143,11 +145,11 @@ class AddEvent extends Component {
                     marginLeft: 10,
                   }}
                   placeholder={'Event Name'}
-                  placeholderTextColor={"rgba(198,198,204,1)"}
+                  placeholderTextColor={"rgba(198, 198,204,1)"}
                   onChangeText={(text) => {this.setState({eventName: text})}}
                   onSubmitEditing={() => {this.setState({eventName: ''})}}
                   value={(this.state && this.state.eventName) || ''}
-                />
+                />  
                 <Text style={styles.specReqsText}>Message about event:</Text>
                 <TextInput
                   style={{
@@ -156,13 +158,13 @@ class AddEvent extends Component {
                     borderWidth: 1,
                     borderColor: "rgba(0,0,0,0.5)",
                     marginLeft: 10,
-                  }}
+                  }}  
                   placeholder={'Message about event'}
                   placeholderTextColor={"rgba(198,198,204,1)"}
                   onChangeText={(text) => {this.setState({eventMessage: text})}}
                   onSubmitEditing={() => {this.setState({eventMessage: ''})}}
                   value={(this.state && this.state.eventMessage) || ''}
-                />
+                />  
                 <Text style={styles.specReqsText}>Event Time (Write in this format: YYYY-MM-DD HH:MM)</Text>
                 <TextInput
                   style={{
@@ -171,14 +173,14 @@ class AddEvent extends Component {
                     borderWidth: 1,
                     borderColor: "rgba(0,0,0,0.5)",
                     marginLeft: 10,
-                  }}
+                  }}  
                   placeholder={'Time'}
                   placeholderTextColor={"rgba(198,198,204,1)"}
                   onChangeText={(text) => {this.setState({eventTime: text})}}
                   onSubmitEditing={() => {this.setState({eventTime: ''})}}
                   value={(this.state && this.state.eventTime) || ''}
                   keyboardType="numeric"
-                />
+                />  
                 <Text style={styles.specReqsText}>Event Expiry Time (Write in this format: YYYY-MM-DD HH:MM)</Text>
                 <TextInput
                   style={{
@@ -214,7 +216,7 @@ class AddEvent extends Component {
 
 var styles = StyleSheet.create({
   topContainer : {
-    flex: 1,
+    flex: 1,  
     flexDirection: 'column',
     backgroundColor: '#FFFFFF',
   },
@@ -228,7 +230,7 @@ var styles = StyleSheet.create({
     fontWeight: 'normal',
     fontFamily: 'Helvetica Neue',
     alignSelf: "center",
-  },
+  },  
   checkboxes: {
     backgroundColor: '#F5FCFF',
     marginLeft: 10,
@@ -254,7 +256,7 @@ var styles = StyleSheet.create({
     marginTop: 10,
     marginLeft: 10,
     
-  },
+  },  
   headerOtherText : {
     color: 'black',
     fontSize:  15 ,

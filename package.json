@@ -11,6 +11,7 @@
     "react-native-button": "^1.6.0",
     "react-native-checkbox": "^1.0.13",
     "react-native-cookies": "^1.0.0",
+    "react-native-datepicker": "^1.4.3",
     "react-native-datetime-picker": "^1.1.2",
     "react-native-dropdown": "git+https://github.com/g6ling/react-native-dropdown.git",
     "react-native-google-signin": "^0.8.1",

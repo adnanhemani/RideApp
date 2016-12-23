@@ -25,7 +25,8 @@ class Register extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            loggedIn: true
+            loggedIn: true,
+            myNumber: ''
         };
     }
   
@@ -37,6 +38,17 @@ class Register extends Component {
   toSignIn () {
     console.log("Back to sign in screen");
     this.props.navigator.pop();
+  }
+  
+  onChangedPN(text){
+    let numbers = '0123456789';
+    if (numbers.indexOf(text[text.length - 1])>-1 || text === '') {
+      this.setState({myNumber: text})
+    } else {
+      alert("Please enter numbers only");
+      this.setState({myNumber: text.substring(0, text.length - 1)});
+      text = text.substring(0, text.length - 1);
+    }
   }
 
   toQueryString(obj) {
@@ -59,9 +71,9 @@ class Register extends Component {
       var params = {"fname": this.state.fName, "lname": this.state.lName, "phone_number": this.state.phone, "email": this.state.email, 
           "driver": "True", "own_car": "True", "pw": this.state.pw, "g": this.state.group}
       fetch(REQUEST_URL + this.toQueryString(params)).then((response) => response.json())
-        .then(((responseData) => {
+        .then(((responseData) => {  
           console.log(responseData);
-          this.setState({
+          this.setState({  
             responseFS: responseData
           });
           if (this.state.responseFS.success === true) {
@@ -69,8 +81,8 @@ class Register extends Component {
           } else {
             this.failAlert();
           }
-        }))
-        .done();
+        }))  
+        .done();  
 
         console.log("Here");
       } else {
@@ -81,8 +93,8 @@ class Register extends Component {
               ]);
       }
       
- 
-    }
+   
+    }  
 
     successAlert () {
       Alert.alert("Success!", "",
@@ -106,8 +118,8 @@ class Register extends Component {
 
                 ]);
         }
-    }
-  
+    } 
+    
   render () {
     return (
     <Navigator
@@ -143,8 +155,8 @@ class Register extends Component {
                       style={styles.fNameInput}
                       placeholder={'First Name'}
                       placeholderTextColor={"rgba(198,198,204,1)"}
+                      returnKeyType="next"
                       onChangeText={(text) => {this.setState({fName: text})}}
-                      onSubmitEditing={() => {this.setState({fName: ''})}}
                       value={(this.state && this.state.fName) || ''}
                     />
                     <Text
@@ -155,33 +167,34 @@ class Register extends Component {
                       style={styles.lNameInput}
                       placeholder={'Last Name'}
                       placeholderTextColor={"rgba(198,198,204,1)"}
+                      returnKeyType="next"
                       onChangeText={(text) => {this.setState({lName: text})}}
-                      onSubmitEditing={() => {this.setState({lName: ''})}}
                       value={(this.state && this.state.lName) || ''}
                     />
                     <Text
                       style={styles.phoneNumber}>
-                      Phone Number: (No parenthesis or hyphens; ONLY NUMBERS PLS)
+                      Phone Number:
                     </Text>
                      <TextInput
                       style={styles.phoneNumberInput}
                       placeholder={'Phone Number'}
                       placeholderTextColor={"rgba(198,198,204,1)"}
-                      onChangeText={(text) => {this.setState({phone: text})}}
-                      onSubmitEditing={() => {this.setState({phone: ''})}}
-                      value={(this.state && this.state.phone) || ''}
+                      returnKeyType="next"
+                      onChangeText={(text)=> this.onChangedPN(text)}
+                      value={(this.state && this.state.myNumber) || ''}
                       keyboardType={'phone-pad'}
+                      maxLength = {10}
                     />
                     <Text
-                      style={styles.emailText}>
-                      Email Address:
+                        style={styles.emailText}>
+                        Email Address:
                     </Text>
                     <TextInput
                       style={styles.emailTextInput}
                       placeholder={'Email'}
                       placeholderTextColor={"rgba(198,198,204,1)"}
+                      returnKeyType="next"
                       onChangeText={(text) => {this.setState({email: text})}}
-                      onSubmitEditing={() => {this.setState({email: ''})}}
                       value={(this.state && this.state.email) || ''}
                       keyboardType={'email-address'}
                     />
@@ -192,17 +205,17 @@ class Register extends Component {
 
                     <Picker 
                       style={styles.riderDriverSelector}
-                      selectedValue={(this.state && this.state.riderDriver) || false}
+                        selectedValue={(this.state && this.state.riderDriver) || false}
                       onValueChange={(value) => {
                         this.setState({riderDriver: value})
                       }}>
                       <Picker.Item label={'Rider'} value={false} />
                       <Picker.Item label={'Driver'} value={true} />
                     </Picker>
-
+  
                     <Text
                       style={styles.carSelect}>
-                      If you are a driver, do you own your own car?
+                        If you are a driver, do you own your own car?
                     </Text>
                     <Picker 
                       style={styles.carSelector}
@@ -210,7 +223,7 @@ class Register extends Component {
                       onValueChange={(value) => {
                         this.setState({carOrNah: value})
                       }}>
-                      <Picker.Item label={'Yes'} value={true} />
+                        <Picker.Item label={'Yes'} value={true} />
                       <Picker.Item label={'No'} value={false} />
                     </Picker>
                     <Text
@@ -219,45 +232,19 @@ class Register extends Component {
                     </Text>
                     <Picker 
                       style={styles.groupsPicker}
-                      selectedValue={(this.state && this.state.group) || 1}
+                        selectedValue={(this.state && this.state.group) || 1}
                       onValueChange={(value) => {
                         this.setState({group: value})
                       }}>
                       <Picker.Item label={'Cal Ismailis Rideshare'} value={1} />
                     </Picker>
-                    <Text
-                      style={styles.groupText}>
-                      Enter your your new password:
-                    </Text>
-                    <TextInput
-                      style={styles.emailTextInput}
-                      placeholder={'Password'}
-                      secureTextEntry={true}
-                      placeholderTextColor={"rgba(198,198,204,1)"}
-                      onChangeText={(text) => {this.setState({pw: text})}}
-                      onSubmitEditing={() => {this.setState({pw: ''})}}
-                      value={(this.state && this.state.pw) || ''}
-                    />
-                    <Text
-                      style={styles.groupText}>
-                      Re-enter your your new password:
-                    </Text>
-                    <TextInput
-                      style={styles.emailTextInput}
-                      placeholder={'Re-enter password'}
-                      secureTextEntry={true}
-                      placeholderTextColor={"rgba(198,198,204,1)"}
-                      onChangeText={(text) => {this.setState({pw2: text})}}
-                      onSubmitEditing={() => {this.setState({pw2: ''})}}
-                      value={(this.state && this.state.pw2) || ''}
-                    />
                     <TouchableElement
                         style={styles.submit}
                         onPress={() => this.submitted()}>
                         <View style={styles.submit}>
-                            <Text style={styles.submitText}>Submit</Text>
-                        </View>
-                    </TouchableElement>
+                          <Text style={styles.submitText}>Submit</Text>
+                      </View>
+                  </TouchableElement>
                 </ScrollView>
         
             );
@@ -271,8 +258,8 @@ var styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#F5FCFF',
-  },  
-  fName: {  
+  },    
+  fName: {    
     color: 'black',
     fontSize: 16,
     fontWeight: 'normal',

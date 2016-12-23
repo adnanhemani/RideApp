@@ -172,6 +172,10 @@ class RideApplLogin extends Component {
         } else {
           console.log("email not found");
           this.props.navigator.push({id:"Register", name: "Register"});
+          GoogleSignin.revokeAccess().then(() => GoogleSignin.signOut()).then(() => {
+            this.setState({user: null});
+          })
+          .done();
           return false;
         }
       }
@@ -214,15 +218,7 @@ class RideApplLogin extends Component {
                         <View style={styles.register}>
                             <Text style={styles.buttonText}>Register</Text>
                         </View>
-                    </TouchableElement>
-                    <TouchableElement
-                        
-                        onPress={() => this.forgot()}>
-                        <View style={styles.register}>
-                            <Text style={styles.forgotText}>Forgot Username or Password?</Text>
-                        </View>
-                    </TouchableElement>
-                    
+                    </TouchableElement>                    
         			</View>
 				);
 
