@@ -156,7 +156,6 @@ class RideApplLogin extends Component {
     }
   
     signInpt2() {
-      //insert cookies here
         console.log(this.state);
         if (this.state.responseFS.logged_in === true) {
            if (this.state.checkboxState) {
