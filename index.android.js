@@ -34,18 +34,20 @@ var MemberEdit = require("./App/MemberEdit");
 
 class App extends Component {
   render() {
+    OneSignal.setSubscription(true);
+    OneSignal.enableInAppAlertNotification(true);
+    OneSignal.enableNotificationsWhenActive(true);
     OneSignal.configure({
       onIdsAvailable: function(device) {
           console.log('UserId = ', device.userId);
           console.log('PushToken = ', device.pushToken);
       },
-      onNotificationOpened: function(message, data, isActive) {
-          console.log('MESSAGE: ', message);
-          console.log('DATA: ', data);
-          console.log('ISACTIVE: ', isActive);
-      }
-    });
-    OneSignal.setSubscription(true);
+    onNotificationOpened: function(message, data, isActive) {
+        console.log('MESSAGE: ', message);
+        console.log('DATA: ', data);
+        console.log('ISACTIVE: ', isActive);
+    }
+  });
     return (
       <Navigator
           initialRoute={{id: 'LoginPage', name: 'Index'}}
