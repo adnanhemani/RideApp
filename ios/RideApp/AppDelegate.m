@@ -15,6 +15,8 @@
 
 @implementation AppDelegate
 
+@synthesize oneSignal = _oneSignal;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   NSURL *jsCodeLocation;
@@ -56,6 +58,8 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  self.oneSignal = [[RCTOneSignal alloc] initWithLaunchOptions:launchOptions
+                                                         appId:@"536f9e1a-7028-49c0-8f02-61f853a421c1"];
   return YES;
 }
 
@@ -65,5 +69,8 @@
   return [RNGoogleSignin application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
 }
 
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification {
+  [RCTOneSignal didReceiveRemoteNotification:notification];
+}
 
 @end

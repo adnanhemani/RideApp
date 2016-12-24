@@ -10,6 +10,7 @@ import {
 } from "react-native";
 
 import React, {Component} from "react";
+import OneSignal from 'react-native-onesignal';
 
 var RideApplLogin = require('./App/App');
 var Register = require('./App/Register');
@@ -31,6 +32,23 @@ var MemberEdit = require("./App/MemberEdit");
 
 class App extends Component {
   render() {
+    OneSignal.enableInAppAlertNotification(true);
+    OneSignal.setSubscription(true);
+    var pendingNotifications = [];
+
+    OneSignal.configure({
+        onIdsAvailable: function(device) {
+            console.log('UserId = ', device.userId);
+            console.log('PushToken = ', device.pushToken);
+        },
+      onNotificationOpened: function(message, data, isActive) {
+          var notification = {message: message, data: data, isActive: isActive};
+          console.log('NOTIFICATION OPENED: ', notification);
+          pendingNotifications.push(notification);
+          handleNotification(notification);
+      }
+    });
+    
     return (
       <Navigator
           initialRoute={{id: 'LoginPage', name: 'Index'}}
