@@ -20,6 +20,8 @@ import {
 } from "react-native";
 
 import CookieManager from 'react-native-cookies';
+import DatePicker from 'react-native-datepicker';
+
 var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/requestride/?';
 
 
@@ -88,12 +90,13 @@ class RideSeek extends Component {
     }
     else {
       d_l_time = new Date(this.props.ride_info.fields.event_time);
+      //HACKY REDO THIS
       d_l_time.setHours(parseInt(this.state.time.slice(0, 1)) + 12);
       d_l_time.setMinutes(parseInt(this.state.time.slice(2)));
       d_l_time = d_l_time.toString().slice(16, 21);
       console.log(d_l_time);
       console.log(this.props.ride_info)
-      var params = {"user": 2, "driver_leaving_time": d_l_time, "driver_spaces": parseInt(this.state.seats), 
+      var params = {"user": this.props.user, "driver_leaving_time": d_l_time, "driver_spaces": parseInt(this.state.seats), 
         "special_requests": "None", "event_id": this.props.ride_info.pk};
     }
     console.log(params);
@@ -122,7 +125,7 @@ class RideSeek extends Component {
     }
     else {
       console.log("Error!");
-      Alert.alert("Submission failed", "Your ride request wasn't recieved. Please try again. If you cannot send your ride request multiple times, please contact your group administrator.",
+      Alert.alert("Submission failed", "Your ride request wasn't recieved. Please try again. If you cannot send your ride request multiple times, please contact your group administrator. Error occurred: ".concat(this.state.responseFS.reason),
                [
                 {text: 'OK', onPress: () => console.log('ok pressed'), style: "cancel"},
 
@@ -187,19 +190,15 @@ class RideSeek extends Component {
                     </Picker>
 
                 <Text style={styles.specReqsText}>If you plan on driving, what time will you be leaving?</Text>
-                <TextInput
-                  style={{
-                    height: 45, 
-                    width: 100,
-                    borderWidth: 1,
-                    borderColor: "rgba(0,0,0,0.5)",
-                    marginLeft: 10,
-                  }}
-                  placeholder={'Time'}
-                  placeholderTextColor={"rgba(198,198,204,1)"}
-                  onChangeText={(text) => {this.setState({time: text})}}
-                  onSubmitEditing={() => {this.setState({time: ''})}}
-                  value={(this.state && this.state.time) || ''}
+                <DatePicker
+                  style={{width: 200}}
+                  date={this.state.time}
+                  mode="time"
+                  format="HH:mm"
+                  confirmBtnText="Confirm"
+                  cancelBtnText="Cancel"
+                  minuteInterval={5}
+                  onDateChange={(time) => {this.setState({time: time});}}
                 />
                 <Text style={styles.specReqsText}>If you plan on driving, how many open spaces will be in your car?</Text>
                 <TextInput
