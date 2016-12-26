@@ -1,0 +1,51 @@
+{
+  "project_info": {
+    "project_number": "1071146405706",
+    "project_id": "rideup-153214"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1071146405706:android:014769f4f929eb7b",
+        "android_client_info": {
+          "package_name": "com.rideapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1071146405706-cibtpuqp94taar8eo3m1adigsnvlc2rv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rideapp",
+            "certificate_hash": "743332CADCE53079D845AF171B90E957F877CF9C"
+          }
+        },
+        {
+          "client_id": "1071146405706-gp6mursvbqlg08mmunjiu79urmu80k8n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzvmiRoeLoVgYmHeU1s5LKDNjd7HQVJVw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-89378513-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

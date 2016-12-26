@@ -170,6 +170,7 @@ class RideApplLogin extends Component {
           }
         } else {
           console.log("email not found");
+          alert("No account was found with that email. Please register for an account!");
           this.props.navigator.push({id:"Register", name: "Register"});
           GoogleSignin.revokeAccess().then(() => GoogleSignin.signOut()).then(() => {
             this.setState({user: null});
