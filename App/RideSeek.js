@@ -89,14 +89,7 @@ class RideSeek extends Component {
       var params = {"user": this.props.user, "driver_leaving_time": "None", "driver_spaces": 0, "special_requests": "None", "event_id": this.props.ride_info.pk};
     }
     else {
-      d_l_time = new Date(this.props.ride_info.fields.event_time);
-      //HACKY REDO THIS
-      d_l_time.setHours(parseInt(this.state.time.slice(0, 1)) + 12);
-      d_l_time.setMinutes(parseInt(this.state.time.slice(2)));
-      d_l_time = d_l_time.toString().slice(16, 21);
-      console.log(d_l_time);
-      console.log(this.props.ride_info)
-      var params = {"user": this.props.user, "driver_leaving_time": d_l_time, "driver_spaces": parseInt(this.state.seats), 
+      var params = {"user": this.props.user, "driver_leaving_time": this.state.time, "driver_spaces": parseInt(this.state.seats), 
         "special_requests": "None", "event_id": this.props.ride_info.pk};
     }
     console.log(params);
