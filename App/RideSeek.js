@@ -86,11 +86,10 @@ class RideSeek extends Component {
   fetchData() {
     console.log(this.state);
     if (this.state.time === "" || this.state.seats === 0) {
-      var params = {"user": this.props.user, "driver_leaving_time": "None", "driver_spaces": 0, "special_requests": "None", "event_id": this.props.ride_info.pk};
+      var params = {"user": this.props.user, "driver_leaving_time": "None", "driver_spaces": 0, "special_requests": "None", "event_id": this.props.ride_info.pk, "pref_location": this.state.prefLocation};
     }
     else {
-      var params = {"user": this.props.user, "driver_leaving_time": this.state.time, "driver_spaces": parseInt(this.state.seats), 
-        "special_requests": "None", "event_id": this.props.ride_info.pk};
+      var params = {"user": this.props.user, "driver_leaving_time": this.state.time, "driver_spaces": parseInt(this.state.seats), "pref_location": this.state.prefLocation, "special_requests": "None", "event_id": this.props.ride_info.pk};
     }
     console.log(params);
     fetch(REQUEST_URL + this.toQueryString(params)).then((response) => response.json())
@@ -177,9 +176,8 @@ class RideSeek extends Component {
                         this.setState({prefLocation: value})
                       }}>
                       <Picker.Item label={"None"} value={0} />
-                      <Picker.Item label={'Location 1'} value={1} />
-                      <Picker.Item label={'Location 2'} value={2} />
-                      <Picker.Item label={'Location 3'} value={3} />
+                      <Picker.Item label={'Telegraph and Parker'} value={1} />
+                      <Picker.Item label={'2718 College Ave'} value={2} />
                     </Picker>
 
                 <Text style={styles.specReqsText}>If you plan on driving, what time will you be leaving?</Text>
