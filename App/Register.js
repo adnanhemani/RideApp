@@ -26,7 +26,8 @@ class Register extends Component {
         super(props, context);
         this.state = {
             loggedIn: true,
-            myNumber: ''
+            myNumber: '',
+            group: 1
         };
     }
   
