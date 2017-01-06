@@ -3,28 +3,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 83,
-					"ch": 38
+					"line": 82,
+					"ch": 11
 				},
 				"to": {
-					"line": 83,
-					"ch": 51
-				}
-			},
-			"editWith": "inputField",
-			"type": "string",
-			"name": "Title",
-			"group": "REACT NATIVE NAVBAR"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 83,
-					"ch": 64
-				},
-				"to": {
-					"line": 83,
-					"ch": 71
+					"line": 82,
+					"ch": 9
 				}
 			},
 			"editWith": "colorPicker",
@@ -35,12 +19,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 84,
-					"ch": 48
+					"line": 83,
+					"ch": 4
 				},
 				"to": {
-					"line": 84,
-					"ch": 55
+					"line": 83,
+					"ch": 2
 				}
 			},
 			"editWith": "colorPicker",
@@ -51,12 +35,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 86,
-					"ch": 46
+					"line": 85,
+					"ch": 26
 				},
 				"to": {
-					"line": 86,
-					"ch": 53
+					"line": 85,
+					"ch": 24
 				}
 			},
 			"editWith": "colorPicker",

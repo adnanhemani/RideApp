@@ -7,7 +7,6 @@ import {
   ScrollView,
   ListView,
 } from 'react-native'
-import CookieManager from 'react-native-cookies';
 import NavigationBar from 'react-native-navbar';
 var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/groupsinfo/?';
 
@@ -72,9 +71,9 @@ class GroupDetails extends Component {
       
     }
   
-  render () {
+  render () {  
     if (!this.state.loaded) {
-          return (<View>
+          return (<View>  
               <Text>Loading!</Text>
             </View>);
         }
@@ -103,8 +102,8 @@ class GroupDetails extends Component {
           );
         } else {
             this.props.navigator.push({id: "LoginPage", name:"Index"})
-        }
-    
+        }  
+      
   }
   
 }

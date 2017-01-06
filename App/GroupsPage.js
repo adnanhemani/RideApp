@@ -7,7 +7,6 @@ import {
   ScrollView,
   ListView,
 } from 'react-native'
-import CookieManager from 'react-native-cookies';
 import NavigationBar from 'react-native-navbar';
 var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/groups/?';
 
@@ -72,7 +71,7 @@ class GroupsPage extends Component {
   
     render () {
         return (
-        <Navigator    
+        <Navigator      
             renderScene={this.renderScene.bind(this)}
             navigator = {this.props.navigator}
            />

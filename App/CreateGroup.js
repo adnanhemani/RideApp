@@ -16,7 +16,6 @@ import {
   Picker,
   ScrollView,
 } from 'react-native'
-import CookieManager from 'react-native-cookies';
 
 class CreateGroup extends Component {
 

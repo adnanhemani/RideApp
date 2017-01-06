@@ -3,11 +3,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 72,
+					"line": 71,
 					"ch": 38
 				},
 				"to": {
-					"line": 72,
+					"line": 71,
 					"ch": 48
 				}
 			},
@@ -19,11 +19,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 72,
+					"line": 71,
 					"ch": 61
 				},
 				"to": {
-					"line": 72,
+					"line": 71,
 					"ch": 68
 				}
 			},
@@ -35,43 +35,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 73,
-					"ch": 36
-				},
-				"to": {
-					"line": 73,
-					"ch": 34
-				}
-			},
-			"editWith": "colorPicker",
-			"type": "string",
-			"name": "Background Color",
-			"group": "REACT NATIVE NAVBAR"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 75,
-					"ch": 27
-				},
-				"to": {
-					"line": 75,
-					"ch": 25
-				}
-			},
-			"editWith": "colorPicker",
-			"type": "string",
-			"name": "Status Bar Color",
-			"group": "REACT NATIVE NAVBAR"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 83,
+					"line": 82,
 					"ch": 13
 				},
 				"to": {
-					"line": 83,
+					"line": 82,
 					"ch": 11
 				}
 			},
@@ -83,12 +51,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 84,
-					"ch": 18
+					"line": 83,
+					"ch": 15
 				},
 				"to": {
-					"line": 84,
-					"ch": 16
+					"line": 83,
+					"ch": 13
 				}
 			},
 			"editWith": "colorPicker",
@@ -99,11 +67,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 95,
+					"line": 94,
 					"ch": 3
 				},
 				"to": {
-					"line": 95,
+					"line": 94,
 					"ch": 1
 				}
 			},
@@ -115,12 +83,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 96,
-					"ch": 7
+					"line": 95,
+					"ch": 5
 				},
 				"to": {
-					"line": 96,
-					"ch": 5
+					"line": 95,
+					"ch": 3
 				}
 			},
 			"editWith": "colorPicker",
@@ -131,12 +99,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 107,
-					"ch": 35
+					"line": 106,
+					"ch": 19
 				},
 				"to": {
-					"line": 107,
-					"ch": 49
+					"line": 106,
+					"ch": 17
 				}
 			},
 			"editWith": "inputField",
@@ -147,11 +115,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 108,
+					"line": 107,
 					"ch": 44
 				},
 				"to": {
-					"line": 108,
+					"line": 107,
 					"ch": 65
 				}
 			},
@@ -163,11 +131,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 121,
+					"line": 120,
 					"ch": 4
 				},
 				"to": {
-					"line": 121,
+					"line": 120,
 					"ch": 2
 				}
 			},
@@ -179,11 +147,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 188,
+					"line": 187,
 					"ch": 6
 				},
 				"to": {
-					"line": 188,
+					"line": 187,
 					"ch": 4
 				}
 			},
@@ -195,11 +163,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 189,
+					"line": 188,
 					"ch": 12
 				},
 				"to": {
-					"line": 189,
+					"line": 188,
 					"ch": 10
 				}
 			},
@@ -210,11 +178,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 190,
+					"line": 189,
 					"ch": 16
 				},
 				"to": {
-					"line": 190,
+					"line": 189,
 					"ch": 19
 				}
 			},
@@ -227,11 +195,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 191,
+					"line": 190,
 					"ch": 16
 				},
 				"to": {
-					"line": 191,
+					"line": 190,
 					"ch": 17
 				}
 			},
@@ -244,11 +212,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 199,
+					"line": 198,
 					"ch": 17
 				},
 				"to": {
-					"line": 199,
+					"line": 198,
 					"ch": 19
 				}
 			},
@@ -260,12 +228,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 205,
-					"ch": 11
+					"line": 204,
+					"ch": 2
 				},
 				"to": {
-					"line": 205,
-					"ch": 17
+					"line": 204,
+					"ch": 0
 				}
 			},
 			"editWith": "colorPicker",
@@ -276,11 +244,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 206,
+					"line": 205,
 					"ch": 14
 				},
 				"to": {
-					"line": 206,
+					"line": 205,
 					"ch": 16
 				}
 			},
@@ -291,11 +259,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 208,
+					"line": 207,
 					"ch": 16
 				},
 				"to": {
-					"line": 208,
+					"line": 207,
 					"ch": 19
 				}
 			},
@@ -308,11 +276,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 214,
+					"line": 213,
 					"ch": 2
 				},
 				"to": {
-					"line": 214,
+					"line": 213,
 					"ch": 0
 				}
 			},
@@ -323,11 +291,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 217,
+					"line": 216,
 					"ch": 6
 				},
 				"to": {
-					"line": 217,
+					"line": 216,
 					"ch": 4
 				}
 			},
@@ -339,11 +307,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 222,
+					"line": 221,
 					"ch": 11
 				},
 				"to": {
-					"line": 222,
+					"line": 221,
 					"ch": 18
 				}
 			},
@@ -355,11 +323,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 223,
+					"line": 222,
 					"ch": 14
 				},
 				"to": {
-					"line": 223,
+					"line": 222,
 					"ch": 16
 				}
 			},
@@ -370,11 +338,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 224,
+					"line": 223,
 					"ch": 16
 				},
 				"to": {
-					"line": 224,
+					"line": 223,
 					"ch": 18
 				}
 			},
@@ -387,11 +355,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 225,
+					"line": 224,
 					"ch": 6
 				},
 				"to": {
-					"line": 225,
+					"line": 224,
 					"ch": 4
 				}
 			},
@@ -404,11 +372,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 231,
+					"line": 230,
 					"ch": 12
 				},
 				"to": {
-					"line": 231,
+					"line": 230,
 					"ch": 14
 				}
 			},
@@ -419,11 +387,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 234,
+					"line": 233,
 					"ch": 6
 				},
 				"to": {
-					"line": 234,
+					"line": 233,
 					"ch": 4
 				}
 			},
@@ -436,27 +404,11 @@
 			"range": {
 				"from": {
 					"line": 260,
-					"ch": 8
+					"ch": 10
 				},
 				"to": {
 					"line": 260,
-					"ch": 6
-				}
-			},
-			"editWith": "colorPicker",
-			"type": "string",
-			"name": "Color",
-			"group": "TEXT"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 261,
-					"ch": 14
-				},
-				"to": {
-					"line": 261,
-					"ch": 12
+					"ch": 8
 				}
 			},
 			"type": "number",
@@ -466,12 +418,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 262,
+					"line": 261,
 					"ch": 16
 				},
 				"to": {
-					"line": 262,
-					"ch": 19
+					"line": 261,
+					"ch": 14
 				}
 			},
 			"editWith": "dropdown",
@@ -483,11 +435,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 263,
+					"line": 262,
 					"ch": 16
 				},
 				"to": {
-					"line": 263,
+					"line": 262,
 					"ch": 17
 				}
 			},

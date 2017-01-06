@@ -14,7 +14,6 @@ import {
   TouchableHighlight,
   TouchableNativeFeedback,
 } from "react-native";
-import CookieManager from 'react-native-cookies';
 import NavigationBar from 'react-native-navbar';
 import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
 
@@ -84,8 +83,8 @@ class SettingsPage extends Component {
   
   renderScene (route, navigator) {
      var TouchableElement = TouchableHighlight;
-              //console.log(TouchableElement);  
-              if (Platform.OS === 'android') {  
+              //console.log(TouchableElement);    
+              if (Platform.OS === 'android') {    
                 TouchableElement = TouchableNativeFeedback;
               }
     return (

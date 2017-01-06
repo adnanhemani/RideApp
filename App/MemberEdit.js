@@ -13,7 +13,6 @@ import {
   TouchableHighlight,
   TouchableNativeFeedback,
 } from "react-native";
-import CookieManager from 'react-native-cookies';
 import NavigationBar from 'react-native-navbar';
 var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/removefromgroup/?';
 
@@ -76,9 +75,9 @@ class MemberEdit extends Component {
         Alert.alert("Success!", "User was removed from your group!",
                [
                 {text: 'OK', onPress: () => console.log('ok pressed'), style: "cancel"},
-
+  
               ]);
-        
+          
       })
       .done();
     }

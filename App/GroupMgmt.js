@@ -7,7 +7,6 @@ import {
   ScrollView,
   ListView,
 } from 'react-native';
-import CookieManager from 'react-native-cookies';
 import NavigationBar from 'react-native-navbar';
 var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/admingroups/?';
 
@@ -80,10 +79,10 @@ class GroupMgmt extends Component {
            />
         );
       }
-  
-  renderScene (route, navigator) {
+      
+  renderScene (route, navigator) {  
     if (!this.state.loaded) {
-          return (<View>
+          return (<View>  
               <Text>Loading!</Text>
             </View>);
         }

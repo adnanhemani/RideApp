@@ -3,28 +3,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 60,
+					"line": 59,
 					"ch": 38
 				},
 				"to": {
-					"line": 60,
-					"ch": 49
-				}
-			},
-			"editWith": "inputField",
-			"type": "string",
-			"name": "Title",
-			"group": "REACT NATIVE NAVBAR"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 60,
-					"ch": 62
-				},
-				"to": {
-					"line": 60,
-					"ch": 69
+					"line": 59,
+					"ch": 36
 				}
 			},
 			"editWith": "colorPicker",
@@ -35,12 +19,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 61,
-					"ch": 48
+					"line": 60,
+					"ch": 25
 				},
 				"to": {
-					"line": 61,
-					"ch": 55
+					"line": 60,
+					"ch": 23
 				}
 			},
 			"editWith": "colorPicker",
@@ -51,12 +35,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 63,
-					"ch": 46
+					"line": 62,
+					"ch": 13
 				},
 				"to": {
-					"line": 63,
-					"ch": 53
+					"line": 62,
+					"ch": 11
 				}
 			},
 			"editWith": "colorPicker",
@@ -67,12 +51,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 98,
+					"line": 97,
 					"ch": 11
 				},
 				"to": {
-					"line": 98,
-					"ch": 18
+					"line": 97,
+					"ch": 14
 				}
 			},
 			"editWith": "colorPicker",
@@ -83,16 +67,33 @@
 		{
 			"range": {
 				"from": {
-					"line": 99,
-					"ch": 14
+					"line": 98,
+					"ch": 7
 				},
 				"to": {
-					"line": 99,
-					"ch": 16
+					"line": 98,
+					"ch": 5
 				}
 			},
 			"type": "number",
 			"name": "FontSize",
+			"group": "TEXT"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 99,
+					"ch": 4
+				},
+				"to": {
+					"line": 99,
+					"ch": 2
+				}
+			},
+			"editWith": "dropdown",
+			"dropdownOptions": "FontWeight",
+			"type": "string",
+			"name": "FontWeight",
 			"group": "TEXT"
 		},
 		{
@@ -103,23 +104,6 @@
 				},
 				"to": {
 					"line": 100,
-					"ch": 24
-				}
-			},
-			"editWith": "dropdown",
-			"dropdownOptions": "FontWeight",
-			"type": "string",
-			"name": "FontWeight",
-			"group": "TEXT"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 101,
-					"ch": 16
-				},
-				"to": {
-					"line": 101,
 					"ch": 32
 				}
 			},
@@ -132,11 +116,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 106,
+					"line": 105,
 					"ch": 12
 				},
 				"to": {
-					"line": 106,
+					"line": 105,
 					"ch": 14
 				}
 			},
@@ -147,11 +131,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 109,
+					"line": 108,
 					"ch": 17
 				},
 				"to": {
-					"line": 109,
+					"line": 108,
 					"ch": 34
 				}
 			},
@@ -163,11 +147,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 115,
+					"line": 114,
 					"ch": 11
 				},
 				"to": {
-					"line": 115,
+					"line": 114,
 					"ch": 18
 				}
 			},
@@ -179,16 +163,33 @@
 		{
 			"range": {
 				"from": {
-					"line": 116,
+					"line": 115,
 					"ch": 14
 				},
 				"to": {
-					"line": 116,
+					"line": 115,
 					"ch": 16
 				}
 			},
 			"type": "number",
 			"name": "FontSize",
+			"group": "TEXT"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 116,
+					"ch": 16
+				},
+				"to": {
+					"line": 116,
+					"ch": 24
+				}
+			},
+			"editWith": "dropdown",
+			"dropdownOptions": "FontWeight",
+			"type": "string",
+			"name": "FontWeight",
 			"group": "TEXT"
 		},
 		{
@@ -199,23 +200,6 @@
 				},
 				"to": {
 					"line": 117,
-					"ch": 24
-				}
-			},
-			"editWith": "dropdown",
-			"dropdownOptions": "FontWeight",
-			"type": "string",
-			"name": "FontWeight",
-			"group": "TEXT"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 118,
-					"ch": 16
-				},
-				"to": {
-					"line": 118,
 					"ch": 32
 				}
 			},
@@ -228,11 +212,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 124,
+					"line": 123,
 					"ch": 12
 				},
 				"to": {
-					"line": 124,
+					"line": 123,
 					"ch": 14
 				}
 			},
@@ -243,11 +227,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 127,
+					"line": 126,
 					"ch": 17
 				},
 				"to": {
-					"line": 127,
+					"line": 126,
 					"ch": 34
 				}
 			},
@@ -259,11 +243,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 132,
+					"line": 131,
 					"ch": 11
 				},
 				"to": {
-					"line": 132,
+					"line": 131,
 					"ch": 18
 				}
 			},
@@ -275,16 +259,33 @@
 		{
 			"range": {
 				"from": {
-					"line": 133,
+					"line": 132,
 					"ch": 14
 				},
 				"to": {
-					"line": 133,
+					"line": 132,
 					"ch": 16
 				}
 			},
 			"type": "number",
 			"name": "FontSize",
+			"group": "TEXT"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 133,
+					"ch": 16
+				},
+				"to": {
+					"line": 133,
+					"ch": 24
+				}
+			},
+			"editWith": "dropdown",
+			"dropdownOptions": "FontWeight",
+			"type": "string",
+			"name": "FontWeight",
 			"group": "TEXT"
 		},
 		{
@@ -295,23 +296,6 @@
 				},
 				"to": {
 					"line": 134,
-					"ch": 24
-				}
-			},
-			"editWith": "dropdown",
-			"dropdownOptions": "FontWeight",
-			"type": "string",
-			"name": "FontWeight",
-			"group": "TEXT"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 135,
-					"ch": 16
-				},
-				"to": {
-					"line": 135,
 					"ch": 32
 				}
 			},
@@ -324,12 +308,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 141,
-					"ch": 12
+					"line": 140,
+					"ch": 7
 				},
 				"to": {
-					"line": 141,
-					"ch": 14
+					"line": 140,
+					"ch": 5
 				}
 			},
 			"type": "number",
@@ -339,12 +323,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 144,
-					"ch": 17
+					"line": 143,
+					"ch": 3
 				},
 				"to": {
-					"line": 144,
-					"ch": 34
+					"line": 143,
+					"ch": 1
 				}
 			},
 			"editWith": "colorPicker",
@@ -355,11 +339,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 150,
+					"line": 149,
 					"ch": 11
 				},
 				"to": {
-					"line": 150,
+					"line": 149,
 					"ch": 18
 				}
 			},
@@ -371,12 +355,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 151,
-					"ch": 14
+					"line": 150,
+					"ch": 6
 				},
 				"to": {
-					"line": 151,
-					"ch": 16
+					"line": 150,
+					"ch": 4
 				}
 			},
 			"type": "number",
@@ -386,12 +370,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 152,
-					"ch": 16
+					"line": 151,
+					"ch": 12
 				},
 				"to": {
-					"line": 152,
-					"ch": 24
+					"line": 151,
+					"ch": 10
 				}
 			},
 			"editWith": "dropdown",
@@ -403,12 +387,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 153,
+					"line": 152,
 					"ch": 16
 				},
 				"to": {
-					"line": 153,
-					"ch": 32
+					"line": 152,
+					"ch": 19
 				}
 			},
 			"editWith": "dropdown",
@@ -420,12 +404,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 158,
+					"line": 157,
 					"ch": 12
 				},
 				"to": {
-					"line": 158,
-					"ch": 14
+					"line": 157,
+					"ch": 11
 				}
 			},
 			"type": "number",
@@ -435,12 +419,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 161,
+					"line": 160,
 					"ch": 17
 				},
 				"to": {
-					"line": 161,
-					"ch": 34
+					"line": 160,
+					"ch": 16
 				}
 			},
 			"editWith": "colorPicker",
@@ -451,12 +435,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 167,
-					"ch": 11
+					"line": 166,
+					"ch": 6
 				},
 				"to": {
-					"line": 167,
-					"ch": 18
+					"line": 166,
+					"ch": 4
 				}
 			},
 			"editWith": "colorPicker",
@@ -467,16 +451,33 @@
 		{
 			"range": {
 				"from": {
-					"line": 168,
-					"ch": 14
+					"line": 167,
+					"ch": 6
 				},
 				"to": {
-					"line": 168,
-					"ch": 16
+					"line": 167,
+					"ch": 4
 				}
 			},
 			"type": "number",
 			"name": "FontSize",
+			"group": "TEXT"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 168,
+					"ch": 12
+				},
+				"to": {
+					"line": 168,
+					"ch": 10
+				}
+			},
+			"editWith": "dropdown",
+			"dropdownOptions": "FontWeight",
+			"type": "string",
+			"name": "FontWeight",
 			"group": "TEXT"
 		},
 		{
@@ -487,24 +488,7 @@
 				},
 				"to": {
 					"line": 169,
-					"ch": 24
-				}
-			},
-			"editWith": "dropdown",
-			"dropdownOptions": "FontWeight",
-			"type": "string",
-			"name": "FontWeight",
-			"group": "TEXT"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 170,
-					"ch": 16
-				},
-				"to": {
-					"line": 170,
-					"ch": 32
+					"ch": 19
 				}
 			},
 			"editWith": "dropdown",
@@ -516,12 +500,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 176,
-					"ch": 11
+					"line": 175,
+					"ch": 6
 				},
 				"to": {
-					"line": 176,
-					"ch": 18
+					"line": 175,
+					"ch": 4
 				}
 			},
 			"editWith": "colorPicker",
@@ -532,16 +516,33 @@
 		{
 			"range": {
 				"from": {
-					"line": 177,
-					"ch": 14
+					"line": 176,
+					"ch": 6
 				},
 				"to": {
-					"line": 177,
-					"ch": 16
+					"line": 176,
+					"ch": 4
 				}
 			},
 			"type": "number",
 			"name": "FontSize",
+			"group": "TEXT"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 177,
+					"ch": 16
+				},
+				"to": {
+					"line": 177,
+					"ch": 15
+				}
+			},
+			"editWith": "dropdown",
+			"dropdownOptions": "FontWeight",
+			"type": "string",
+			"name": "FontWeight",
 			"group": "TEXT"
 		},
 		{
@@ -552,24 +553,7 @@
 				},
 				"to": {
 					"line": 178,
-					"ch": 24
-				}
-			},
-			"editWith": "dropdown",
-			"dropdownOptions": "FontWeight",
-			"type": "string",
-			"name": "FontWeight",
-			"group": "TEXT"
-		},
-		{
-			"range": {
-				"from": {
-					"line": 179,
 					"ch": 16
-				},
-				"to": {
-					"line": 179,
-					"ch": 32
 				}
 			},
 			"editWith": "dropdown",
@@ -581,12 +565,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 194,
-					"ch": 11
+					"line": 193,
+					"ch": 6
 				},
 				"to": {
-					"line": 194,
-					"ch": 18
+					"line": 193,
+					"ch": 4
 				}
 			},
 			"editWith": "colorPicker",
@@ -597,11 +581,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 195,
+					"line": 194,
 					"ch": 14
 				},
 				"to": {
-					"line": 195,
+					"line": 194,
 					"ch": 16
 				}
 			},
@@ -612,12 +596,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 196,
+					"line": 195,
 					"ch": 16
 				},
 				"to": {
-					"line": 196,
-					"ch": 24
+					"line": 195,
+					"ch": 16
 				}
 			},
 			"editWith": "dropdown",
@@ -629,12 +613,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 197,
+					"line": 196,
 					"ch": 16
 				},
 				"to": {
-					"line": 197,
-					"ch": 32
+					"line": 196,
+					"ch": 17
 				}
 			},
 			"editWith": "dropdown",
@@ -646,12 +630,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 214,
+					"line": 213,
 					"ch": 11
 				},
 				"to": {
-					"line": 214,
-					"ch": 18
+					"line": 213,
+					"ch": 17
 				}
 			},
 			"editWith": "colorPicker",
@@ -662,11 +646,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 215,
+					"line": 214,
 					"ch": 14
 				},
 				"to": {
-					"line": 215,
+					"line": 214,
 					"ch": 16
 				}
 			},
@@ -677,11 +661,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 216,
+					"line": 215,
 					"ch": 16
 				},
 				"to": {
-					"line": 216,
+					"line": 215,
 					"ch": 17
 				}
 			},
@@ -694,12 +678,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 217,
+					"line": 216,
 					"ch": 16
 				},
 				"to": {
-					"line": 217,
-					"ch": 25
+					"line": 216,
+					"ch": 19
 				}
 			},
 			"editWith": "dropdown",

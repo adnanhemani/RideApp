@@ -7,7 +7,6 @@ import {
   ScrollView,
   ListView,
 } from 'react-native'
-import CookieManager from 'react-native-cookies';
 import NavigationBar from 'react-native-navbar';
 var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/groupmembers/?';
 
@@ -80,10 +79,10 @@ class MemberMgmt extends Component {
             navigator = {this.props.navigator}
            />
         );
-      }
-  
+      }    
+    
   renderScene (route, navigator) {
-    const backButton = {
+    const backButton = {  
             title: "Back",
             handler: () => this.backOnePage(),
           };
@@ -149,7 +148,7 @@ var styles = StyleSheet.create({
     marginBottom: 8,
     textAlign: 'center',
   },
-  year: {
+  year: {  
     textAlign: 'center',
   },
   thumbnail: {

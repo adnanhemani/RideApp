@@ -3,12 +3,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 74,
-					"ch": 48
+					"line": 73,
+					"ch": 15
 				},
 				"to": {
-					"line": 74,
-					"ch": 55
+					"line": 73,
+					"ch": 13
 				}
 			},
 			"editWith": "colorPicker",
@@ -19,12 +19,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 76,
-					"ch": 46
+					"line": 75,
+					"ch": 26
 				},
 				"to": {
-					"line": 76,
-					"ch": 53
+					"line": 75,
+					"ch": 24
 				}
 			},
 			"editWith": "colorPicker",
@@ -35,12 +35,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 103,
+					"line": 102,
 					"ch": 11
 				},
 				"to": {
-					"line": 103,
-					"ch": 18
+					"line": 102,
+					"ch": 16
 				}
 			},
 			"editWith": "colorPicker",
@@ -51,12 +51,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 105,
-					"ch": 16
+					"line": 104,
+					"ch": 11
 				},
 				"to": {
-					"line": 105,
-					"ch": 24
+					"line": 104,
+					"ch": 9
 				}
 			},
 			"editWith": "dropdown",
@@ -68,12 +68,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 106,
-					"ch": 16
+					"line": 105,
+					"ch": 6
 				},
 				"to": {
-					"line": 106,
-					"ch": 32
+					"line": 105,
+					"ch": 4
 				}
 			},
 			"editWith": "dropdown",
@@ -85,11 +85,11 @@
 		{
 			"range": {
 				"from": {
-					"line": 111,
+					"line": 110,
 					"ch": 11
 				},
 				"to": {
-					"line": 111,
+					"line": 110,
 					"ch": 18
 				}
 			},
@@ -101,12 +101,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 113,
+					"line": 112,
 					"ch": 16
 				},
 				"to": {
-					"line": 113,
-					"ch": 24
+					"line": 112,
+					"ch": 19
 				}
 			},
 			"editWith": "dropdown",
@@ -118,12 +118,12 @@
 		{
 			"range": {
 				"from": {
-					"line": 114,
+					"line": 113,
 					"ch": 16
 				},
 				"to": {
-					"line": 114,
-					"ch": 32
+					"line": 113,
+					"ch": 25
 				}
 			},
 			"editWith": "dropdown",

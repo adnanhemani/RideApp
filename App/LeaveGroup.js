@@ -8,7 +8,6 @@ import {
   ListView,
   Alert,
 } from 'react-native'
-import CookieManager from 'react-native-cookies';
 import NavigationBar from 'react-native-navbar';
 var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/groups/?';
 var POST_URL = 'https://calm-garden-29993.herokuapp.com/index/removefromgroup/?';
@@ -81,10 +80,10 @@ class LeaveGroup extends Component {
             navigator = {this.props.navigator}
            />
         );
-      }
-  
+      }    
+    
   renderScene (route, navigator) {
-    const backButton = {
+    const backButton = {  
         title: "Back",
         handler: () => this.backOneScene(),
       };

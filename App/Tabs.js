@@ -8,7 +8,6 @@ import {
   Navigator,
   ScrollView,
 } from 'react-native'
-import CookieManager from 'react-native-cookies';
 import RideApplLogin from './App';
 import RidesPage from "./RidesPage";
 import Tabbar, { Tab, RawContent, IconWithBar, glypyMapMaker, Rawbar } from 'react-native-tabbar';
@@ -32,17 +31,6 @@ class Tabs extends Component {
         };
     }
 
-    logout () {
-        CookieManager.clearAll((err, res) => {
-            console.log(err);
-            console.log(res);
-        });
-    
-        this.setState({
-            loggedIn: false,
-        });
-    }
-  
     settingsPressed () {
       console.log("a");
       this.props.navigator.push({id:"LoginPage", name: "LoginPage"});

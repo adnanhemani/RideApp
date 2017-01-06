@@ -13,7 +13,6 @@ import {
   TouchableHighlight,
   TouchableNativeFeedback,
 } from "react-native";
-import CookieManager from 'react-native-cookies';
 import NavigationBar from 'react-native-navbar';
 
 

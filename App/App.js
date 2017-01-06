@@ -14,7 +14,6 @@ import {
   Navigator,
   Alert,
 } from 'react-native';
-import CookieManager from 'react-native-cookies';
 import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
 
 
@@ -99,7 +98,7 @@ class RideApplLogin extends Component {
         console.log("Here");
       }))
       .done();
-    
+      
       console.log("Here");
       console.log(this.state);
       return true;
@@ -107,16 +106,16 @@ class RideApplLogin extends Component {
     }
 
 	componentWillMount () {
-  
-		try {  
+    
+		try {    
       AsyncStorage.getItem("user").then((value) => {
         if (value !== null){
           console.log(value);
           this.props.navigator.push({id: "Tabs", name: "Tabs", passProps: {"user": value}});
         } else {
           console.log("no remembered user data found");
-        }  
-      }).done();  
+        }    
+      }).done();    
     } catch (error) {
       console.log("Error?");
     }
@@ -180,9 +179,9 @@ class RideApplLogin extends Component {
         }
       }
   
-    render () {
-      return (  
-      <Navigator  
+    render ()  { 
+      return (    
+        <Navigator  
             renderScene={this.renderScene.bind(this)}
           navigator = {this.props.navigator}
         />
@@ -193,9 +192,9 @@ class RideApplLogin extends Component {
 
 	renderScene (route, navigator) {
         var TouchableElement = TouchableHighlight;
-        //console.log(Touchable Element);
-        if (Platform.OS ===   'android') {
-            TouchableElement = TouchableNativeFeedback;
+        //console.log(Touch a ble Element);
+          if (Platform.OS ===   'android') {
+              TouchableElement = TouchableNativeFeedback;
         }  
 				return (
 					<View style={styles.container}>
@@ -211,7 +210,7 @@ class RideApplLogin extends Component {
                             <Text style={styles.buttonText}>Sign in with Google</Text>
                         </View>
                     </TouchableElement>
-                    
+                      
                       <TouchableElement
                         
                           onPress={this.register.bind(this)}>

@@ -17,7 +17,6 @@ import {
   ScrollView,
   Alert,
 } from 'react-native'
-import CookieManager from 'react-native-cookies';
 
 var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/addgroup/?';
 
@@ -58,10 +57,10 @@ class AddGroup extends Component {
     fetch(REQUEST_URL + this.toQueryString({"user": this.props.user, "group": this.state.group}))
       .then((response) => response.json())
       .then((responseData) => {
-        console.log(responseData);
-        this.setState({
+        console.log(responseData);    
+        this.setState({  
           responseFS: responseData,
-        });
+        });  
         this.submitted();
       })
       .done();
@@ -97,8 +96,8 @@ class AddGroup extends Component {
           renderScene={this.renderScene.bind(this)}
           navigator = {this.props.navigator}
          /> );
-    }
-  
+    }  
+    
     renderScene(route, navigator) {
       var TouchableElement = TouchableHighlight;
               //console.log(TouchableElement);
@@ -139,44 +138,44 @@ class AddGroup extends Component {
                 </ScrollView>
         
             );
-    }
+    }  
   
   
-}
+}  
 
 var styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#F5FCFF',
-  },
-  fName: {
+  },  
+  fName: {  
     color: 'black',
     fontSize: 16,
     fontWeight: 'normal',
     fontFamily: 'Helvetica Neue',
     marginLeft: 10,
-    top: 0,
+    top: 0, 
   },
   fNameInput: {
-    height: 30, 
+    height: 30,  
     width:  200 ,
     borderWidth: 1,
     borderColor: "rgba(0,0,0,0.5)",
     marginLeft: 10,
     top: 10,
-    
-  },
-  lName: {
+      
+  },  
+  lName: {  
     color: 'black',
     fontSize: 16,
     fontWeight: 'normal',
     fontFamily: 'Helvetica Neue',
     marginLeft: 10,
     top: 20,
-    
-  },
-  lNameInput: {
+      
+  },  
+  lNameInput: { 
     height: 30, 
     width:  200 ,
     borderWidth: 1,
@@ -192,7 +191,7 @@ var styles = StyleSheet.create({
     marginLeft: 10,
     top: 41,
     
-  },
+  },  
   phoneNumberInput: {
     height: 30, 
     width:  200 ,

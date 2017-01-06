@@ -19,7 +19,6 @@ import {
   TouchableNativeFeedback,
 } from "react-native";
 
-import CookieManager from 'react-native-cookies';
 import DatePicker from 'react-native-datepicker';
 
 var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/requestride/?';
@@ -118,9 +117,9 @@ class RideSeek extends Component {
     else {
       console.log("Error!");
       Alert.alert("Submission failed", "Your ride request wasn't recieved. Please try again. If you cannot send your ride request multiple times, please contact your group administrator. Error occurred: ".concat(this.state.responseFS.reason),
-               [
+               [  
                 {text: 'OK', onPress: () => console.log('ok pressed'), style: "cancel"},
-
+  
               ]);
     }
     
@@ -144,13 +143,13 @@ class RideSeek extends Component {
       const backButton = {
         title: "Back",
         handler: () => this.backOneScene(),
-      };
+      };  
         
       var eventTime = new Date(); 
       eventTime = JSON.stringify(this.props.ride_info.fields.event_time);
       eventTime = new Date(JSON.parse(eventTime));
-
-      var expiryTime = new Date();
+  
+      var expiryTime = new Date();  
       expiryTime = JSON.stringify(this.props.ride_info.fields.signup_expiry_time);
       expiryTime = new Date(JSON.parse(expiryTime));
       return (
@@ -159,7 +158,7 @@ class RideSeek extends Component {
                       style={{ backgroundColor: "white", }}
                       leftButton={backButton}
                       statusBar={{ tintColor: "white", }}
-                    />
+                    />  
                 <View style={styles.topContainer}>
                 <Text style={styles.headTitle}>
                   Event Name: {this.props.ride_info.fields.name}
@@ -238,17 +237,17 @@ class RideSeek extends Component {
   
   
 }
-
+  
 var styles = StyleSheet.create({
   topContainer : {
-    flex: 1,
+    flex: 1,  
     flexDirection: 'column',
     backgroundColor: '#FFFFFF',
   },
   submit: {
     marginTop: 30,
     
-  },
+  },  
   submitText: {
     color: 'black',
     fontSize:  16 ,
@@ -260,7 +259,7 @@ var styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
     marginLeft: 10,
     marginRight: 10,
-
+  
   },
   specReqsText : {
     color: 'black',

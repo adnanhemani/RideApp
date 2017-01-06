@@ -17,7 +17,6 @@ import {
   ScrollView,
   Alert,
 } from 'react-native'
-import CookieManager from 'react-native-cookies';
 var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/register/?';
 
 class Register extends Component {
@@ -81,8 +80,8 @@ class Register extends Component {
             this.successAlert();
           } else {
             this.failAlert();
-          }
-        }))  
+          }  
+        }))    
         .done();  
 
         console.log("Here");
@@ -93,8 +92,8 @@ class Register extends Component {
 
               ]);
       }
-      
-   
+        
+     
     }  
 
     successAlert () {
@@ -105,7 +104,7 @@ class Register extends Component {
               ]);
     }
 
-    failAlert() {
+    failAlert() {  
       if (this.state.responseFS.reason === "A user already exists with this username") {
         Alert.alert("Submission failed", "A user already exists with that email. Please contact your group admin if you think this is a mistake.",
                  [
@@ -119,7 +118,7 @@ class Register extends Component {
 
                 ]);
         }
-    } 
+      } 
     
   render () {
     return (
@@ -186,8 +185,8 @@ class Register extends Component {
                       keyboardType={'phone-pad'}
                       maxLength = {10}
                     />
-                    <Text
-                        style={styles.emailText}>
+                      <Text
+                          style={styles.emailText}>
                         Email Address:
                     </Text>
                     <TextInput
@@ -203,7 +202,7 @@ class Register extends Component {
                       style={styles.riderOrDriver}>
                       Are you a rider or driver?
                     </Text>
-
+  
                     <Picker 
                       style={styles.riderDriverSelector}
                         selectedValue={(this.state && this.state.riderDriver) || false}
@@ -212,10 +211,10 @@ class Register extends Component {
                       }}>
                       <Picker.Item label={'Rider'} value={false} />
                       <Picker.Item label={'Driver'} value={true} />
-                    </Picker>
+                      </Picker>
   
                     <Text
-                      style={styles.carSelect}>
+                        style={styles.carSelect}>
                         If you are a driver, do you own your own car?
                     </Text>
                     <Picker 
@@ -223,7 +222,7 @@ class Register extends Component {
                       selectedValue={(this.state && this.state.carOrNah) || true}
                       onValueChange={(value) => {
                         this.setState({carOrNah: value})
-                      }}>
+                        }}>
                         <Picker.Item label={'Yes'} value={true} />
                       <Picker.Item label={'No'} value={false} />
                     </Picker>
@@ -232,7 +231,7 @@ class Register extends Component {
                       What group would you like to join?
                     </Text>
                     <Picker 
-                      style={styles.groupsPicker}
+                        style={styles.groupsPicker}
                         selectedValue={(this.state && this.state.group) || 1}
                       onValueChange={(value) => {
                         this.setState({group: value})
@@ -259,8 +258,8 @@ var styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#F5FCFF',
-  },    
-  fName: {    
+  },      
+  fName: {      
     color: 'black',
     fontSize: 16,
     fontWeight: 'normal',
