@@ -19,7 +19,6 @@ import {
   TouchableNativeFeedback,
 } from "react-native";
 
-import CookieManager from 'react-native-cookies';
 import DatePicker from 'react-native-datepicker';
 
 var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/requestride/?';
@@ -29,28 +28,27 @@ var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/requestride/?';
 
 class RideSeek extends Component {
 
-    constructor(props, context) {
-        super(props, context);
-        this.state = {
-            loggedIn: true,
-            rando: "a",
-            prefLocation: 0,
-            rte: false,
-            rfe: false,
-            latest: false,
-            time: "",
-            seats: 0,
-            responseFS: "",
-        };
+  constructor(props, context) {
+      super(props, context);
+      this.state = {
+          loggedIn: true,
+          rando: "a",
+          prefLocation: 0,
+          rte: false,
+          rfe: false,
+          latest: false,
+          time: "",
+          seats: 0,
+          responseFS: "",
+      };
 
-    }
+  }
 
-
-    setPrefLocation(location) {
-    this.setState({
-        prefLocation: location
-      });
-    }
+  setPrefLocation(location) {
+  this.setState({
+      prefLocation: location
+    });
+  }
   
   rideToEvent () {
     this.setState({rte: !this.state.rte});
@@ -84,12 +82,12 @@ class RideSeek extends Component {
   
 
   fetchData() {
-    console.log(this.state);
+    var specreqs = this.state.rte.toString()[0] + this.state.rfe.toString()[0] + this.state.latest.toString()[0];
     if (this.state.time === "" || this.state.seats === 0) {
-      var params = {"user": this.props.user, "driver_leaving_time": "None", "driver_spaces": 0, "special_requests": "None", "event_id": this.props.ride_info.pk, "pref_location": this.state.prefLocation};
+      var params = {"user": this.props.user, "driver_leaving_time": "None", "driver_spaces": 0, "special_requests": specreqs, "event_id": this.props.ride_info.pk, "pref_location": this.state.prefLocation};
     }
     else {
-      var params = {"user": this.props.user, "driver_leaving_time": this.state.time, "driver_spaces": parseInt(this.state.seats), "pref_location": this.state.prefLocation, "special_requests": "None", "event_id": this.props.ride_info.pk};
+      var params = {"user": this.props.user, "driver_leaving_time": this.state.time, "driver_spaces": parseInt(this.state.seats), "pref_location": this.state.prefLocation, "special_requests": specreqs, "event_id": this.props.ride_info.pk};
     }
     console.log(params);
     fetch(REQUEST_URL + this.toQueryString(params)).then((response) => response.json())
@@ -203,7 +201,6 @@ class RideSeek extends Component {
                   placeholder={'Open Spaces'}
                   placeholderTextColor={"rgba(198,198,204,1)"}
                   onChangeText={(text) => {this.setState({seats: text})}}
-                  onSubmitEditing={() => {this.setState({seats: ''})}}
                   value={(this.state && this.state.seats) || ''}
                   keyboardType="numeric"
                 />

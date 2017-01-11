@@ -17,7 +17,6 @@ import {
   ScrollView,
   Alert,
 } from 'react-native'
-import CookieManager from 'react-native-cookies';
 var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/register/?';
 
 class Register extends Component {
@@ -27,13 +26,23 @@ class Register extends Component {
         this.state = {
             loggedIn: true,
             myNumber: '',
-            group: 1
+            group: 1,
+            animating: false,
+            riderDriver: "Rider"
         };
     }
   
   submitted () {
     console.log("submitted");
-    this.fetchData();
+    if (!this.state.riderDriver) {
+      Alert.alert("Rider or Driver not selected", "Please choose one option",
+               [
+                {text: 'OK', onPress: () => console.log("ok pressed"), style: "cancel"},
+
+              ]);
+    } else {
+      this.fetchData();
+    }
   }
   
   toSignIn () {
@@ -68,31 +77,39 @@ class Register extends Component {
   
 
   fetchData() {
-    if (this.state.pw === this.state.pw2) {
-      var params = {"fname": this.state.fName, "lname": this.state.lName, "phone_number": this.state.phone, "email": this.state.email, 
-          "driver": "True", "own_car": "True", "pw": this.state.pw, "g": this.state.group}
-      fetch(REQUEST_URL + this.toQueryString(params)).then((response) => response.json())
-        .then(((responseData) => {  
-          console.log(responseData);
-          this.setState({  
-            responseFS: responseData
-          });
-          if (this.state.responseFS.success === true) {
-            this.successAlert();
-          } else {
-            this.failAlert();
-          }
-        }))  
-        .done();  
-
-        console.log("Here");
-      } else {
-        Alert.alert("Submission failed", "Your passwords weren't the same. Please try again.",
+    Alert.alert("Processing", "Hang on there!",
                [
-                {text: 'OK', onPress: () => console.log('ok pressed'), style: "cancel"},
+                {text: 'OK', onPress: () => console.log("ok pressed"), style: "cancel"},
 
               ]);
-      }
+    var driverParams = "False";
+    var ownCarParams = "False";
+    if (this.state.riderDriver === "Rider") {
+      driverParams = "False";
+      ownCarParams = "False";
+    } else if (this.state.riderDriver === "Driver with own car") {
+      driverParams = "True";
+      ownCarParams = "True";
+    } else {
+      driverParams = "True";
+      ownCarParams = "False";
+    }
+    var params = {"fname": this.state.fName, "lname": this.state.lName, "phone_number": this.state.myNumber, "email": this.state.email, 
+        "driver": driverParams, "own_car": ownCarParams, "g": this.state.group, "pw": this.state.pw}
+    fetch(REQUEST_URL + this.toQueryString(params)).then((response) => response.json())
+      .then(((responseData) => {  
+        console.log(responseData);
+        this.setState({  
+          responseFS: responseData
+        });
+        if (this.state.responseFS.success === true) {
+          this.successAlert();
+        } else {
+          this.failAlert();
+        }
+        this.setState({animating: false});
+      }))  
+      .done();
       
    
     }  
@@ -100,7 +117,7 @@ class Register extends Component {
     successAlert () {
       Alert.alert("Success!", "",
                [
-                {text: 'OK', onPress: () => console.log('ok pressed'), style: "cancel"},
+                {text: 'OK', onPress: () => this.toSignIn(), style: "cancel"},
 
               ]);
     }
@@ -206,26 +223,13 @@ class Register extends Component {
 
                     <Picker 
                       style={styles.riderDriverSelector}
-                        selectedValue={(this.state && this.state.riderDriver) || false}
+                        selectedValue={(this.state && this.state.riderDriver) || "Rider"}
                       onValueChange={(value) => {
                         this.setState({riderDriver: value})
                       }}>
-                      <Picker.Item label={'Rider'} value={false} />
-                      <Picker.Item label={'Driver'} value={true} />
-                    </Picker>
-  
-                    <Text
-                      style={styles.carSelect}>
-                        If you are a driver, do you own your own car?
-                    </Text>
-                    <Picker 
-                      style={styles.carSelector}
-                      selectedValue={(this.state && this.state.carOrNah) || true}
-                      onValueChange={(value) => {
-                        this.setState({carOrNah: value})
-                      }}>
-                        <Picker.Item label={'Yes'} value={true} />
-                      <Picker.Item label={'No'} value={false} />
+                      <Picker.Item label={'Rider'} value={'Rider'} />
+                      <Picker.Item label={'Driver with own car'} value={'Driver with own car'} />
+                      <Picker.Item label={'Driver with Zipcar'} value={'Driver with Zipcar'} />
                     </Picker>
                     <Text
                       style={styles.groupText}>
@@ -259,7 +263,7 @@ var styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#F5FCFF',
-  },    
+  },
   fName: {    
     color: 'black',
     fontSize: 16,

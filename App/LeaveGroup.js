@@ -7,8 +7,8 @@ import {
   ScrollView,
   ListView,
   Alert,
+  RefreshControl,
 } from 'react-native'
-import CookieManager from 'react-native-cookies';
 import NavigationBar from 'react-native-navbar';
 var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/groups/?';
 var POST_URL = 'https://calm-garden-29993.herokuapp.com/index/removefromgroup/?';
@@ -72,6 +72,12 @@ class LeaveGroup extends Component {
         });
       })
       .done();
+      this.setState({refreshing: false});
+    }
+
+    _onRefresh() {
+      this.setState({refreshing: true});
+      this.fetchData();
     }
   
     render () {
@@ -98,7 +104,7 @@ class LeaveGroup extends Component {
             <ScrollView>
             <NavigationBar
                       title={{ title: "Leave Group", tintColor: 'black', }}
-                      style={{ backgroundColor: "white", }}
+                      style={{ backgroundColor: "#e9eaed", }}
                       leftButton={backButton}
                       statusBar={{ tintColor: "white", }}
                     />
@@ -107,7 +113,12 @@ class LeaveGroup extends Component {
                 dataSource = {this.state.dataSource}
                 renderRow = {this.renderRide}
                 style = {styles.listView}
-                  
+                refreshControl={
+                  <RefreshControl
+                    refreshing={this.state.refreshing}
+                    onRefresh={this._onRefresh.bind(this)}
+                  />
+                }
             />
             </ScrollView>
           );
@@ -123,7 +134,7 @@ Object.assign(LeaveGroup.prototype, {
     bindableMethods : {
         renderRide (group) {
           return (
-          <View>
+          <View style={styles.row}>
               <Text onPress={() => this.wannaLeaveGroup(group)} style={styles.title}>{group.fields.name}</Text>
             </View>
           );
@@ -138,7 +149,7 @@ Object.assign(LeaveGroup.prototype, {
         },
         leaveGroup (group) {
           console.log("leave group requested");
-          fetch(POST_URL + this.toQueryString({"user": 2, "group": group.pk}))
+          fetch(POST_URL + this.toQueryString({"user": this.props.user, "group": group.pk}))
           .then((response) => response.json())
           .then((responseData) => {
             console.log(responseData);
@@ -168,7 +179,7 @@ Object.assign(LeaveGroup.prototype, {
 
         okPressed () {
           console.log("ok pressed");
-          this.props.navigator.push({id: "Tabs", name:"Tabs"});
+          this.props.navigator.pop();
 
         }
 
@@ -182,6 +193,12 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#ff7f50',
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    padding: 10,
+    backgroundColor: '#F6F6F6',
   },
   rightContainer: {
     flex: 1,
@@ -199,8 +216,7 @@ var styles = StyleSheet.create({
     height: 81,
   },
   listView: {
-    paddingTop: 20,
-    backgroundColor: 'powderblue',
+    paddingTop: 120,
     marginBottom: 50,
     
   },

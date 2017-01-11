@@ -14,7 +14,6 @@ import {
   TouchableHighlight,
   TouchableNativeFeedback,
 } from "react-native";
-import CookieManager from 'react-native-cookies';
 import NavigationBar from 'react-native-navbar';
 import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
 
@@ -25,7 +24,6 @@ class SettingsPage extends Component {
         super(props, context);
         this.state = {
             loggedIn: true,
-          
         };
 
     }

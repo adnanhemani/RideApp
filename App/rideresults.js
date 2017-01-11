@@ -7,7 +7,6 @@ import {
   ScrollView,
   ListView,
 } from 'react-native'
-import CookieManager from 'react-native-cookies';
 import NavigationBar from 'react-native-navbar';
 var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
 

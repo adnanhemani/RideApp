@@ -8,7 +8,6 @@ import {
   Navigator,
   ScrollView,
 } from 'react-native'
-import CookieManager from 'react-native-cookies';
 import RideApplLogin from './App';
 import RidesPage from "./RidesPage";
 import Tabbar, { Tab, RawContent, IconWithBar, glypyMapMaker, Rawbar } from 'react-native-tabbar';
@@ -28,19 +27,9 @@ class Tabs extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            loggedIn: true
+            loggedIn: true,
+            noback: true,
         };
-    }
-
-    logout () {
-        CookieManager.clearAll((err, res) => {
-            console.log(err);
-            console.log(res);
-        });
-    
-        this.setState({
-            loggedIn: false,
-        });
     }
   
     settingsPressed () {
