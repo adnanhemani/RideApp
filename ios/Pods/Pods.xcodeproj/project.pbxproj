@@ -7,76 +7,96 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		63B1936E5BCE66F660579679491D2197 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		665E2EEE592C730063852D9E7A90E1A6 /* Pods-RideAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FB5DB1EA7BB0FC25D17972B8CB2EA5 /* Pods-RideAppTests-dummy.m */; };
-		BC90F1CE6EA44BBD5C39A4246FAA7561 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		CE6EDD89780A9B3C97F1166D555569FA /* Pods-RideApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 71602C5372651500A0557E7BD78C7F87 /* Pods-RideApp-dummy.m */; };
+		1D0A8FC4E7EFF138FB7B8201A7E8FBFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		1EA0AB59515995C5E6DD8625EBCF1C14 /* Pods-RideAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DD0A756D8E9D5BCD7DD834AEB06F65 /* Pods-RideAppTests-dummy.m */; };
+		5D5B26A3B161F2664CDFF309F1808FC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		B55A5E678EF682FB6B2BBA984103012B /* Pods-RideApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD33FB558CFECB30EC3BEF789C445F8 /* Pods-RideApp-dummy.m */; };
+		B5A0D10C747361E41565FEE01039A72A /* Pods-RideApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FFE3FF30E3BBB8510021455E83185CD2 /* Pods-RideApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF860AE232593EB7F4ACDD0C8704A2A2 /* Pods-RideAppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B897399BBFE4B893F9AD0C7FC18D5E4 /* Pods-RideAppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0983D1F9A62860330D6A92E5C2482F6B /* Pods-RideAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RideAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		24B856C8717C31BB2DC2B886587ED403 /* Pods-RideAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RideAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2AE49818908564E74ED629E0B98EF0FF /* Pods-RideApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RideApp.release.xcconfig"; sourceTree = "<group>"; };
-		2DF5E12BB54EE340BB2C5EE5B9C742A3 /* libPods-RideApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-RideApp.a"; path = "libPods-RideApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		31DBCFCB3B5263E593EFC97584155E66 /* Pods-RideApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RideApp-acknowledgements.plist"; sourceTree = "<group>"; };
-		322002493D65B8E5403E264AAAC4BEA1 /* Pods-RideApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RideApp.debug.xcconfig"; sourceTree = "<group>"; };
-		64079147DC31F2EAB339E3C361BB06E6 /* Pods-RideApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RideApp-acknowledgements.markdown"; sourceTree = "<group>"; };
-		71602C5372651500A0557E7BD78C7F87 /* Pods-RideApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RideApp-dummy.m"; sourceTree = "<group>"; };
+		091881146D8329553F71DE18A7C13962 /* Pods-RideApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RideApp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4353101749613AF10417E4B171A103B2 /* Pods-RideApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-RideApp.modulemap"; sourceTree = "<group>"; };
+		4B897399BBFE4B893F9AD0C7FC18D5E4 /* Pods-RideAppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RideAppTests-umbrella.h"; sourceTree = "<group>"; };
+		55AB56B3D26E43C808178C08F224B1B8 /* Pods-RideApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RideApp.debug.xcconfig"; sourceTree = "<group>"; };
+		55DD7F97FE67C87ECBC9555E719B1444 /* Pods-RideAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RideAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		585F8021853D283A011A998B271B1F63 /* Pods-RideAppTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RideAppTests-frameworks.sh"; sourceTree = "<group>"; };
+		5D16A4F84F466B8BF442D94472250D7D /* Pods-RideApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RideApp.release.xcconfig"; sourceTree = "<group>"; };
+		71D6BC89A211C09CA4EF24C05BA06933 /* Pods-RideApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RideApp-resources.sh"; sourceTree = "<group>"; };
+		7AA2F282E2316D03C06F8EE58E9DC897 /* Pods-RideAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RideAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		8A98B9885516C52E11AECED974D80706 /* Pods-RideApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RideApp-frameworks.sh"; sourceTree = "<group>"; };
 		8A98DA003BC3D16244E1E32F64E16E21 /* OneSignal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OneSignal.framework; path = iOS_SDK/Framework/OneSignal.framework; sourceTree = "<group>"; };
-		8FDCD01DD19C0C29903C29E9EBD2A90D /* Pods-RideApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RideApp-resources.sh"; sourceTree = "<group>"; };
+		8BD33FB558CFECB30EC3BEF789C445F8 /* Pods-RideApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RideApp-dummy.m"; sourceTree = "<group>"; };
+		8CBE350F8F24DD31085B2F443361AE5F /* Pods-RideAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RideAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AC724A0210C44F1542F51EBCC2594AB3 /* libPods-RideAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-RideAppTests.a"; path = "libPods-RideAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACB39FDCCD9B709713E617FD3CE02513 /* Pods-RideAppTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RideAppTests-frameworks.sh"; sourceTree = "<group>"; };
-		B1BB0A57692ADA5B82522B71B9D99B32 /* Pods-RideApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RideApp-frameworks.sh"; sourceTree = "<group>"; };
-		B8689EEDFB919E2DF1BC36C56561527A /* Pods-RideAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RideAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9A03A4C9E40E14BBE312BDA336008F96 /* Pods-RideApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RideApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		B1EC0022484F830524EB732790DBA876 /* Pods-RideAppTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RideAppTests-resources.sh"; sourceTree = "<group>"; };
+		B549755B454D1C51170F2BAFE1B94B66 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB504636B52CCF642317EDA2FFCB690A /* Pods-RideAppTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-RideAppTests.modulemap"; sourceTree = "<group>"; };
+		BD116E9FEEDEAE69F67172DCFEA395D1 /* Pods_RideAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RideAppTests.framework; path = "Pods-RideAppTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66D6AA9622BA6F38B6B68F9A7DEB1DD /* Pods_RideApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RideApp.framework; path = "Pods-RideApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D2FB5DB1EA7BB0FC25D17972B8CB2EA5 /* Pods-RideAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RideAppTests-dummy.m"; sourceTree = "<group>"; };
-		D48674857EA9401BF7D58A1D26BE2494 /* Pods-RideAppTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RideAppTests-resources.sh"; sourceTree = "<group>"; };
-		D5B534EE7B1E67308FB4021DCD94DB76 /* Pods-RideAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RideAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		D7A0D4FA41A327AF4916A45BD74A85F7 /* Pods-RideAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RideAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E8DD0A756D8E9D5BCD7DD834AEB06F65 /* Pods-RideAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RideAppTests-dummy.m"; sourceTree = "<group>"; };
+		F756067A0ACC730DD208D240AF111E09 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFE3FF30E3BBB8510021455E83185CD2 /* Pods-RideApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RideApp-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1B2BAAC01E3342202835B91BC6D0C292 /* Frameworks */ = {
+		061F3CF9198018D936AE81772C479400 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC90F1CE6EA44BBD5C39A4246FAA7561 /* Foundation.framework in Frameworks */,
+				5D5B26A3B161F2664CDFF309F1808FC6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		547650BA0101029DDF4466B1FC34F127 /* Frameworks */ = {
+		914D01CFC97186143028F060FC4F8B72 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63B1936E5BCE66F660579679491D2197 /* Foundation.framework in Frameworks */,
+				1D0A8FC4E7EFF138FB7B8201A7E8FBFE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		23C7D623D3E0DDCBFD23B0A70C92E4B3 /* Pods-RideAppTests */ = {
+		1FA51B56B7E90C07BF56A8801904AA3B /* Pods-RideApp */ = {
 			isa = PBXGroup;
 			children = (
-				B8689EEDFB919E2DF1BC36C56561527A /* Pods-RideAppTests-acknowledgements.markdown */,
-				0983D1F9A62860330D6A92E5C2482F6B /* Pods-RideAppTests-acknowledgements.plist */,
-				D2FB5DB1EA7BB0FC25D17972B8CB2EA5 /* Pods-RideAppTests-dummy.m */,
-				ACB39FDCCD9B709713E617FD3CE02513 /* Pods-RideAppTests-frameworks.sh */,
-				D48674857EA9401BF7D58A1D26BE2494 /* Pods-RideAppTests-resources.sh */,
-				24B856C8717C31BB2DC2B886587ED403 /* Pods-RideAppTests.debug.xcconfig */,
-				D5B534EE7B1E67308FB4021DCD94DB76 /* Pods-RideAppTests.release.xcconfig */,
+				B549755B454D1C51170F2BAFE1B94B66 /* Info.plist */,
+				4353101749613AF10417E4B171A103B2 /* Pods-RideApp.modulemap */,
+				091881146D8329553F71DE18A7C13962 /* Pods-RideApp-acknowledgements.markdown */,
+				9A03A4C9E40E14BBE312BDA336008F96 /* Pods-RideApp-acknowledgements.plist */,
+				8BD33FB558CFECB30EC3BEF789C445F8 /* Pods-RideApp-dummy.m */,
+				8A98B9885516C52E11AECED974D80706 /* Pods-RideApp-frameworks.sh */,
+				71D6BC89A211C09CA4EF24C05BA06933 /* Pods-RideApp-resources.sh */,
+				FFE3FF30E3BBB8510021455E83185CD2 /* Pods-RideApp-umbrella.h */,
+				55AB56B3D26E43C808178C08F224B1B8 /* Pods-RideApp.debug.xcconfig */,
+				5D16A4F84F466B8BF442D94472250D7D /* Pods-RideApp.release.xcconfig */,
+			);
+			name = "Pods-RideApp";
+			path = "Target Support Files/Pods-RideApp";
+			sourceTree = "<group>";
+		};
+		440BC807EBBEEB9E17ED63DB0481D522 /* Pods-RideAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				F756067A0ACC730DD208D240AF111E09 /* Info.plist */,
+				BB504636B52CCF642317EDA2FFCB690A /* Pods-RideAppTests.modulemap */,
+				8CBE350F8F24DD31085B2F443361AE5F /* Pods-RideAppTests-acknowledgements.markdown */,
+				55DD7F97FE67C87ECBC9555E719B1444 /* Pods-RideAppTests-acknowledgements.plist */,
+				E8DD0A756D8E9D5BCD7DD834AEB06F65 /* Pods-RideAppTests-dummy.m */,
+				585F8021853D283A011A998B271B1F63 /* Pods-RideAppTests-frameworks.sh */,
+				B1EC0022484F830524EB732790DBA876 /* Pods-RideAppTests-resources.sh */,
+				4B897399BBFE4B893F9AD0C7FC18D5E4 /* Pods-RideAppTests-umbrella.h */,
+				D7A0D4FA41A327AF4916A45BD74A85F7 /* Pods-RideAppTests.debug.xcconfig */,
+				7AA2F282E2316D03C06F8EE58E9DC897 /* Pods-RideAppTests.release.xcconfig */,
 			);
 			name = "Pods-RideAppTests";
 			path = "Target Support Files/Pods-RideAppTests";
-			sourceTree = "<group>";
-		};
-		25EEB019C292D807B16E5165DD219312 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2DF5E12BB54EE340BB2C5EE5B9C742A3 /* libPods-RideApp.a */,
-				AC724A0210C44F1542F51EBCC2594AB3 /* libPods-RideAppTests.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		6202124E9D433C3EA7B1CF2F09917CA5 /* Pods */ = {
@@ -95,37 +115,31 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		7D6AD6AC8416D0AE627874075667D45A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C66D6AA9622BA6F38B6B68F9A7DEB1DD /* Pods_RideApp.framework */,
+				BD116E9FEEDEAE69F67172DCFEA395D1 /* Pods_RideAppTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				6202124E9D433C3EA7B1CF2F09917CA5 /* Pods */,
-				25EEB019C292D807B16E5165DD219312 /* Products */,
-				8BA59D0DC22E94E6E603FF5C708E56BE /* Targets Support Files */,
+				7D6AD6AC8416D0AE627874075667D45A /* Products */,
+				AD14499515BCBC5B664E3E4A0B2FADFF /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		882B1FF6256971E34EB3C60E7C2E7EEB /* Pods-RideApp */ = {
+		AD14499515BCBC5B664E3E4A0B2FADFF /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				64079147DC31F2EAB339E3C361BB06E6 /* Pods-RideApp-acknowledgements.markdown */,
-				31DBCFCB3B5263E593EFC97584155E66 /* Pods-RideApp-acknowledgements.plist */,
-				71602C5372651500A0557E7BD78C7F87 /* Pods-RideApp-dummy.m */,
-				B1BB0A57692ADA5B82522B71B9D99B32 /* Pods-RideApp-frameworks.sh */,
-				8FDCD01DD19C0C29903C29E9EBD2A90D /* Pods-RideApp-resources.sh */,
-				322002493D65B8E5403E264AAAC4BEA1 /* Pods-RideApp.debug.xcconfig */,
-				2AE49818908564E74ED629E0B98EF0FF /* Pods-RideApp.release.xcconfig */,
-			);
-			name = "Pods-RideApp";
-			path = "Target Support Files/Pods-RideApp";
-			sourceTree = "<group>";
-		};
-		8BA59D0DC22E94E6E603FF5C708E56BE /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				882B1FF6256971E34EB3C60E7C2E7EEB /* Pods-RideApp */,
-				23C7D623D3E0DDCBFD23B0A70C92E4B3 /* Pods-RideAppTests */,
+				1FA51B56B7E90C07BF56A8801904AA3B /* Pods-RideApp */,
+				440BC807EBBEEB9E17ED63DB0481D522 /* Pods-RideAppTests */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
@@ -157,13 +171,33 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		4BE574DD1C8EC3AB5E881563A55DA69F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF860AE232593EB7F4ACDD0C8704A2A2 /* Pods-RideAppTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8F11DF29B27BF71886941CA0E2D03CE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5A0D10C747361E41565FEE01039A72A /* Pods-RideApp-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		326B9ECF3454DFA7D34ABD799607B298 /* Pods-RideAppTests */ = {
+		38B61C55D3857AC7216ABC13644B17B1 /* Pods-RideAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 512525DAF9B4A945BC8127F66B007F33 /* Build configuration list for PBXNativeTarget "Pods-RideAppTests" */;
+			buildConfigurationList = 87DFD17B52BE7DCBECBCA279C9EB81DE /* Build configuration list for PBXNativeTarget "Pods-RideAppTests" */;
 			buildPhases = (
-				8075850A5B79E1F956AFD9E92387D5A7 /* Sources */,
-				547650BA0101029DDF4466B1FC34F127 /* Frameworks */,
+				EFEF4CD8657A7C26E61B42AAA8B1BDC7 /* Sources */,
+				061F3CF9198018D936AE81772C479400 /* Frameworks */,
+				4BE574DD1C8EC3AB5E881563A55DA69F /* Headers */,
 			);
 			buildRules = (
 			);
@@ -171,15 +205,16 @@
 			);
 			name = "Pods-RideAppTests";
 			productName = "Pods-RideAppTests";
-			productReference = AC724A0210C44F1542F51EBCC2594AB3 /* libPods-RideAppTests.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = BD116E9FEEDEAE69F67172DCFEA395D1 /* Pods_RideAppTests.framework */;
+			productType = "com.apple.product-type.framework";
 		};
-		98CF7169888B95EC0359ABA3AA1EAB75 /* Pods-RideApp */ = {
+		A9C47DF995AF3F2F43288B53E8F76265 /* Pods-RideApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE54ACB5E07A375DDD03764E2391B782 /* Build configuration list for PBXNativeTarget "Pods-RideApp" */;
+			buildConfigurationList = F789927CAC75C92EB6EED79B10AC58E6 /* Build configuration list for PBXNativeTarget "Pods-RideApp" */;
 			buildPhases = (
-				1B80730598D56679E52D8852C6CD1E9B /* Sources */,
-				1B2BAAC01E3342202835B91BC6D0C292 /* Frameworks */,
+				10C661525F5B94FFD0C818D6DF76A46F /* Sources */,
+				914D01CFC97186143028F060FC4F8B72 /* Frameworks */,
+				B8F11DF29B27BF71886941CA0E2D03CE /* Headers */,
 			);
 			buildRules = (
 			);
@@ -187,8 +222,8 @@
 			);
 			name = "Pods-RideApp";
 			productName = "Pods-RideApp";
-			productReference = 2DF5E12BB54EE340BB2C5EE5B9C742A3 /* libPods-RideApp.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = C66D6AA9622BA6F38B6B68F9A7DEB1DD /* Pods_RideApp.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -207,60 +242,142 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 25EEB019C292D807B16E5165DD219312 /* Products */;
+			productRefGroup = 7D6AD6AC8416D0AE627874075667D45A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				98CF7169888B95EC0359ABA3AA1EAB75 /* Pods-RideApp */,
-				326B9ECF3454DFA7D34ABD799607B298 /* Pods-RideAppTests */,
+				A9C47DF995AF3F2F43288B53E8F76265 /* Pods-RideApp */,
+				38B61C55D3857AC7216ABC13644B17B1 /* Pods-RideAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1B80730598D56679E52D8852C6CD1E9B /* Sources */ = {
+		10C661525F5B94FFD0C818D6DF76A46F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE6EDD89780A9B3C97F1166D555569FA /* Pods-RideApp-dummy.m in Sources */,
+				B55A5E678EF682FB6B2BBA984103012B /* Pods-RideApp-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8075850A5B79E1F956AFD9E92387D5A7 /* Sources */ = {
+		EFEF4CD8657A7C26E61B42AAA8B1BDC7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				665E2EEE592C730063852D9E7A90E1A6 /* Pods-RideAppTests-dummy.m in Sources */,
+				1EA0AB59515995C5E6DD8625EBCF1C14 /* Pods-RideAppTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		133AE654D47968E6545FB9AB3775440F /* Debug */ = {
+		02BD7E06BE227C5F59F1330971F6B105 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24B856C8717C31BB2DC2B886587ED403 /* Pods-RideAppTests.debug.xcconfig */;
+			baseConfigurationReference = 5D16A4F84F466B8BF442D94472250D7D /* Pods-RideApp.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				INFOPLIST_FILE = "Target Support Files/Pods-RideApp/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RideApp/Pods-RideApp.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_RideApp;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0FF32F2547C46D356B797209EC6AEA83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55AB56B3D26E43C808178C08F224B1B8 /* Pods-RideApp.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-RideApp/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RideApp/Pods-RideApp.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Pods_RideApp;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		79B0C2E66EFA9917ED6EDDB8FC6A7684 /* Release */ = {
+		64F2203EAD68E42E6E858726164D9407 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AA2F282E2316D03C06F8EE58E9DC897 /* Pods-RideAppTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-RideAppTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RideAppTests/Pods-RideAppTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_RideAppTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		673254EEAF0B5BF4596080C749645884 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -292,7 +409,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
@@ -300,53 +417,42 @@
 			};
 			name = Release;
 		};
-		A0FFEFBB69E84297652741D8230A316C /* Release */ = {
+		B3893627971802F79007B1E8C4E537E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2AE49818908564E74ED629E0B98EF0FF /* Pods-RideApp.release.xcconfig */;
+			baseConfigurationReference = D7A0D4FA41A327AF4916A45BD74A85F7 /* Pods-RideAppTests.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		A4B342404BD99C18943B1B1D27ABF84B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 322002493D65B8E5403E264AAAC4BEA1 /* Pods-RideApp.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				INFOPLIST_FILE = "Target Support Files/Pods-RideAppTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RideAppTests/Pods-RideAppTests.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Pods_RideAppTests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		CF7953F66E785E8876EB4D370D777D50 /* Debug */ = {
+		E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -382,7 +488,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -390,55 +496,32 @@
 			};
 			name = Debug;
 		};
-		FDDF592248761E1B344C7BE1FBDDF886 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5B534EE7B1E67308FB4021DCD94DB76 /* Pods-RideAppTests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CF7953F66E785E8876EB4D370D777D50 /* Debug */,
-				79B0C2E66EFA9917ED6EDDB8FC6A7684 /* Release */,
+				E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */,
+				673254EEAF0B5BF4596080C749645884 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		512525DAF9B4A945BC8127F66B007F33 /* Build configuration list for PBXNativeTarget "Pods-RideAppTests" */ = {
+		87DFD17B52BE7DCBECBCA279C9EB81DE /* Build configuration list for PBXNativeTarget "Pods-RideAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				133AE654D47968E6545FB9AB3775440F /* Debug */,
-				FDDF592248761E1B344C7BE1FBDDF886 /* Release */,
+				B3893627971802F79007B1E8C4E537E3 /* Debug */,
+				64F2203EAD68E42E6E858726164D9407 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE54ACB5E07A375DDD03764E2391B782 /* Build configuration list for PBXNativeTarget "Pods-RideApp" */ = {
+		F789927CAC75C92EB6EED79B10AC58E6 /* Build configuration list for PBXNativeTarget "Pods-RideApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A4B342404BD99C18943B1B1D27ABF84B /* Debug */,
-				A0FFEFBB69E84297652741D8230A316C /* Release */,
+				0FF32F2547C46D356B797209EC6AEA83 /* Debug */,
+				02BD7E06BE227C5F59F1330971F6B105 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
