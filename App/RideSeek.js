@@ -109,7 +109,7 @@ class RideSeek extends Component {
     if (this.state.responseFS.error === false) {
     Alert.alert("Submission successful", "Your ride request was successfully received!",
                [
-                {text: 'OK', onPress: () => console.log('ok pressed'), style: "cancel"},
+                {text: 'OK', onPress: () => this.backOneScene(), style: "cancel"},
 
               ]);
     }
@@ -204,7 +204,7 @@ class RideSeek extends Component {
                   value={(this.state && this.state.seats) || ''}
                   keyboardType="numeric"
                 />
-                <Text style={styles.specReqsText}>Special Requests: (Please be curteous)</Text>
+                <Text style={styles.specReqsText}>Special Requests: (Please be courteous)</Text>
                 <CheckBox 
                       style={styles.checkboxes}
                       label="Ride to event ONLY"

@@ -227,28 +227,9 @@ class Register extends Component {
                       onValueChange={(value) => {
                         this.setState({riderDriver: value})
                       }}>
-<<<<<<< HEAD
-                      <Picker.Item label={'Rider'} value={false} />
-                      <Picker.Item label={'Driver'} value={true} />
-                      </Picker>
-  
-                    <Text
-                        style={styles.carSelect}>
-                        If you are a driver, do you own your own car?
-                    </Text>
-                    <Picker 
-                      style={styles.carSelector}
-                      selectedValue={(this.state && this.state.carOrNah) || true}
-                      onValueChange={(value) => {
-                        this.setState({carOrNah: value})
-                        }}>
-                        <Picker.Item label={'Yes'} value={true} />
-                      <Picker.Item label={'No'} value={false} />
-=======
                       <Picker.Item label={'Rider'} value={'Rider'} />
                       <Picker.Item label={'Driver with own car'} value={'Driver with own car'} />
                       <Picker.Item label={'Driver with Zipcar'} value={'Driver with Zipcar'} />
->>>>>>> fcfdd496bd6e59493702fda2e2aa1fe69fe422eb
                     </Picker>
                     <Text
                       style={styles.groupText}>
@@ -282,13 +263,8 @@ var styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#F5FCFF',
-<<<<<<< HEAD
-  },      
-  fName: {      
-=======
   },
   fName: {    
->>>>>>> fcfdd496bd6e59493702fda2e2aa1fe69fe422eb
     color: 'black',
     fontSize: 16,
     fontWeight: 'normal',
