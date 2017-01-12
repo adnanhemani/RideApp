@@ -26,7 +26,8 @@ class AddGroup extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            loggedIn: true
+            loggedIn: true,
+            group: 1
         };
     }
   
@@ -34,8 +35,8 @@ class AddGroup extends Component {
     console.log("submitted");
   }
   
-  toSignIn () {
-    console.log("Back to sign in screen");
+  backOneScreen () {
+    console.log("Back one screen");
     this.props.navigator.pop();
   }
 
@@ -87,7 +88,7 @@ class AddGroup extends Component {
 
     okPressed () {
       console.log("ok pressed");
-      this.props.navigator.push({id: "Tabs", name:"Tabs"});
+      this.props.navigator.pop();
     }
   
   render () {
@@ -106,7 +107,7 @@ class AddGroup extends Component {
               }
       const backButton = {
         title: "Back",
-        handler: () => this.toSignIn(),
+        handler: () => this.backOneScreen(),
       };
         
       return (

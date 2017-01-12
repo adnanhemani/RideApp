@@ -27,10 +27,11 @@ class Tabs extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            loggedIn: true
+            loggedIn: true,
+            noback: true,
         };
     }
-
+    
     settingsPressed () {
       console.log("a");
       this.props.navigator.push({id:"LoginPage", name: "LoginPage"});

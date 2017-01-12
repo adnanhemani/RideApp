@@ -13,6 +13,7 @@ import {
   TextInput,
   Navigator,
   Alert,
+  BackAndroid,
 } from 'react-native';
 import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
 
@@ -63,10 +64,6 @@ class RideApplLogin extends Component {
     register () {
       console.log("register screen");
       this.props.navigator.push({id: "Register", name: "Register"})
-    };
-  
-    forgot () {
-      console.log("forgot");
     };
 
     toQueryString(obj) {
@@ -119,6 +116,15 @@ class RideApplLogin extends Component {
     } catch (error) {
       console.log("Error?");
     }
+
+    BackAndroid.addEventListener('hardwareBackPress', () => {
+      if (this.props.navigator && this.props.navigator.getCurrentRoutes().length > 2) {
+        this.props.navigator.pop();
+        return true;
+      } else {
+        return false;
+      }
+    });
 	}
   
     componentDidMount() {

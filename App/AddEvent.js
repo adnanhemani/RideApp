@@ -89,8 +89,14 @@ class AddEvent extends Component {
   
 
   fetchData() {
-    var params = {"name": this.state.eventName, "event_time": this.state.eventTime, 
-      "signup_expiry": this.state.expiryTime, "group": this.props.group_info.pk, "active": true, "about": this.state.eventMessage};
+    var d = new Date();
+    var n = d.getTimezoneOffset();
+    var offset = (n/60) * -1;
+    console.log(offset);
+    this.setState({eventTime: this.state.eventTime.toString() + offset.toString()});
+
+    var params = {"name": this.state.eventName, "event_time": this.state.eventTime.toString() + offset.toString(), 
+      "signup_expiry": this.state.expiryTime.toString() + offset.toString(), "group": this.props.group_info.pk, "active": true, "about": this.state.eventMessage};
     fetch(REQUEST_URL + this.toQueryString(params)).then((response) => response.json())
       .then(((responseData) => {
         console.log(responseData);

@@ -24,7 +24,6 @@ class SettingsPage extends Component {
         super(props, context);
         this.state = {
             loggedIn: true,
-          
         };
 
     }

@@ -6,6 +6,7 @@ import {
   Navigator,
   ScrollView,
   ListView,
+  RefreshControl,
 } from 'react-native'
 import NavigationBar from 'react-native-navbar';
 var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/ridesessions/?';
@@ -70,6 +71,12 @@ class RidesPage extends Component {
         });
       })
       .done();
+      this.setState({refreshing: false});
+    }
+
+    _onRefresh() {
+      this.setState({refreshing: true});
+      this.fetchData();
     }
   
     render () {
@@ -92,7 +99,7 @@ class RidesPage extends Component {
             <ScrollView>
             <NavigationBar
                       title={{ title: "Active Rides Sessions", tintColor: 'black', }}
-                      style={{ backgroundColor: "white", }}
+                      style={{ backgroundColor: "#e9eaed", }}
                       statusBar={{ tintColor: "white", }}
                     />
             <ListView
@@ -100,6 +107,12 @@ class RidesPage extends Component {
                 dataSource = {this.state.dataSource}
                 renderRow = {this.renderRide}
                 style = {styles.listView}
+                refreshControl={
+                  <RefreshControl
+                    refreshing={this.state.refreshing}
+                    onRefresh={this._onRefresh.bind(this)}
+                  />
+                }
                   
             />
             </ScrollView>
@@ -116,7 +129,7 @@ Object.assign(RidesPage.prototype, {
     bindableMethods : {
         renderRide (ride) {
           return (
-          <View>
+          <View style={styles.row}>
               <Text onPress={() => this.rideSeek(ride)} style={styles.title}>{ride.fields.name}</Text>
             </View>
           );
@@ -139,6 +152,12 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#ff7f50',
   },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    padding: 10,
+    backgroundColor: '#F6F6F6',
+  },
   rightContainer: {
     flex: 1,
   },
@@ -155,8 +174,7 @@ var styles = StyleSheet.create({
     height: 81,
   },
   listView: {
-    paddingTop: 20,
-    backgroundColor: "powderblue",
+    paddingTop: 120,
     marginBottom: 50,
     
   },
