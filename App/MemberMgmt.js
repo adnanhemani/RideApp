@@ -6,6 +6,7 @@ import {
   Navigator,
   ScrollView,
   ListView,
+  RefreshControl,
 } from 'react-native'
 import NavigationBar from 'react-native-navbar';
 var REQUEST_URL = 'https://calm-garden-29993.herokuapp.com/index/groupmembers/?';
@@ -93,7 +94,7 @@ class MemberMgmt extends Component {
         }
         else if (this.state.loggedIn) {
           return (
-            <ScrollView>
+            <View>
             <NavigationBar
                       title={{ title: "Members", tintColor: 'black', }}
                       style={{ backgroundColor: "white", }}
@@ -105,9 +106,14 @@ class MemberMgmt extends Component {
                 dataSource = {this.state.dataSource}
                 renderRow = {this.renderRegularMembers}
                 style = {styles.listView}
-                  
+                refreshControl={
+                  <RefreshControl
+                    refreshing={this.state.refreshing}
+                    onRefresh={this._onRefresh.bind(this)}
+                  />
+                }
             />
-            </ScrollView>
+            </View>
           );
         } else {
             this.props.navigator.push({id: "LoginPage", name:"Index"})
@@ -121,7 +127,7 @@ Object.assign(MemberMgmt.prototype, {
     bindableMethods : {
         renderRegularMembers (member) {
           return (
-          <View>
+          <View style={styles.row}>
               <Text onPress={() => this.memberPressed(member)} style={styles.title}>{member.fields.first_name + " " + member.fields.last_name}</Text>
             </View>
           );
@@ -148,6 +154,12 @@ var styles = StyleSheet.create({
     marginBottom: 8,
     textAlign: 'center',
   },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    padding: 10,
+    backgroundColor: '#F6F6F6',
+  },
   year: {  
     textAlign: 'center',
   },
@@ -156,10 +168,8 @@ var styles = StyleSheet.create({
     height: 81,
   },
   listView: {
-    paddingTop: 20,
-    backgroundColor: 'powderblue',
-    marginBottom: 20,
-    
+    paddingTop: 0,
+    paddingBottom: 550,
   },
   headTitle: {
     color: 'black',

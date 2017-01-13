@@ -99,7 +99,7 @@ class GroupMgmt extends Component {
             handler: () => this.backOneScene(),
           };
           return (
-            <ScrollView>
+            <View>
             <NavigationBar
                       title={{ title: "Group Management", tintColor: 'black', }}
                       style={{ backgroundColor: "#e9eaed", }}
@@ -119,7 +119,7 @@ class GroupMgmt extends Component {
                 }
                   
             />
-            </ScrollView>
+            </View>
           );
         } else {
             this.props.navigator.push({id: "LoginPage", name:"Index"})
@@ -175,8 +175,8 @@ var styles = StyleSheet.create({
     height: 81,
   },
   listView: {
-    paddingTop: 120,
-    marginBottom: 50,
+    paddingTop: 0,
+    paddingBottom: 550,
   },
 });
 

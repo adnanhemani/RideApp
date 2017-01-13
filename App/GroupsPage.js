@@ -94,7 +94,7 @@ class GroupsPage extends Component {
         }
         else if (this.state.loggedIn) {
           return (
-            <ScrollView>
+            <View>
             <NavigationBar
                       title={{ title: "Groups", tintColor: 'black', }}
                       style={{ backgroundColor: "#e9eaed", }}
@@ -113,7 +113,7 @@ class GroupsPage extends Component {
                 }
                   
             />
-            </ScrollView>
+            </View>
           );
         } else {
             this.props.navigator.push({id: "LoginPage", name:"Index"})
@@ -168,8 +168,8 @@ var styles = StyleSheet.create({
     height: 81,
   },
   listView: {
-    paddingTop: 120,
-    marginBottom: 50,
+    paddingTop: 0,
+    paddingBottom: 550,
     
   },
 });
