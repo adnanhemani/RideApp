@@ -95,7 +95,7 @@ class Register extends Component {
       driverParams = "True";
       ownCarParams = "False";
     }
-    var params = {"fname": this.state.fName, "lname": this.state.lName, "phone_number": this.state.myNumber, "email": this.state.email, 
+    var params = {"fname": this.state.fName.toLowerCase(), "lname": this.state.lName.toLowerCase(), "phone_number": this.state.myNumber, "email": this.state.email.toLowerCase(), 
         "driver": driverParams, "own_car": ownCarParams, "g": this.state.group, "pw": this.state.pw}
     fetch(REQUEST_URL + this.toQueryString(params)).then((response) => response.json())
       .then(((responseData) => {  
